@@ -2,12 +2,12 @@ from .analyzer import SemgrepAnalyzer
 from .issues_data import issues_data
 
 analyzers = {
-    'semgrep' :
+    'semgrep':
         {
-            'name' : 'semgrep',
-            'title' : 'semgrep',
-            'class' : SemgrepAnalyzer,
-            'language' : 'all',
-            'issues_data' : issues_data,
+            'name': 'semgrep',
+            'title': 'semgrep',
+            'class': SemgrepAnalyzer,
+            'language': 'all',
+            'issues_data': issues_data,
         },
 }

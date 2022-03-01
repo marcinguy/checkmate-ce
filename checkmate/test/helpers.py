@@ -14,13 +14,13 @@ class ProjectBasedTest(TestCase):
     def setUp(self):
 
         self.tmpdir = tempfile.mkdtemp()
-        self.tmp_project_path = os.path.join(self.tmpdir,"basic_project")
+        self.tmp_project_path = os.path.join(self.tmpdir, "basic_project")
         os.makedirs(self.tmp_project_path)
 
         self.settings = Settings(
-            analyzers = {},
-            aggregators = {},
-            commands = {}
+            analyzers={},
+            aggregators={},
+            commands={}
         )
 
         self.settings.initialize()
@@ -28,12 +28,14 @@ class ProjectBasedTest(TestCase):
         self.current_path = os.getcwd()
 
         os.chdir(self.tmp_project_path)
-        init_command = InitCommand(None,None)
+        init_command = InitCommand(None, None)
         init_command.run()
 
-        assert os.path.exists(os.path.join(self.tmp_project_path,'.checkmate'))
+        assert os.path.exists(os.path.join(
+            self.tmp_project_path, '.checkmate'))
 
-        self.project,self.backend = get_project_and_backend(self.tmp_project_path,self.settings)
+        self.project, self.backend = get_project_and_backend(
+            self.tmp_project_path, self.settings)
 
     def tearDown(self):
         os.chdir(self.current_path)

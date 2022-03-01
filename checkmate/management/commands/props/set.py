@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+
 from checkmate.management.commands.base import BaseCommand
 from checkmate.management.helpers import save_project_config
 
@@ -9,6 +9,7 @@ import os.path
 import json
 import time
 import uuid
+
 
 class Command(BaseCommand):
 
@@ -20,7 +21,7 @@ class Command(BaseCommand):
             return -1
         propname = self.raw_args[0]
         propvalue = self.raw_args[1]
-        if not hasattr(self.project,'props'):
+        if not hasattr(self.project, 'props'):
             self.project.props = {}
         self.project.props[propname] = propvalue
         self.backend.save(self.project)

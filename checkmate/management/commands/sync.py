@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
 
+from checkmate.lib.models import Snapshot, FileRevision, Issue, IssueOccurrence
+from checkmate.helpers.issue import group_issues_by_fingerprint
+from checkmate.lib.code import CodeEnvironment
 from .base import BaseCommand
 
 from collections import defaultdict
@@ -19,9 +21,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-from checkmate.lib.code import CodeEnvironment
-from checkmate.helpers.issue import group_issues_by_fingerprint
-from checkmate.lib.models import Snapshot,FileRevision,Issue,IssueOccurrence
 
 class Command(BaseCommand):
 

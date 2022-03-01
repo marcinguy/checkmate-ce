@@ -2,31 +2,31 @@
 from distutils.core import setup
 from setuptools import find_packages
 
-setup(name='checkmate',
-version='0.2.0',
-author=u'Andreas Dewes - QuantifiedCode UG (haftungsbeschränkt)',
-author_email = 'andreas@quantifiedcode.com',
-license = 'MIT',
-install_requires = """
+setup(name='checkmate3',
+      version='0.2.0',
+      author='Andreas Dewes - QuantifiedCode UG (haftungsbeschränkt)',
+      author_email='andreas@quantifiedcode.com',
+      license='MIT',
+      install_requires="""
 pylint
 pyflakes
 pep8
 six
 chardet
-blitzdb
+blitzdb3
 pyyaml
 sqlalchemy
 """,
-entry_points = {
-        'console_scripts': [
-               'checkmate = checkmate.scripts.manage:main',
-        ],
-    },
-url='https://github.com/quantifiedcode/checkmate',
-packages=find_packages(),
-zip_safe = False,
-description='A meta-code checker written in Python.',
-long_description="""
+      entry_points={
+          'console_scripts': [
+              'checkmate = checkmate.scripts.manage:main',
+          ],
+      },
+      url='https://github.com/quantifiedcode/checkmate',
+      packages=find_packages(),
+      zip_safe=False,
+      description='A meta-code checker written in Python.',
+      long_description="""
 Checkmate is a cross-language (meta-)tool for static code analysis, written in Python.
 Unlike other tools, it provides a global overview of the code quality in a project and aims
 to provide clear, actionable insights to the user.
@@ -46,4 +46,4 @@ Changelog
 
 * 0.2.0: Beta-release
 """
-)
+      )
