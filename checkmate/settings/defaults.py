@@ -29,7 +29,7 @@ plugins = {
            'trojansource': 'checkmate.contrib.plugins.all.trojansource',
            # 'pep8' : 'checkmate.contrib.plugins.all.tpep8',
            'pylint': 'checkmate.contrib.plugins.all.pylint',
-           'pyflakes': 'checkmate.contrib.plugins.all.pyflakes',
+           #'pyflakes': 'checkmate.contrib.plugins.all.pyflakes',
            'jshint': 'checkmate.contrib.plugins.all.jshint',
            'metrics': 'checkmate.contrib.plugins.all.metrics',
            'bandit': 'checkmate.contrib.plugins.all.bandit',

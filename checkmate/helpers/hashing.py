@@ -12,7 +12,9 @@ class Hasher(object):
         elif isinstance(value, (str)):
             v = str(value, errors='replace').encode("utf-8", "ignore")
         elif isinstance(value, (int, float, complex, bool)):
-            v = str(str(value), errors='replace').encode("utf-8", "ignore")
+            #v = str(str(value), errors='replace').encode("utf-8", "ignore")
+            v = str(value)
+
         elif isinstance(value, (tuple, list)):
             for v in value:
                 self.add(v)
@@ -27,7 +29,7 @@ class Hasher(object):
         else:
             raise AttributeError("Unhashable type: %s" % str(type(value)))
 
-        self.digest.update(v)
+        self.digest.update(str(v).encode('utf-8'))
 
     def digest(self):
         return self.digest

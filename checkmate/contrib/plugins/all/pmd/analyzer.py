@@ -44,7 +44,7 @@ class PmdAnalyzer(BaseAnalyzer):
         result = {}
         try:
             with f:
-                f.write(file_revision.get_file_content())
+                f.write(file_revision.get_file_content().decode("utf-8"))
             try:
                 result = subprocess.check_output(["/root/pmd-bin-6.41.0/bin/run.sh",
                                                   "pmd",

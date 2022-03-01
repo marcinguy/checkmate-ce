@@ -383,8 +383,8 @@ class Repository(object):
             if not e.returncode in (141, 128):
                 raise
             raw_log_output = e.output.decode("utf-8", "ignore")
-        headers_and_logs_str = map(lambda x: x.lstrip().split(
-            "\n", 1), raw_log_output.split(split_sequence))[:-1]
+        headers_and_logs_str = list(map(lambda x: x.lstrip().split(
+            "\n", 1), raw_log_output.split(split_sequence)))[:-1]
         headers_and_logs = [(x[0].split(":-:"), x[1])
                             for x in headers_and_logs_str]
 

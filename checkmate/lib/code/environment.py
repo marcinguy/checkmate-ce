@@ -194,7 +194,7 @@ class CodeEnvironment(object):
                 'exception': exception_str
             },
             'location': location,
-            'fingerprint': hashlib.sha256(exception_str).hexdigest(),
+            'fingerprint': hashlib.sha256(exception_str.encode()).hexdigest(),
         }
         return issue_doc
 
