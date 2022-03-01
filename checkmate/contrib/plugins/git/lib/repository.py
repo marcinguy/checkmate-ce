@@ -181,8 +181,8 @@ class Repository(object):
         return_code, stdout = self.call(["git", "remote", "-v"])
         if return_code != 0:
             raise subprocess.CalledProcessError(returncode, args[0], stdout)
-        for line in stdout.split("\n"):
-            match = re.match(r'([^\s]+)\s+([^\s]+)', line)
+        for line in stdout.split(b'\n'):
+            match = re.match(r'([^\s]+)\s+([^\s]+)', str(line))
             if not match:
                 continue
             name = match.group(1)
