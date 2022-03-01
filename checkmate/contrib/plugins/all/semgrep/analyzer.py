@@ -44,7 +44,7 @@ class SemgrepAnalyzer(BaseAnalyzer):
         result = {}
         try:
             with f:
-                f.write(file_revision.get_file_content().decode("utf-8))
+                f.write(file_revision.get_file_content().decode("utf-8"))
             try:
                 result = subprocess.check_output(["python3", "-m", "semgrep",
                                                   "--config",
