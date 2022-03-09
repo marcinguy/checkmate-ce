@@ -49,7 +49,6 @@ class SemgrepAnalyzer(BaseAnalyzer):
                 result = subprocess.check_output(["python3", "-m", "semgrep",
                                                   "--config",
                                                   "/root/custom-semgrep/rules/custom/log4j-message-injection.yaml",
-                                                  "--dangerously-allow-arbitrary-code-execution-from-rules",
                                                   "--no-git-ignore",
                                                   "--json",
                                                   f.name])
