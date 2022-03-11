@@ -66,10 +66,17 @@ class GosecAnalyzer(BaseAnalyzer):
                     #  issue['source_line'] = 1
                     #  pass
 
-                    # location = (((issue['source_line'],None),
-                    #              (issue['source_line'],None)),)
-                    location = (((1, None),
-                                 (1, None)),)
+                    try:
+                        value = issue['line'].split("-",1)[1]
+                    except IndexError:
+                        value = issue['line']
+                        pass
+
+                    location = (((value,None),
+                                  (value,None)),)
+
+                    #location = (((1, None),
+                    #             (1, None)),)
 
                     if ".go" in file_revision.path and file_revision.path in issue['file']:
                         # if ".go" in issue['file']:
