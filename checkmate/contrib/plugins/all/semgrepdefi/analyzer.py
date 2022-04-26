@@ -13,10 +13,10 @@ import subprocess
 logger = logging.getLogger(__name__)
 
 
-class SemgrepAnalyzer(BaseAnalyzer):
+class SemgrepDeFiAnalyzer(BaseAnalyzer):
 
     def __init__(self, *args, **kwargs):
-        super(SemgrepAnalyzer, self).__init__(*args, **kwargs)
+        super(SemgrepDeFiAnalyzer, self).__init__(*args, **kwargs)
         try:
             result = subprocess.check_output(
                 ["python3", "-m", "semgrep", "--version"])
