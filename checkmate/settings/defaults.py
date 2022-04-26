@@ -39,6 +39,8 @@ plugins = {
            'confused': 'checkmate.contrib.plugins.all.confused',
            'pmd': 'checkmate.contrib.plugins.all.pmd',
            'semgrep': 'checkmate.contrib.plugins.all.semgrep',
+           'semgrepdefi': 'checkmate.contrib.plugins.all.semgrepdefi',
+
 
 
 
