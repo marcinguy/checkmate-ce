@@ -4,7 +4,7 @@
 issues_data = {
 
     "compound-borrowfresh-reentrancy": {
-        "title": "Compound borrowfres reentrancy",
+        "title": "compound borrowfresh reentrancy",
         "display_name": "Compound borrowfres reentrancy",
         "severity": "3",
         "categories": [
