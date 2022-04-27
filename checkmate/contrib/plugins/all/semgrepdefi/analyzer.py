@@ -60,7 +60,7 @@ class SemgrepDeFiAnalyzer(BaseAnalyzer):
                     result = []
                     pass
                 else:
-                    print((e.returncode))
+                    #print((e.returncode))
                     result = e.output
                     pass
 
@@ -74,35 +74,35 @@ class SemgrepDeFiAnalyzer(BaseAnalyzer):
                                  (issue['start']['line'], None)),)
 
                     if ".sol" in file_revision.path:
-                        if issue['check_id'] == "root.semgrep-smart-contracts.compound-borrowfresh-reentrancy":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.compound-borrowfresh-reentrancy":
                             issue['check_id'] = "compound-borrowfresh-reentrancy"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.compound-sweeptoken-not-restricted":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.compound-sweeptoken-not-restricted":
                             issue['check_id'] = "compound-sweeptoken-not-restricted"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.erc20-public-transfer":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.erc20-public-transfer":
                             issue['check_id'] = "erc20-public-transfer"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.erc20-public-burn":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.erc20-public-burn":
                             issue['check_id'] = "erc20-public-burn"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.erc677-reentrancy":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.erc677-reentrancy":
                             issue['check_id'] = "erc677-reentrancy"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.erc777-reentrancy":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.erc777-reentrancy":
                             issue['check_id'] = "erc777-reentrancy"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.erc721-reentrancy":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.erc721-reentrancy":
                             issue['check_id'] = "erc721-reentrancy"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.gearbox-tokens-path-confusion":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.gearbox-tokens-path-confusion":
                             issue['check_id'] = "gearbox-tokens-path-confusion"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.keeper-network-oracle-manipulation":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.keeper-network-oracle-manipulation":
                             issue['check_id'] = "keeper-network-oracle-manipulation"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.basic-oracle-manipulation":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.basic-oracle-manipulation":
                             issue['check_id'] = "basic-oracle-manipulation"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.redacted-cartel-custom-approval-bug":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.redacted-cartel-custom-approval-bug":
                             issue['check_id'] = "redacted-cartel-custom-approval-bug"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.rigoblock-missing-access-control":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.rigoblock-missing-access-control":
                             issue['check_id'] = "rigoblock-missing-access-control"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.oracle-price-update-not-restricted":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.oracle-price-update-not-restricted":
                             issue['check_id'] = "oracle-price-update-not-restricted"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.superfluid-ctx-injection":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.superfluid-ctx-injection":
                             issue['check_id'] = "superfluid-ctx-injection"
-                        if issue['check_id'] == "root.semgrep-smart-contracts.tecra-coin-burnfrom-bug":
+                        if issue['check_id'] == "root.semgrep-smart-contracts.solidity.tecra-coin-burnfrom-bug":
                             issue['check_id'] = "tecra-coin-burnfrom-bug"
                         issues.append({
                             'code': issue['check_id'],
