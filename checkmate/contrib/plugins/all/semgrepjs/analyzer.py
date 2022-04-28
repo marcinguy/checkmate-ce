@@ -74,9 +74,11 @@ class SemgrepJsAnalyzer(BaseAnalyzer):
                                  (issue['start']['line'], None)),)
 
                     if ".js" in file_revision.path:
-                        issue['check_id'].replace("root.semgrepjs.","")
+                        val = issue['check_id']
+                        val = val.replace("root.semgrepjs.","")
+                        val = val.title().replace("-","")
                         issues.append({
-                            'code': issue['check_id'],
+                            'code': val,
                             'location': location,
                             'data': issue['extra']['message'],
                             'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['extra']['message'])
