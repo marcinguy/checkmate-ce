@@ -40,6 +40,7 @@ plugins = {
            'pmd': 'checkmate.contrib.plugins.all.pmd',
            'semgrep': 'checkmate.contrib.plugins.all.semgrep',
            'semgrepdefi': 'checkmate.contrib.plugins.all.semgrepdefi',
+           'semgrepjs': 'checkmate.contrib.plugins.all.semgrepjs',
 
 
 
