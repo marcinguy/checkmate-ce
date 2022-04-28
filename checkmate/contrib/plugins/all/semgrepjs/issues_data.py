@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-issues_data = 
+issues_data = {
 
-{
   "DetectNoCsrfBeforeMethodOverride": {
     "title": "detect no csrf before method override",
     "display_name": "DetectNoCsrfBeforeMethodOverride",
