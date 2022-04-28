@@ -76,7 +76,7 @@ class SemgrepJsAnalyzer(BaseAnalyzer):
                     if ".js" in file_revision.path:
                         val = issue['check_id']
                         val = val.replace("root.semgrepjs.","")
-                        val = val.title().replace("-","")
+                        val = val.title().replace("_","")
                         issues.append({
                             'code': val,
                             'location': location,
