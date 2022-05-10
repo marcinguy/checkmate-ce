@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
+
 from .base import BaseCommand
 
 import sys
@@ -18,4 +18,5 @@ $ checkmate stats python:metrics -- --hierarchy
 class Command(BaseCommand):
 
     def run(self):
-        snapshots = self.backend.filter(self.project.DiskSnapshot,{}).sort('created_at',-1)
+        snapshots = self.backend.filter(
+            self.project.DiskSnapshot, {}).sort('created_at', -1)

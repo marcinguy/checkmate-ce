@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-from __future__ import absolute_import
 
 from checkmate.lib.analysis.base import BaseAnalyzer
 
@@ -14,17 +12,18 @@ import subprocess
 
 logger = logging.getLogger(__name__)
 
+
 class ProgpilotAnalyzer(BaseAnalyzer):
 
     def __init__(self, *args, **kwargs):
         super(ProgpilotAnalyzer, self).__init__(*args, **kwargs)
 
-    def summarize(self,items):
+    def summarize(self, items):
         pass
 
-    def analyze(self,file_revision):
+    def analyze(self, file_revision):
         issues = []
-        f = tempfile.NamedTemporaryFile(delete = False)
+        f = tempfile.NamedTemporaryFile(delete=False)
         try:
             with f:
                 f.write(file_revision.get_file_content())
@@ -37,33 +36,31 @@ class ProgpilotAnalyzer(BaseAnalyzer):
                 elif e.returncode == 1:
                     result = e.output
                     pass
-		else:
+                else:
                     result = []
             try:
-              json_result = json.loads(result)
+                json_result = json.loads(result)
             except ValueError:
-              json_result = []
-              pass
+                json_result = []
+                pass
 
             for issue in json_result:
                 try:
-                  issue['source_line'] = issue['source_line'][0]
+                    issue['source_line'] = issue['source_line'][0]
                 except KeyError:
-                  issue['source_line'] = 0
-                  pass
+                    issue['source_line'] = 0
+                    pass
 
-                location = (((issue['source_line'],None),
-                              (issue['source_line'],None)),)
-
-
+                location = (((issue['source_line'], None),
+                             (issue['source_line'], None)),)
 
                 issues.append({
-                    'code' : issue['vuln_name'],
-                    'location' : location,
-                    'data' : issue['vuln_name'],
-                    'fingerprint' : self.get_fingerprint_from_code(file_revision,location, extra_data=issue['vuln_name'])
-                    })
+                    'code': issue['vuln_name'],
+                    'location': location,
+                    'data': issue['vuln_name'],
+                    'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['vuln_name'])
+                })
 
         finally:
             os.unlink(f.name)
-        return {'issues' : issues}
+        return {'issues': issues}

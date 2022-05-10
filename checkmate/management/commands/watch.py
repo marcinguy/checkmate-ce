@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
 
+from .analze import Command as AnalyzeCommand
+from checkmate.lib.code import CodeEnvironment
 from .base import BaseCommand
 
 from collections import defaultdict
@@ -19,8 +20,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-from checkmate.lib.code import CodeEnvironment
-from .analze import Command as AnalyzeCommand
 
 class Command(AnalyzeCommand):
 

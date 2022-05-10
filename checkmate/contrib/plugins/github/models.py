@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
 
+from checkmate.lib.models import BaseDocument
 import os
 import uuid
 import time
@@ -11,8 +11,6 @@ import copy
 import traceback
 
 logger = logging.getLogger(__name__)
-
-from checkmate.lib.models import BaseDocument
 
 
 class Github(BaseDocument):

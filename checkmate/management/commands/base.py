@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
+
 import argparse
 import copy
+
 
 class BaseCommand(object):
 
@@ -13,27 +14,27 @@ class BaseCommand(object):
 
     options = [
         {
-        'name'        : '--help',
-        'action'      : 'store_true',
-        'dest'        : 'help',
-        'default'     : False,
-        'help'        : 'display this help message.'
+            'name': '--help',
+            'action': 'store_true',
+            'dest': 'help',
+            'default': False,
+            'help': 'display this help message.'
         },
         {
-        'name'        : '--non-interactive',
-        'action'      : 'store_true',
-        'dest'        : 'non_interactive',
-        'default'     : False,
-        'help'        : 'non-interactive mode.'
+            'name': '--non-interactive',
+            'action': 'store_true',
+            'dest': 'non_interactive',
+            'default': False,
+            'help': 'non-interactive mode.'
         },
         {
-        'name'        : '--format',
-        'action'      : 'store',
-        'dest'        : 'format',
-        'default'     : 'python',
-        'help'        : 'the output format for the return value of the command.'
+            'name': '--format',
+            'action': 'store',
+            'dest': 'format',
+            'default': 'python',
+            'help': 'the output format for the return value of the command.'
         },
-        ]
+    ]
 
     description = None
 
@@ -45,17 +46,18 @@ class BaseCommand(object):
         self.parse_args(args if args else [])
 
     def _get_parser(self):
-        parser = argparse.ArgumentParser(self.prog,add_help = False,description = self.description)
+        parser = argparse.ArgumentParser(
+            self.prog, add_help=False, description=self.description)
         for opt in self.options:
             c_opt = copy.deepcopy(opt)
             name = c_opt['name']
             del c_opt['name']
-            parser.add_argument(name,**c_opt)
+            parser.add_argument(name, **c_opt)
         return parser
 
-    def parse_args(self,raw_args):
+    def parse_args(self, raw_args):
         parser = self._get_parser()
-        args,self.extra_args = parser.parse_known_args(raw_args)
+        args, self.extra_args = parser.parse_known_args(raw_args)
         self.raw_args = raw_args
         self.opts = vars(args)
 

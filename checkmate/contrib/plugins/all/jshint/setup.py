@@ -2,11 +2,11 @@ from .analyzer import JSHintAnalyzer
 from .issues_data import issues_data
 
 analyzers = {
-    'jshint' :
+    'jshint':
         {
-            'title' : 'JSHint',
-            'class' : JSHintAnalyzer,
-            'language' : 'all',
-            'issues_data' : issues_data,
+            'title': 'JSHint',
+            'class': JSHintAnalyzer,
+            'language': 'all',
+            'issues_data': issues_data,
         },
 }
