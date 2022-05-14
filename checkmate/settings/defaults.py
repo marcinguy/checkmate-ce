@@ -1,9 +1,10 @@
 from checkmate.lib.stats.helpers import directory_splitter
 from checkmate.lib.models import (Project,
                                   Snapshot,
+                                  DiskSnapshot,
                                   FileRevision,
                                   Issue)
-from checkmate.contrib.plugins.git.models import GitSnapshot
+
 from collections import defaultdict
 
 """
@@ -40,6 +41,7 @@ plugins = {
            'semgrep': 'checkmate.contrib.plugins.all.semgrep',
            'semgrepdefi': 'checkmate.contrib.plugins.all.semgrepdefi',
            'semgrepjs': 'checkmate.contrib.plugins.all.semgrepjs',
+           'checkov': 'checkmate.contrib.plugins.all.checkov',
 
 
 
@@ -98,7 +100,7 @@ commands = {
 models = {
     'Project': Project,
     'Snapshot': Snapshot,
-    'GitSnapshot': GitSnapshot,
+    'DiskSnapshot': DiskSnapshot,
     'FileRevision': FileRevision,
     'Issue': Issue,
 }
