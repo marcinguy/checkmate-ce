@@ -51,10 +51,10 @@ class CheckovAnalyzer(BaseAnalyzer):
                                                   "json",
                                                   "--file",
                                                   f.name])
-                # pprint.pprint(result)
             except subprocess.CalledProcessError as e:
-                if e.returncode == 4:
+                if e.returncode == 1:
                     result = e.output
+                    pass
                 elif e.returncode == 3:
                     result = []
                     pass
@@ -63,14 +63,13 @@ class CheckovAnalyzer(BaseAnalyzer):
                     result = e.output
                     pass
 
-            # pprint.pprint(result)
             try:
                 json_result = json.loads(result)
 
-                for issue in json_result['results']:
+                for issue in json_result['results']['failed_checks']:
 
-                    location = (((issue['start']['line'], None),
-                                 (issue['start']['line'], None)),)
+                    location = (((1, None),
+                                 (1, None)),)
 
                     issues.append({
                             'code': issue['check_id'],
