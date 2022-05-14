@@ -47,7 +47,8 @@ class CheckovAnalyzer(BaseAnalyzer):
                 f.write(file_revision.get_file_content().decode("utf-8"))
             try:
                 result = subprocess.check_output(["checkov",
-                                                  "-o json",
+                                                  "-o",
+                                                  "json",
                                                   "--file",
                                                   f.name])
                 # pprint.pprint(result)
