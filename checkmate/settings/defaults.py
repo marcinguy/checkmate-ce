@@ -1,10 +1,9 @@
 from checkmate.lib.stats.helpers import directory_splitter
 from checkmate.lib.models import (Project,
                                   Snapshot,
-                                  DiskSnapshot,
                                   FileRevision,
                                   Issue)
-
+from checkmate.contrib.plugins.git.models import GitSnapshot
 from collections import defaultdict
 
 """
@@ -100,7 +99,7 @@ commands = {
 models = {
     'Project': Project,
     'Snapshot': Snapshot,
-    'DiskSnapshot': DiskSnapshot,
+    'GitSnapshot': GitSnapshot,
     'FileRevision': FileRevision,
     'Issue': Issue,
 }
