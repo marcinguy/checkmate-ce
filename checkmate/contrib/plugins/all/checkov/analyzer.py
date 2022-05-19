@@ -67,9 +67,10 @@ class CheckovAnalyzer(BaseAnalyzer):
                 json_result = json.loads(result)
 
                 for issue in json_result['results']['failed_checks']:
-
-                    location = (((1, None),
-                                 (1, None)),)
+                    
+                    line = issue['file_line_range'][0]
+                    location = (((line, None),
+                                 (line, None)),)
 
                     issues.append({
                             'code': issue['check_id'],
