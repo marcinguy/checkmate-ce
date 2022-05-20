@@ -1902,6 +1902,287 @@ issues_data = {
       "security"
     ],
     "title": "S3 Bucket has an ACL defined which allows public READ access."
+  },
+
+  "CKV_K8S_49": {
+    "title": "Minimize wildcard use in Roles and ClusterRoles",
+    "display_name": "CKV_K8S_49",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Minimize wildcard use in Roles and ClusterRoles"
+  },
+  "CKV_K8S_43": {
+    "title": "Image should use digest",
+    "display_name": "CKV_K8S_43",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Image should use digest"
+  },
+  "CKV_K8S_40": {
+    "title": "Containers should run as a high UID to avoid host conflict",
+    "display_name": "CKV_K8S_40",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Containers should run as a high UID to avoid host conflict"
+  },
+  "CKV_K8S_25": {
+    "title": "Minimize the admission of containers with added capability",
+    "display_name": "CKV_K8S_25",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Minimize the admission of containers with added capability"
+  },
+  "CKV_K8S_27": {
+    "title": "Do not expose the docker daemon socket to containers",
+    "display_name": "CKV_K8S_27",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Do not expose the docker daemon socket to containers"
+  },
+  "CKV_K8S_20": {
+    "title": "Containers should not run with allowPrivilegeEscalation",
+    "display_name": "CKV_K8S_20",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Containers should not run with allowPrivilegeEscalation"
+  },
+  "CKV_K8S_21": {
+    "title": "The default namespace should not be used",
+    "display_name": "CKV_K8S_21",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "The default namespace should not be used"
+  },
+  "CKV_K8S_22": {
+    "title": "Use read-only filesystem for containers where possible",
+    "display_name": "CKV_K8S_22",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Use read-only filesystem for containers where possible"
+  },
+  "CKV_K8S_23": {
+    "title": "Minimize the admission of root containers",
+    "display_name": "CKV_K8S_23",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Minimize the admission of root containers"
+  },
+  "CKV_K8S_28": {
+    "title": "Minimize the admission of containers with the NET_RAW capability",
+    "display_name": "CKV_K8S_28",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Minimize the admission of containers with the NET_RAW capability"
+  },
+  "CKV_K8S_29": {
+    "title": "Apply security context to your pods and containers",
+    "display_name": "CKV_K8S_29",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Apply security context to your pods and containers"
+  },
+  "CKV_K8S_155": {
+    "title": "Minimize ClusterRoles that grant control over validating or mutating admission webhook configurations",
+    "display_name": "CKV_K8S_155",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Minimize ClusterRoles that grant control over validating or mutating admission webhook configurations"
+  },
+  "CKV_K8S_157": {
+    "title": "Minimize Roles and ClusterRoles that grant permissions to bind RoleBindings or ClusterRoleBindings",
+    "display_name": "CKV_K8S_157",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Minimize Roles and ClusterRoles that grant permissions to bind RoleBindings or ClusterRoleBindings"
+  },
+  "CKV_K8S_156": {
+    "title": "Minimize ClusterRoles that grant permissions to approve CertificateSigningRequests",
+    "display_name": "CKV_K8S_156",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Minimize ClusterRoles that grant permissions to approve CertificateSigningRequests"
+  },
+  "CKV_K8S_158": {
+    "title": "Minimize Roles and ClusterRoles that grant permissions to escalate Roles or ClusterRoles",
+    "display_name": "CKV_K8S_158",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Minimize Roles and ClusterRoles that grant permissions to escalate Roles or ClusterRoles"
+  },
+  "CKV_K8S_9": {
+    "title": "Readiness Probe Should be Configured",
+    "display_name": "CKV_K8S_9",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Readiness Probe Should be Configured"
+  },
+  "CKV_K8S_8": {
+    "title": "Liveness Probe Should be Configured",
+    "display_name": "CKV_K8S_8",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Liveness Probe Should be Configured"
+  },
+  "CKV_K8S_38": {
+    "title": "Ensure that Service Account Tokens are only mounted where necessary",
+    "display_name": "CKV_K8S_38",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Ensure that Service Account Tokens are only mounted where necessary"
+  },
+  "CKV_K8S_31": {
+    "title": "Ensure that the seccomp profile is set to docker/default or runtime/default",
+    "display_name": "CKV_K8S_31",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Ensure that the seccomp profile is set to docker/default or runtime/default"
+  },
+  "CKV_K8S_30": {
+    "title": "Apply security context to your pods and containers",
+    "display_name": "CKV_K8S_30",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Apply security context to your pods and containers"
+  },
+  "CKV_K8S_37": {
+    "title": "Minimize the admission of containers with capabilities assigned",
+    "display_name": "CKV_K8S_37",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Minimize the admission of containers with capabilities assigned"
+  },
+  "CKV_K8S_35": {
+    "title": "Prefer using secrets as files over secrets as environment variables",
+    "display_name": "CKV_K8S_35",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Prefer using secrets as files over secrets as environment variables"
+  },
+  "CKV_K8S_11": {
+    "title": "CPU limits should be set",
+    "display_name": "CKV_K8S_11",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "CPU limits should be set"
+  },
+  "CKV_K8S_10": {
+    "title": "CPU requests should be set",
+    "display_name": "CKV_K8S_10",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "CPU requests should be set"
+  },
+  "CKV_K8S_13": {
+    "title": "Memory limits should be set",
+    "display_name": "CKV_K8S_13",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Memory limits should be set"
+  },
+  "CKV_K8S_12": {
+    "title": "Memory requests should be set",
+    "display_name": "CKV_K8S_12",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Memory requests should be set"
+  },
+  "CKV_K8S_14": {
+    "title": "Image Tag should be fixed - not latest or blank",
+    "display_name": "CKV_K8S_14",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Image Tag should be fixed - not latest or blank"
+  },
+  "CKV_K8S_17": {
+    "title": "Containers should not share the host process ID namespace",
+    "display_name": "CKV_K8S_17",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Containers should not share the host process ID namespace"
+  },
+  "CKV_K8S_16": {
+    "title": "Container should not be privileged",
+    "display_name": "CKV_K8S_16",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Container should not be privileged"
+  },
+  "CKV_K8S_19": {
+    "title": "Containers should not share the host network namespace",
+    "display_name": "CKV_K8S_19",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Containers should not share the host network namespace"
+  },
+  "CKV_K8S_18": {
+    "title": "Containers should not share the host IPC namespace",
+    "display_name": "CKV_K8S_18",
+    "severity": "1",
+    "categories": [
+      "security"
+    ],
+    "description": "Containers should not share the host IPC namespace"
   }
+
 }
 
