@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
+
 from checkmate.management.commands.init import Command as BaseCommand
 from checkmate.management.helpers import (get_project_config,
                                           get_project,
@@ -17,6 +17,7 @@ from ..models import GitRepository
 
 logger = logging.getLogger(__name__)
 
+
 class Command(BaseCommand):
 
     description = """
@@ -28,7 +29,7 @@ class Command(BaseCommand):
         Tries to find a directory with a .git repository
         """
         while path is not None:
-            git_path = os.path.join(path,'.git')
+            git_path = os.path.join(path, '.git')
             if os.path.exists(git_path) and os.path.isdir(git_path):
                 return path
             path = os.path.dirname(path)
@@ -48,9 +49,9 @@ class Command(BaseCommand):
             return -1
 
         try:
-            repo = self.backend.get(GitRepository,{'project' : self.project})
+            repo = self.backend.get(GitRepository, {'project': self.project})
         except GitRepository.DoesNotExist:
-            repo = GitRepository({'project' : self.project})
+            repo = GitRepository({'project': self.project})
 
         repo.path = project_path
 

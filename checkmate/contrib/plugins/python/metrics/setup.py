@@ -2,11 +2,11 @@ from .analyzer import FormatAnalyzer
 from .issues_data import issues_data
 
 analyzers = {
-    'metrics' :
+    'metrics':
         {
-            'title' : 'Code Metrics',
-            'class' : FormatAnalyzer,
-            'language' : 'python',
-            'issues_data' : issues_data,
+            'title': 'Code Metrics',
+            'class': FormatAnalyzer,
+            'language': 'python',
+            'issues_data': issues_data,
         },
 }

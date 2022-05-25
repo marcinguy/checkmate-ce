@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
 
-def directory_splitter(path,include_filename = False):
+def directory_splitter(path, include_filename=False):
     if include_filename:
         path_hierarchy = path.split("/")
     else:
@@ -14,7 +13,7 @@ def directory_splitter(path,include_filename = False):
     for partial_path in path_hierarchy:
         paths.append(current_path)
         if current_path != '':
-            current_path+='/'
-        current_path+=partial_path
+            current_path += '/'
+        current_path += partial_path
     paths.append(current_path)
     return paths

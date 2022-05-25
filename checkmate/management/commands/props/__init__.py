@@ -1,1 +1,1 @@
-import get,set,delete
+from . import get, set, delete

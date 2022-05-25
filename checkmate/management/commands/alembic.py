@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals,absolute_import
 
+from alembic.config import Config, main
+from checkmate.settings import project_path
 from .base import BaseCommand
 from checkmate.management.helpers import save_project_config
 
@@ -17,8 +18,6 @@ Creates a new project. The command proceeds as follows:
 -If a project already exists in the same directory, we do nothing.
 """
 
-from alembic.config import Config,main
-from checkmate.settings import project_path
 
 class Command(BaseCommand):
 
@@ -29,5 +28,5 @@ class Command(BaseCommand):
     """
 
     def run(self):
-        alembic_cfg = Config(os.path.join(project_path,"alembic.ini"))
-        main(argv = self.raw_args)
+        alembic_cfg = Config(os.path.join(project_path, "alembic.ini"))
+        main(argv=self.raw_args)

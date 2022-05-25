@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
-from __future__ import absolute_import
 
 from checkmate.lib.analysis.base import BaseAnalyzer
 
@@ -19,12 +17,12 @@ class TrojansourceAnalyzer(BaseAnalyzer):
     def __init__(self, *args, **kwargs):
         super(TrojansourceAnalyzer, self).__init__(*args, **kwargs)
 
-    def summarize(self,items):
+    def summarize(self, items):
         pass
 
-    def analyze(self,file_revision):
+    def analyze(self, file_revision):
         issues = []
-        f = tempfile.NamedTemporaryFile(delete = False)
+        f = tempfile.NamedTemporaryFile(delete=False)
         try:
             with f:
                 f.write(file_revision.get_file_content())
@@ -35,30 +33,27 @@ class TrojansourceAnalyzer(BaseAnalyzer):
             except subprocess.CalledProcessError as e:
                 pass
             try:
-              json_result = json.loads(result)
+                json_result = json.loads(result)
             except ValueError:
-              json_result = {}
-              pass
-           
-            try: 
-              line  = json_result["line"]
-              line = int(line)
-              location = (((line,line),
-                              (line,None)),)
+                json_result = {}
+                pass
 
-              issues.append({
-                    'code' : "I001",
-                    'location' : location,
-                    'data' : json_result["I001"],
-                    'fingerprint' : self.get_fingerprint_from_code(file_revision,location,extra_data=json_result["I001"])
-                    })
+            try:
+                line = json_result["line"]
+                line = int(line)
+                location = (((line, line),
+                             (line, None)),)
 
-
+                issues.append({
+                    'code': "I001",
+                    'location': location,
+                    'data': json_result["I001"],
+                    'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=json_result["I001"])
+                })
 
             except KeyError:
-              pass
+                pass
 
         finally:
             os.unlink(f.name)
-        return {'issues' : issues}
-
+        return {'issues': issues}
