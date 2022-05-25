@@ -36,7 +36,7 @@ plugins = {
            'brakeman': 'checkmate.contrib.plugins.all.brakeman',
            'phpanalyzer':  'checkmate.contrib.plugins.all.progpilot',
            'gosec':  'checkmate.contrib.plugins.all.gosec',
-           #'confused': 'checkmate.contrib.plugins.all.confused',
+           'confused': 'checkmate.contrib.plugins.all.confused',
            'pmd': 'checkmate.contrib.plugins.all.pmd',
            'semgrep': 'checkmate.contrib.plugins.all.semgrep',
            'semgrepdefi': 'checkmate.contrib.plugins.all.semgrepdefi',
