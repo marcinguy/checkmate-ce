@@ -5,6 +5,7 @@ from checkmate.lib.models import Issue
 from checkmate.contrib.plugins.git.models import GitSnapshot
 from checkmate.management.commands.base import BaseCommand
 import logging
+import json
 
 logger = logging.getLogger(__name__)
 
