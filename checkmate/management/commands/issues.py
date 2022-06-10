@@ -136,8 +136,6 @@ data.sort(sort_by('risk_no', true, parseInt));
 
 for(var i = 0; i < data.length; i++) {
 $('#findings').append("<tbody><tr><th>Finding</th><td>"+data[i].alert+"</td></tr>");
-$('#findings').append("<tr><th>Risk</th><td>"+data[i].risk+"</td></tr>");
-$('#findings').append("<tr><th>URL</th><td><a href=\"#\">"+data[i].url+"</a></td></tr>");
 $('#findings').append("<tr><th>Description</th><td>"+data[i].description+"</td></tr></tbody></table>");
 $('#hr').append("<hr>");
 
@@ -275,6 +273,8 @@ new Chartist.Pie('.ct-chart', data);
 
 
 """
-          print(head)
-          print(json_object)
-          print(end)
+          f = open("report.html", "a")
+          f.write(head)
+          f.write(json_output)
+          f.write(end)
+          f.close()
