@@ -58,8 +58,8 @@ class Command(BaseCommand):
           jsonout = []
           out = {}
           for issue in issues:
-              out['alert'] = {'analyzer': issue['analyzer']}
-              out['description'] = {'code': issue['code']}
+              out['alert'] =  issue['code']
+              out['description'] = issue['data']
               jsonout.append(out)
        
 
