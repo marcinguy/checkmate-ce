@@ -49,7 +49,7 @@ class Command(BaseCommand):
                 {})\
                              .sort('analyzer',1)
 
-        if ashtml = 0:
+        if ashtml == 0:
           for issue in issues:
               print(("%(analyzer)s\t%(code)s\t" % {'analyzer': issue['analyzer'],
                                                  'code': issue['code']}))
