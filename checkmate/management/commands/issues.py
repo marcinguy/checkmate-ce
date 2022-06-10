@@ -55,6 +55,13 @@ class Command(BaseCommand):
               print(("%(analyzer)s\t%(code)s\t" % {'analyzer': issue['analyzer'],
                                                  'code': issue['code']}))
         else:
+          jsonout = []
+          out = {}
+          for issue in issues:
+              out['alert'] = {'analyzer': issue['analyzer']}
+              out['description'] = {'code': issue['code']}
+              jsonout.append(out)
+       
 
           head = """
 <!DOCTYPE html>
@@ -78,7 +85,8 @@ class Command(BaseCommand):
 $(window).load(function(){
 var data =
 """
-          json_object = json.dumps(issues, indent = 4) 
+          
+          json_object = json.dumps(jsonout, indent = 4) 
 
           end = """
 var sort_by = function(field, reverse, primer){
