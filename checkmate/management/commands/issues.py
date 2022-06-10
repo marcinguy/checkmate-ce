@@ -275,6 +275,6 @@ new Chartist.Pie('.ct-chart', data);
 """
           f = open("report.html", "a")
           f.write(head)
-          f.write(json_output)
+          f.write(json_object)
           f.write(end)
           f.close()
