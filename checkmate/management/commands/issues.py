@@ -73,11 +73,9 @@ class Command(BaseCommand):
 
   <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
   <link href="https://www.scanmycode.io/assets/css/reportstyle.css" rel="stylesheet">
 
 
-  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
 
 
@@ -221,22 +219,6 @@ $('#hr').append("<hr>");
 
 
   <div align="center"><h1>Scan Report</h1></div>
-
-  <div class="ct-chart ct-major-twelfth"></div>
-  <div align="center">Fig. 1 Findings severity</div>
-
-
-  <script>
-
-var data = {
-  labels: ['Low', 'Medium', 'High'],
-  series: [159, 96, 20]
-};
-
-
-
-new Chartist.Pie('.ct-chart', data);
-  </script>
 
 
 <hr>
