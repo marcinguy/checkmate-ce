@@ -240,21 +240,7 @@ new Chartist.Pie('.ct-chart', data);
 
 
 <hr>
- <div class="box">
-        <h4>Network & OS</h4>
-        <div class="box-content" style="padding: 0;">
-            <table class="table">
-                <thead>
-                    <tr>
-
-                         <td style="border-top: 0;">If you are also interested in Network and OS vulnerabilities please start a <a href="cvescan.html" target="_blank">Nmap Scan with CVEs</a>. It will open a new window with the results.</td>
-                    </tr>
-                </thead>
-            </table>
-
-        </div>
-    </div>
-  <h4>Web Application</h4>
+  <h4>Code</h4>
 
  <section id="findings1">
     <div class="box">
