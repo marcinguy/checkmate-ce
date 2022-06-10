@@ -241,7 +241,7 @@ $('#hr').append("<hr>");
 
 
 """
-          f = open("report.html", "w")
+          f = open("report.html", "a")
           f.write(head)
           f.write(json_object)
           f.write(end)
