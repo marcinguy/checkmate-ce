@@ -58,9 +58,11 @@ class Command(BaseCommand):
           jsonout = []
           out = {}
           for issue in issues:
+              out={}
               out['alert'] =  issue['code']
               out['description'] = issue['data']
               jsonout.append(out)
+              out={}
        
 
           head = """
@@ -241,7 +243,7 @@ $('#hr').append("<hr>");
 
 
 """
-          f = open("report.html", "a")
+          f = open("report.html", "w")
           f.write(head)
           f.write(json_object)
           f.write(end)
