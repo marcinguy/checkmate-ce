@@ -59,7 +59,8 @@ class Command(BaseCommand):
           out = {}
           for issue in issues:
               out={}
-              out['alert'] =  issue['code']
+              out['alert'] =  issue['title']
+              out['code'] =  issue['code']
               out['description'] = issue['data']
               jsonout.append(out)
               out={}
@@ -136,6 +137,7 @@ data.sort(sort_by('risk_no', true, parseInt));
 
 for(var i = 0; i < data.length; i++) {
 $('#findings').append("<tbody><tr><th>Finding</th><td>"+data[i].alert+"</td></tr>");
+$('#findings').append("<tbody><tr><th>Code</th><td>"+data[i].code+"</td></tr>");
 $('#findings').append("<tr><th>Description</th><td>"+data[i].description+"</td></tr></tbody></table>");
 $('#hr').append("<hr>");
 
@@ -199,19 +201,11 @@ $('#hr').append("<hr>");
             <table class="table">
                 <tbody><tr>
                     <th style="border-top: 0;">File Name</th>
-                    <td style="border-top: 0;">index.html</td>
-                </tr>
-                <tr>
-                    <th>File Size</th>
-                    <td>5136</td>
+                    <td style="border-top: 0;">report.html</td>
                 </tr>
                 <tr>
                     <th>File Type</th>
                     <td>data</td>
-                </tr>
-                <tr>
-                    <th>MD5</th>
-                    <td>eacf331f0ffc35d4b482f1d15a887d3b</td>
                 </tr>
             </tbody></table>
         </div>
@@ -247,4 +241,8 @@ $('#hr').append("<hr>");
           f.write(head)
           f.write(json_object)
           f.write(end)
+          f.close()
+
+          f = open("report.json", "w")
+          f.write(json_object)
           f.close()
