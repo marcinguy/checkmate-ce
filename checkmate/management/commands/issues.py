@@ -57,6 +57,7 @@ class Command(BaseCommand):
         else:
           jsonout = []
           out = {}
+          pprint.pprint(issues)
           for issue in issues:
               out={}
               out['alert'] =  issue['title']
