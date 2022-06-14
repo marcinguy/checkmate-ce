@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import pprint
-
 from checkmate.lib.models import Issue
 from checkmate.contrib.plugins.git.models import GitSnapshot
 from checkmate.management.commands.base import BaseCommand
@@ -57,11 +55,9 @@ class Command(BaseCommand):
         else:
           jsonout = []
           out = {}
-          pprint.pprint(issues)
           for issue in issues:
               out={}
-              out['alert'] =  issue['title']
-              out['code'] =  issue['code']
+              out['hash'] =  issue['hash']
               out['description'] = issue['data']
               jsonout.append(out)
               out={}
@@ -137,8 +133,7 @@ data.sort(sort_by('risk_no', true, parseInt));
 
 
 for(var i = 0; i < data.length; i++) {
-$('#findings').append("<tbody><tr><th>Finding</th><td>"+data[i].alert+"</td></tr>");
-$('#findings').append("<tbody><tr><th>Code</th><td>"+data[i].code+"</td></tr>");
+$('#findings').append("<tbody><tr><th>Hash</th><td>"+data[i].hash+"</td></tr>");
 $('#findings').append("<tr><th>Description</th><td>"+data[i].description+"</td></tr></tbody></table>");
 $('#hr').append("<hr>");
 
