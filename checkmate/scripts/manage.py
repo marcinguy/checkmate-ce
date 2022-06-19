@@ -75,6 +75,13 @@ def load_command_class(settings):
 
 def main():
 
+    if not os.path.isdir('.git'):
+      sys.stderr.write("Not a git repository.\nTry running: \"git init && git add. && git commit -m \"init\" \" in the folder\n")
+      exit(-1)
+    if not "CODE_DIR" in os.environ:
+      sys.stderr.write("CODE_DIR env not set. Please set it to directory of your code.\nTry running: \"export CODE_DIR=/path/to/code\" before\n")
+      exit(-1)
+
     project_path = get_project_path()
 
     settings = Settings()
