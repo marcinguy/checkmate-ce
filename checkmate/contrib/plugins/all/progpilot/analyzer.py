@@ -58,6 +58,8 @@ class ProgpilotAnalyzer(BaseAnalyzer):
                     'code': issue['vuln_name'],
                     'location': location,
                     'data': issue['vuln_name'],
+                    'file': f.name,
+                    'line': issue['source_line'],
                     'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['vuln_name'])
                 })
 

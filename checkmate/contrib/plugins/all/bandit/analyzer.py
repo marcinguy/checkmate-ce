@@ -61,6 +61,8 @@ class BanditAnalyzer(BaseAnalyzer):
                         'code': issue['test_id'],
                         'location': location,
                         'data': issue['issue_text'],
+                        'file': f.name,
+                        'line': issue['line_number'],
                         'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['issue_text'])
                     })
 
