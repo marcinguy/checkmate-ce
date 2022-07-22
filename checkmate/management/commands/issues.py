@@ -248,7 +248,7 @@ $('#hr').append("<hr>");
 
           rules = {}
           results = []
-
+          i = 0
           for item in jsonout:
 
                 short_description = item['description']
