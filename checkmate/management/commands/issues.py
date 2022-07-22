@@ -59,6 +59,8 @@ class Command(BaseCommand):
               out={}
               out['hash'] =  issue['hash']
               out['description'] = issue['data']
+              out['file'] = issue['file']
+              out['line'] = issue['line']
               jsonout.append(out)
               out={}
        
@@ -242,3 +244,65 @@ $('#hr').append("<hr>");
           f = open("report.json", "w")
           f.write(json_object)
           f.close()
+
+
+          rules = {}
+          results = []
+
+          for item in jsonout:
+
+                short_description = item['description']
+                full_description = (item['description'])
+                message = item['description']
+                fname = item['file']
+                line = item['line']
+
+                rules[i] = {
+                        "id": str(i),
+                        "name": "BetterscanRule",
+                        # This appears as the title on the list and individual issue view
+                        "shortDescription": {"text": short_description},
+                        # This appears as a sub heading on the individual issue view
+                        "fullDescription": {"text": full_description},
+                        # This appears on the individual issue view in an expandable box
+                        "helpUri": "https://betterscan.io",
+                        "help": {
+                            "markdown": item['description'],
+                            # This property is not used if markdown is provided, but is required
+                            "text": "",
+                            },
+                        "defaultConfiguration": {"level": "warning"},
+                        "properties": {"tags": ["security"]},
+                        }
+
+
+                result = {
+                        "ruleId": str(i),
+                        # This appears in the line by line highlight on the individual issue view
+                        "message": {"text": message},
+                        "locations": [
+                            {
+                                "physicalLocation": {
+                                    "artifactLocation": {"uri": str(fname)},
+                                    "region": {"startLine": int(line)},
+                                    }
+                                }
+                            ],
+                        }
+                results.append(result)
+                i=i+1
+
+          out = {
+            "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+            "version": "2.1.0",
+            "runs": [
+                {
+                    "tool": {"driver": {"name": "Betterscan", "informationUri": "https://betterscan.io", "semanticVersion": "0.9.9", "rules": list(rules.values())}},
+                    "results": results,
+                }
+            ],
+          }
+
+          with open('report.sarif', 'w') as f:
+            json.dump(out, f)
+
