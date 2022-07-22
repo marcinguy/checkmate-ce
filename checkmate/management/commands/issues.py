@@ -254,7 +254,8 @@ $('#hr').append("<hr>");
                 short_description = item['description']
                 full_description = (item['description'])
                 message = item['description']
-                fname = item['file']
+                fname_list = item['file'].split("/")
+                fname = ''.join(fname_list[3:])
                 line = item['line']
 
                 rules[i] = {
