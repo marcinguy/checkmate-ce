@@ -56,13 +56,14 @@ class Command(BaseCommand):
           jsonout = []
           out = {}
           for issue in issues:
-              out={}
-              out['hash'] =  issue['hash']
-              out['description'] = issue['data']
-              out['file'] = issue['file']
-              out['line'] = issue['line']
-              jsonout.append(out)
-              out={}
+              if not issue['code'] == "AnalysisError":
+                out={}
+                out['hash'] =  issue['hash']
+                out['description'] = issue['data']
+                out['file'] = issue['file']
+                out['line'] = issue['line']
+                jsonout.append(out)
+                out={}
        
 
           head = """
@@ -254,8 +255,7 @@ $('#hr').append("<hr>");
                 short_description = item['description']
                 full_description = (item['description'])
                 message = item['description']
-                fname_list = item['file'].split("/")
-                fname = ''.join(fname_list[3:])
+                fname = item['file']
                 line = item['line']
 
                 rules[i] = {

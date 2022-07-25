@@ -79,7 +79,7 @@ class PmdAnalyzer(BaseAnalyzer):
                             'code': issue['rule'],
                             'location': location,
                             'data': issue['description'],
-                            'file': f.name,
+                            'file': file_revision.path,
                             'line': issue['beginline'],
                             'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['description'])
                         })
