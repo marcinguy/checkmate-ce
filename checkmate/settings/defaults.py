@@ -42,7 +42,7 @@ plugins = {
            'semgrepdefi': 'checkmate.contrib.plugins.all.semgrepdefi',
            'semgrepjs': 'checkmate.contrib.plugins.all.semgrepjs',
            'checkov': 'checkmate.contrib.plugins.all.checkov',
-
+           'kubescape': 'checkmate.contrib.plugins.all.kubescape',
 
 
 
