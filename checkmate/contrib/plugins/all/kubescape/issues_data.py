@@ -1,4 +1,8 @@
-{
+# -*- coding: utf-8 -*-
+
+
+issues_data = {
+  
   "C-0030": {
     "title": "Ingress and Egress blocked",
     "display_name": "Ingress and Egress blocked",
