@@ -47,14 +47,9 @@ class Trufflehog3Analyzer(BaseAnalyzer):
                 pass
 
             for issue in json_result:
-                try:
-                    issue['source_line'] = 1
-                except KeyError:
-                    issue['source_line'] = 1
-                    pass
 
-                location = (((issue['source_line'], None),
-                             (issue['source_line'], None)),)
+                location = (((issue['line'], None),
+                             (issue['line'], None)),)
 
                 issues.append({
                     'code': issue['reason'],
