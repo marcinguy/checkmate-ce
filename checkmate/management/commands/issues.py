@@ -4,6 +4,8 @@ from checkmate.contrib.plugins.git.models import GitSnapshot
 from checkmate.management.commands.base import BaseCommand
 import logging
 import json
+from rich.console import Console
+from rich.table import Table
 
 logger = logging.getLogger(__name__)
 
@@ -49,9 +51,17 @@ class Command(BaseCommand):
                              .sort('analyzer',1)
 
         if ashtml == 0:
-          for issue in issues:
-              print(("%(analyzer)s\t%(code)s\t" % {'analyzer': issue['analyzer'],
-                                                 'code': issue['code']}))
+          table = Table(title="Scan Report")
+
+          table.add_column("Analyzer", style="cyan", no_wrap=True)
+          table.add_column("Code", style="magenta")
+          table.add_column("File", justify="right", style="green")
+          table.add_column("Line", justify="right", style="green")
+
+          table.add_row(issue['analyzer'], issue['code'], issue['file'], issue['line'], "❌")
+          #for issue in issues:
+          #    print(("%(analyzer)s\t%(code)s\t" % {'analyzer': issue['analyzer'],
+          #                                       'code': issue['code']}))
         else:
           jsonout = []
           out = {}
