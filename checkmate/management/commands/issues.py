@@ -54,13 +54,13 @@ class Command(BaseCommand):
           table = Table(title="Scan Report")
 
           table.add_column("Analyzer", style="cyan", no_wrap=True)
-          table.add_column("Code", style="magenta")
+          table.add_column("Description", style="magenta")
           table.add_column("File", justify="right", style="green")
           table.add_column("Line", justify="right", style="green")
           
           for issue in issues:
               if not issue['code'] == "AnalysisError":
-                table.add_row(issue['analyzer'], issue['code'], issue['file'], str(issue['line']), "❌")
+                table.add_row(issue['analyzer'], issue['data'], issue['file'], str(issue['line']), "❌")
 
           console = Console()
           console.print(table)
