@@ -61,6 +61,10 @@ class Command(BaseCommand):
           for issue in issues:
               if not issue['code'] == "AnalysisError":
                 table.add_row(issue['analyzer'], issue['code'], issue['file'], str(issue['line']), "❌")
+
+          console = Console()
+          console.print(table)
+
           #for issue in issues:
           #    print(("%(analyzer)s\t%(code)s\t" % {'analyzer': issue['analyzer'],
           #                                       'code': issue['code']}))
