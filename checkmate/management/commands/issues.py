@@ -57,8 +57,9 @@ class Command(BaseCommand):
           table.add_column("Code", style="magenta")
           table.add_column("File", justify="right", style="green")
           table.add_column("Line", justify="right", style="green")
-
-          table.add_row(issue['analyzer'], issue['code'], issue['file'], issue['line'], "❌")
+          
+          for issue in issues:
+               table.add_row(issue['analyzer'], issue['code'], issue['file'], issue['line'], "❌")
           #for issue in issues:
           #    print(("%(analyzer)s\t%(code)s\t" % {'analyzer': issue['analyzer'],
           #                                       'code': issue['code']}))
