@@ -59,7 +59,6 @@ class SemgrepjavaAnalyzer(BaseAnalyzer):
                     result = []
                     pass
                 else:
-                    print((e.returncode))
                     result = e.output
                     pass
 
