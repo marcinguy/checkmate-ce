@@ -1,0 +1,9 @@
+pylint
+pyflakes
+chardet
+pep8
+six
+cffi
+blitzdb
+sqlalchemy
+pyyaml
