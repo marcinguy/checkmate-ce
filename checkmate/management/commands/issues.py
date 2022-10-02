@@ -74,7 +74,7 @@ class Command(BaseCommand):
           console.print(table)
           print("[bold red]Note:[/bold red] Issues include findings accross all revisions i.e it can be that you have fixed it in your latest revision, but the finding will still appear here (for the affected revision)")
 
-          print("This scan could be 4x+ faster with PRO version :thumbs_up: https://www.betterscan.io/product/betterscan-platform-cli-terminal-and-html-2-3-times-faster/")
+          print("This scan could be 4x+ faster with PRO version :thumbs_up: https://www.betterscan.io/pricing")
 
           #for issue in issues:
           #    print(("%(analyzer)s\t%(code)s\t" % {'analyzer': issue['analyzer'],
