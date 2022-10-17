@@ -8,6 +8,7 @@ author=u'Andreas Dewes - QuantifiedCode UG (haftungsbeschränkt)',
 author_email = 'andreas@quantifiedcode.com',
 license = 'MIT',
 install_requires = [
+'blitzdb3_ce==4.0.0'
 'pylint',
 'pyflakes',
 'pep8',
@@ -17,7 +18,7 @@ install_requires = [
 'sqlalchemy'
 ],
 dependency_links=[
-      'https://github.com/marcinguy/blitzdb3-ce/archive/refs/tags/v0.4.4.tar.gz#egg=blitzdb3_ce',
+      'https://github.com/marcinguy/blitzdb3-ce/archive/refs/tags/v0.4.4.tar.gz#egg=blitzdb3_ce-4.0.0',
 ],
 entry_points = {
         'console_scripts': [
