@@ -22,7 +22,7 @@ install_requires = [
               'checkmate = checkmate.scripts.manage:main',
           ],
       },
-      url='https://github.com/quantifiedcode/checkmate',
+      url='https://github.com/marcinguy/checkmate-ce',
       packages=find_packages(),
       zip_safe=False,
       description='A meta-code checker written in Python.',
@@ -34,12 +34,12 @@ to provide clear, actionable insights to the user.
 Documentation
 =============
 
-The documentation can be found `here <https://docs.quantifiedcode.com/checkmate>`.
+The documentation can be found `here <https://github.com/marcinguy/checkmate-ce>`.
 
 Source Code
 ===========
 
-The source code can be found on `Github <https://github.com/quantifiedcode/checkmate>`.
+The source code can be found on `Github <https://github.com/marcinguy/checkmate-ce>`.
 
 Changelog
 =========
