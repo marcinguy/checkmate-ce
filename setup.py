@@ -18,7 +18,7 @@ install_requires = [
 'sqlalchemy'
 ],
 dependency_links=[
-      'https://github.com/marcinguy/blitzdb3-ce/archive/refs/tags/v0.4.4.tar.gz#egg=blitzdb3_ce-4.0.0',
+      'https://github.com/marcinguy/blitzdb3-ce/archive/refs/tags/v4.0.0.tar.gz#egg=blitzdb3_ce-4.0.0',
 ],
 entry_points = {
         'console_scripts': [
