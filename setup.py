@@ -8,7 +8,7 @@ author=u'Andreas Dewes - QuantifiedCode UG (haftungsbeschränkt)',
 author_email = 'andreas@quantifiedcode.com',
 license = 'MIT',
 install_requires = [
-'blitzdb3_ce==4.0.0'
+'blitzdb3_ce==4.0.0',
 'pylint',
 'pyflakes',
 'pep8',
