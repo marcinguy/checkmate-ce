@@ -8,7 +8,7 @@ setup(name='checkmate3',
       author_email='andreas@quantifiedcode.com',
       license='MIT',
 install_requires = [
-"blitzdb3@https://github.com/marcinguy/blitzdb3-ce@master#egg=blitzdb3",
+'blitzdb3_ce==4.0.0',
 'pylint',
 'pyflakes',
 'pep8',
@@ -16,6 +16,9 @@ install_requires = [
 'chardet',
 'pyyaml',
 'sqlalchemy'
+],
+dependency_links=[
+      'https://github.com/marcinguy/blitzdb3-ce/archive/refs/tags/v4.0.0.tar.gz#egg=blitzdb3_ce-4.0.0',
 ],
       entry_points={
           'console_scripts': [
