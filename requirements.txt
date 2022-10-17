@@ -4,6 +4,6 @@ chardet
 pep8
 six
 cffi
-git+https://github.com/marcinguy/blitzdb3-ce@master#egg=blitzdb
+git+https://github.com/marcinguy/blitzdb3-ce@checkmate3-cli#egg=blitzdb
 sqlalchemy
 pyyaml
