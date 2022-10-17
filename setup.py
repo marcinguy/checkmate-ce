@@ -7,16 +7,16 @@ setup(name='checkmate3',
       author='Andreas Dewes - QuantifiedCode UG (haftungsbeschränkt)',
       author_email='andreas@quantifiedcode.com',
       license='MIT',
-      install_requires="""
-pylint
-pyflakes
-pep8
-six
-chardet
-blitzdb3
-pyyaml
-sqlalchemy
-""",
+install_requires = [
+"blitzdb@https://github.com/marcinguy/blitzdb3-ce#egg=blitzdb",
+'pylint',
+'pyflakes',
+'pep8',
+'six',
+'chardet',
+'pyyaml',
+'sqlalchemy'
+],
       entry_points={
           'console_scripts': [
               'checkmate = checkmate.scripts.manage:main',
