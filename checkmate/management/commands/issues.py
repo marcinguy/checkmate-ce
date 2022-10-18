@@ -111,7 +111,7 @@ class Command(BaseCommand):
 
   <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-  <link href="https://www.betterscan.io/assets/css/reportstyle.css" rel="stylesheet">
+  <link href="https://dl.betterscan.io/assets/css/reportstyle.css" rel="stylesheet">
 
 
 
@@ -171,8 +171,9 @@ data.sort(sort_by('risk_no', true, parseInt));
 
 
 for(var i = 0; i < data.length; i++) {
-$('#findings').append("<tbody><tr><th>Hash</th><td>"+data[i].hash+"</td></tr>");
-$('#findings').append("<tr><th>Description</th><td>"+data[i].description+"</td></tr></tbody></table>");
+$('#findings').append("<tbody><tr><th>File</th><td>"+data[i].file+"</td></tr>");
+$('#findings').append("<tr><th>Description</th><td>"+data[i].description+"</td></tr>");
+$('#findings').append("<tr><th>Line</th><td>"+data[i].line+"</td></tr></tbody></table>");
 $('#hr').append("<hr>");
 
 }
@@ -190,7 +191,7 @@ $('#hr').append("<hr>");
 
 
 
-<p style="margin-bottom: 25px;"><img src="https://www.betterscan.io/wp-content/uploads/2022/05/logo-nobackground-164x32-1.png" style="position:relative; top:-40px;"></p>
+<p style="margin-bottom: 25px;"><img src="https://dl.betterscan.io/wp-content/uploads/2022/05/logo-nobackground-164x32-1.png" style="position:relative; top:-40px;"></p>
 
 <div class="tabbable tabs-left">
     <ul class="nav nav-tabs">
@@ -344,5 +345,5 @@ $('#hr').append("<hr>");
          
           print("Check your report in report.html file")
 
-          print("This scan could be 4x+ faster with PRO version :thumbs_up: https://www.betterscan.io/product/betterscan-platform-cli-terminal-and-html-2-3-times-faster/")
+          print("This scan could be 4x+ faster with PRO version :thumbs_up: https://www.betterscan.io/pricing")
 

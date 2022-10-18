@@ -85,4 +85,5 @@ checkignore = """*/site-packages/*
 */eggs/*
 */migrations/*
 */alembic/versions/*
+*/node_modules/*
 """
