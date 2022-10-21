@@ -22,20 +22,19 @@ class Text4shellAnalyzer(BaseAnalyzer):
 
     def analyze(self, file_revision):
         issues = []
-        f = tempfile.NamedTemporaryFile(delete=False)
+        tmpdir = "/tmp/"+file_revision.project.pk
+        f = open(tmpdir+"/"+file_revision.path, "wb")
         try:
             with f:
-                try:
-                  f.write(file_revision.get_file_content())
-                except UnicodeDecodeError:
-                  pass
+                f.write(file_revision.get_file_content())
             try:
-                result = subprocess.check_output(["/root/text4shell-ce/scan_commons_text_versions.py",
+                result = subprocess.check_output(["python3","/root/text4shell-ce/scan_commons_text_versions.py",
                                                   f.name,
-                                                  "-quiet"],
-                                                  stderr=subprocess.DEVNULL).strip()
+                                                  "-quiet"]
+                                                  )
             except subprocess.CalledProcessError as e:
                 pass
+
             try:
                 json_result = json.loads(result)
             except ValueError:
