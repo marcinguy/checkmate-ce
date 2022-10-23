@@ -18,7 +18,7 @@ class SemgrepAnalyzer(BaseAnalyzer):
         super(SemgrepAnalyzer, self).__init__(*args, **kwargs)
         try:
             result = subprocess.check_output(
-                ["python3", "-m", "semgrep", "--version"])
+                ["python3", "-m", "semgrep", "--version"],stderr=subprocess.DEVNULL).strip()
         except subprocess.CalledProcessError:
             logger.error(
                 "Cannot initialize semgrep analyzer: Executable is missing, please install it.")
@@ -37,20 +37,25 @@ class SemgrepAnalyzer(BaseAnalyzer):
             except OSError as exc:  # Guard against race condition
                 if exc.errno != errno.EEXIST:
                     raise
-        f = open(tmpdir+"/"+file_revision.path, "w")
+
+        f = open(tmpdir+"/"+file_revision.path, "wb")
 
         fout = tempfile.NamedTemporaryFile(suffix=".json", delete=False)
         result = {}
         try:
             with f:
-                f.write(file_revision.get_file_content().decode("utf-8"))
+                try:
+                  f.write(file_revision.get_file_content())
+                except UnicodeDecodeError:
+                  pass
             try:
                 result = subprocess.check_output(["python3", "-m", "semgrep",
                                                   "--config",
-                                                  "/root/custom-semgrep/rules/custom/log4j-message-injection.yaml",
+                                                  "/root/custom-semgrep/rules/custom/custom.yaml",
                                                   "--no-git-ignore",
                                                   "--json",
-                                                  f.name])
+                                                  f.name],
+                                                  stderr=subprocess.DEVNULL).strip()
                 
             except subprocess.CalledProcessError as e:
                 if e.returncode == 4:
@@ -59,6 +64,7 @@ class SemgrepAnalyzer(BaseAnalyzer):
                     result = []
                     pass
                 else:
+                    
                     result = e.output
                     pass
 
@@ -74,14 +80,22 @@ class SemgrepAnalyzer(BaseAnalyzer):
                     if ".java" in file_revision.path or ".jsp" in file_revision.path or ".scala" in file_revision.path:
                         if issue['check_id'] == "root.custom-semgrep.rules.custom.log4j-message-injection":
                             issue['check_id'] = "log4shell"
+                        if issue['check_id'] == "root.custom-semgrep.rules.custom.detected-log4j-core":
+                            issue['check_id'] = "log4shell"
+                        if issue['check_id'] == "root.custom-semgrep.rules.custom.spring-controller-exists":
+                            issue['check_id'] = "spring4shell"
+
                         issues.append({
                             'code': issue['check_id'],
                             'location': location,
                             'data': issue['extra']['message'],
+                            'file': file_revision.path,
+                            'line': issue['start']['line'],
                             'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['extra']['message'])
                         })
             except:
                 pass
 
         finally:
-            return {'issues': issues}
+         return {'issues': issues}
+
