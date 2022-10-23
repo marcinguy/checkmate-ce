@@ -51,7 +51,7 @@ class SemgrepAnalyzer(BaseAnalyzer):
             try:
                 result = subprocess.check_output(["python3", "-m", "semgrep",
                                                   "--config",
-                                                  "/root/custom-semgrep/rules/custom/log4j-message-injection.yaml",
+                                                  "/root/custom-semgrep/rules/custom/custom.yaml",
                                                   "--no-git-ignore",
                                                   "--json",
                                                   f.name],
@@ -80,6 +80,11 @@ class SemgrepAnalyzer(BaseAnalyzer):
                     if ".java" in file_revision.path or ".jsp" in file_revision.path or ".scala" in file_revision.path:
                         if issue['check_id'] == "root.custom-semgrep.rules.custom.log4j-message-injection":
                             issue['check_id'] = "log4shell"
+                        if issue['check_id'] == "root.custom-semgrep.rules.custom.detected-log4j-core":
+                            issue['check_id'] = "log4shell"
+                        if issue['check_id'] == "root.custom-semgrep.rules.custom.spring-controller-exists":
+                            issue['check_id'] = "spring4shell"
+
                         issues.append({
                             'code': issue['check_id'],
                             'location': location,
