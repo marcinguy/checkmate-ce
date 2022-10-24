@@ -63,7 +63,7 @@ class Command(BaseCommand):
           for issue in issues:
             if issue["line"]==1:
               unique.append(issue)
-            if all(unique_issue["line"] != issue["line"] for unique_issue in unique):
+            if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
               unique.append(issue)
 
           for issue in unique:
@@ -86,7 +86,7 @@ class Command(BaseCommand):
           for issue in issues:
             if issue["line"]==1:
               unique.append(issue)
-            if all(unique_issue["line"] != issue["line"] for unique_issue in unique):
+            if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
               unique.append(issue)
 
 
@@ -346,4 +346,3 @@ $('#hr').append("<hr>");
           print("Check your report in report.html file")
 
           print("This scan could be 4x+ faster with PRO version :thumbs_up: https://www.betterscan.io/pricing")
-
