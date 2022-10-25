@@ -77,7 +77,7 @@ class SemgrepAnalyzer(BaseAnalyzer):
                     location = (((issue['start']['line'], None),
                                  (issue['start']['line'], None)),)
 
-                    if ".java" in file_revision.path or ".jsp" in file_revision.path or ".scala" in file_revision.path:
+                    if ".java" in file_revision.path or ".jsp" in file_revision.path or ".scala" in file_revision.path or ".xml" in file_revision.path:
                         if issue['check_id'] == "root.custom-semgrep.rules.custom.log4j-message-injection":
                             issue['check_id'] = "log4shell"
                         if issue['check_id'] == "root.custom-semgrep.rules.custom.detected-log4j-core":
