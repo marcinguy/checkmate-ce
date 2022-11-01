@@ -38,6 +38,7 @@ plugins = {
     'semgrepjava': 'checkmate.contrib.plugins.all.semgrepjava',
     'graudit': 'checkmate.contrib.plugins.all.graudit',
     'text4shell': 'checkmate.contrib.plugins.all.text4shell',
+    'yara': 'checkmate.contrib.plugins.all.yara',
 }
 
 
