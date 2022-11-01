@@ -30,7 +30,7 @@ class YaraAnalyzer(BaseAnalyzer):
             try:
                 result = subprocess.check_output(["scan",
                                                   "-y",
-                                                  "/root/yara_openssl_version",
+                                                  "/root/openssl_version_yara",
                                                   "-j",
                                                   f.name]
                                                   )
