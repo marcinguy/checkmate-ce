@@ -1,5 +1,5 @@
 issues_data = {
-    "I001": {
+    "vulnerable_openssl_version": {
         "title": "Vulnerable OpenSSL",
         "description": "%(issue.data)s",
         "severity": 3,

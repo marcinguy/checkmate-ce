@@ -29,8 +29,8 @@ class YaraAnalyzer(BaseAnalyzer):
                 f.write(file_revision.get_file_content())
             try:
                 result = subprocess.check_output(["scan",
-                                                  "-y",
-                                                  "/root/openssl_version_yara",
+                                                  "-Y",
+                                                  "/root/yara",
                                                   "-j",
                                                   f.name]
                                                   )
@@ -50,7 +50,7 @@ class YaraAnalyzer(BaseAnalyzer):
                              (line, None)),)
                 for item in json_result:
                     issues.append({
-                    'code': "I001",
+                    'code': item["rule"],
                     'location': location,
                     'data': item["rule"],
                     'file': file_revision.path,
