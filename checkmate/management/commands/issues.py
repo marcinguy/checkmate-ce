@@ -56,6 +56,7 @@ class Command(BaseCommand):
 
           table.add_column("Analyzer", style="cyan", no_wrap=True)
           table.add_column("Description", style="magenta")
+          table.add_column("Severity", justify="right", style="green")
           table.add_column("File", justify="right", style="green")
           table.add_column("Line", justify="right", style="green")
 
@@ -68,7 +69,7 @@ class Command(BaseCommand):
 
           for issue in unique:
               if not issue['code'] == "AnalysisError":
-                table.add_row(issue['analyzer'], issue['data'], issue['file'], str(issue['line']), "❌")
+                table.add_row(issue['analyzer'], issue['data'], "Warning", issue['file'], str(issue['line']), "❌")
 
           console = Console()
           console.print(table)
@@ -95,6 +96,7 @@ class Command(BaseCommand):
                 out={}
                 out['hash'] =  issue['hash']
                 out['description'] = issue['data']
+                out['severity'] = "Warning"
                 out['file'] = issue['file']
                 out['line'] = issue['line']
                 jsonout.append(out)
@@ -173,6 +175,7 @@ data.sort(sort_by('risk_no', true, parseInt));
 for(var i = 0; i < data.length; i++) {
 $('#findings').append("<tbody><tr><th>File</th><td>"+data[i].file+"</td></tr>");
 $('#findings').append("<tr><th>Description</th><td>"+data[i].description+"</td></tr>");
+$('#findings').append("<tr><th>Severity</th><td>Warning</td></tr>");
 $('#findings').append("<tr><th>Line</th><td>"+data[i].line+"</td></tr></tbody></table>");
 $('#hr').append("<hr>");
 
