@@ -8,6 +8,8 @@ import os
 import tempfile
 import json
 import subprocess
+from os.path import exists
+
 
 logger = logging.getLogger(__name__)
 
@@ -50,7 +52,9 @@ class InsiderseccsharpAnalyzer(BaseAnalyzer):
                                                   "csharp",
                                                   "-target",
                                                   f.name])
-                result = subprocess.check_output(["mv",
+                file_exists = exists("report.json")
+                if file_exists:
+                    result = subprocess.check_output(["mv",
                                                   "report.json",
                                                   tmpdir])
 
