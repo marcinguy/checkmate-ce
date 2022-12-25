@@ -39,6 +39,8 @@ plugins = {
     'graudit': 'checkmate.contrib.plugins.all.graudit',
     'text4shell': 'checkmate.contrib.plugins.all.text4shell',
     'yara': 'checkmate.contrib.plugins.all.yara',
+    'osvscanner': 'checkmate.contrib.plugins.all.osvscanner',
+
 }
 
 
