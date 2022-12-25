@@ -34,8 +34,6 @@ class OSVscannerAnalyzer(BaseAnalyzer):
                 if exc.errno != errno.EEXIST:
                     raise
         
-        result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
-                                        
         f = open(tmpdir+"/"+file_revision.path, "wb")
 
         result = {}
@@ -45,13 +43,12 @@ class OSVscannerAnalyzer(BaseAnalyzer):
                   f.write(file_revision.get_file_content())
                 except UnicodeDecodeError:
                   pass
-            os.chdir(tmpdir)
             os.environ["PATH"] = "/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/:/usr/local/go/bin/"
 
             try:
                 result = subprocess.check_output(["/root/bin/osv-scanner",
                                                   "--json",
-                                                  tmpdir],
+                                                  "/home/mk/test-gem"],
                                                   stderr=subprocess.DEVNULL).strip()
             except subprocess.CalledProcessError as e:
                 json_result = e.output
@@ -79,3 +76,4 @@ class OSVscannerAnalyzer(BaseAnalyzer):
         finally:
             pass
         return {'issues': issues}
+
