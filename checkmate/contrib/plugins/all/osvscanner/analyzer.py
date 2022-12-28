@@ -48,7 +48,7 @@ class OSVscannerAnalyzer(BaseAnalyzer):
             try:
                 result = subprocess.check_output(["/root/bin/osv-scanner",
                                                   "--json",
-                                                  "/home/mk/test-gem"],
+                                                  tmpdir],
                                                   stderr=subprocess.DEVNULL).strip()
             except subprocess.CalledProcessError as e:
                 json_result = e.output
