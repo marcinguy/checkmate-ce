@@ -28,9 +28,9 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
         fresults = tempfile.NamedTemporaryFile(delete=False)
 
         f1 = open(fconf.name, "w")
-        f1.write("namespace: repository\noutput:\n\tfile_path:")
+        f1.write("namespace: repository\noutput:\n  file_path: ")
         f1.write(fresults.name+"\n")
-        f1.write("\tformat: CSV\npath:\n\tinclude:\n\t- "+f.name)
+        f1.write("  format: CSV\npath:\n  include:\n  - "+f.name)
         f1.close()
         try:
             with f:
