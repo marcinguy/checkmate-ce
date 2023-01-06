@@ -27,10 +27,10 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
         fconf = tempfile.NamedTemporaryFile(delete=False)
         fresults = tempfile.NamedTemporaryFile(delete=False)
 
-        f1 = open(fconf, "w")
+        f1 = open(fconf.name, "w")
         f1.write("namespace: repository\noutput:\n\tfile_path:")
         f1.write(fresults.name+"\n")
-        fwrite("\tformat: CSV\npath:\n\tinclude:\n\t- "+f.name)
+        f1.write("\tformat: CSV\npath:\n\tinclude:\n\t- "+f.name)
         f1.close()
         try:
             with f:
@@ -55,7 +55,11 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
 
             my_file = open(fresults.name, 'r')
             data = my_file.readlines()
-            firstLine = data.pop(0) 
+            try:
+              firstLine = data.pop(0) 
+            except:
+              pass
+
             outjson = []
             val ={}
             for line in data:
