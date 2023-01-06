@@ -57,7 +57,7 @@ class OSVscannerAnalyzer(BaseAnalyzer):
             json_result = json.loads(json_result)
 
             try:
-               if "Cargo.lock" in file_revision.path or  "package-lock.json" in file_revision.path or  "yarn.lock" in file_revision.path or  "pnpm-lock.yaml" in file_revision.path or  "composer.lock" in file_revision.path or  "Gemfile.lock" in file_revision.path or  "go.mod" in file_revision.path or  "mix.lock" in file_revision.path or  "poetry.lock" in file_revision.path or "pubsepc.lock" in file_revision.path or "pom.xml" in file_revision.path or  "requirments.txt" in file_revision.path or "gradle.lockfile" in file_revision.path or  "buildscript-gradle.lockfile" in file_revision.path:
+               if "Cargo.lock" in file_revision.path or "packages.lock.json" in file_revision.path or  "package-lock.json" in file_revision.path or  "yarn.lock" in file_revision.path or  "pnpm-lock.yaml" in file_revision.path or  "composer.lock" in file_revision.path or  "Gemfile.lock" in file_revision.path or  "go.mod" in file_revision.path or  "mix.lock" in file_revision.path or  "poetry.lock" in file_revision.path or "pubsepc.lock" in file_revision.path or "pom.xml" in file_revision.path or  "requirments.txt" in file_revision.path or "gradle.lockfile" in file_revision.path or  "buildscript-gradle.lockfile" in file_revision.path:
                   for res in json_result['results']:
                     for pkg in res['packages']:
                       for vuln in pkg['vulnerabilities']:
