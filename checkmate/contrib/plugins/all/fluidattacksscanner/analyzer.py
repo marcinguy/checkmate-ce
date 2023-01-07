@@ -73,6 +73,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
             outjson = []
             val ={}
             for line in reader:
+              val["code"]=line[0]
               val["line"]=line[3]
               val["data"]=line[6]
               outjson.append(val)
@@ -86,7 +87,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
 
                   if ".go" in file_revision.path or ".cs" in file_revision.path or ".java" in file_revision.path or ".js" in file_revision.path or ".ts" in file_revision.path:
                     issues.append({
-                      'code': "I001",
+                      'code': issue["code"],
                       'location': location,
                       'data': issue["data"],
                       'file': file_revision.path,
