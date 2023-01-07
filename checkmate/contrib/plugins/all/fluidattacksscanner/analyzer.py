@@ -8,6 +8,7 @@ import os
 import tempfile
 import json
 import subprocess
+import csv
 
 logger = logging.getLogger(__name__)
 
@@ -56,17 +57,17 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
                 pass
 
             my_file = open(fresults.name, 'r')
-            data = my_file.readlines()
-            firstLine = data.pop(0) 
+            reader = csv.reader(my_file)
+            next(reader)
+
             outjson = []
             val ={}
-            for line in data:
-              out=line.split(",")
-              val["line"]=out[3]
-              val["data"]=out[6]
+            for line in reader:
+              val["line"]=line[3]
+              val["data"]=line[6]
               outjson.append(val)
               val={}
-
+             
             try:
                 for issue in outjson:
                   line = issue["line"]
@@ -90,3 +91,4 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
         finally:
             os.unlink(f.name)
         return {'issues': issues}
+
