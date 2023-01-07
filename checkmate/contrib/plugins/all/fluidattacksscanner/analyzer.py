@@ -27,17 +27,19 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
         fconf = tempfile.NamedTemporaryFile(delete=False)
         fresults = tempfile.NamedTemporaryFile(delete=False)
 
-        f1 = open(fconf.name, "w")
-        f1.write("namespace: repository\noutput:\n  file_path: ")
-        f1.write(fresults.name+"\n")
-        f1.write("  format: CSV\npath:\n  include:\n  - "+f.name)
-        f1.close()
         try:
             with f:
                 try:
                   f.write(file_revision.get_file_content())
                 except UnicodeDecodeError:
                   pass
+            f1 = open(fconf.name, "w")
+            f1.write("namespace: repository\noutput:\n  file_path: ")
+            f1.write(fresults.name+"\n")
+            f1.write("  format: CSV\npath:\n  include:\n    - "+f.name)
+            f1.close()
+            os.chdir("/tmp")
+            os.environ["PATH"] = "/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
             try:
                 result = subprocess.check_output(["/root/.nix-profile/bin/m",
                                                   "gitlab:fluidattacks/universe@trunk",
@@ -55,11 +57,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
 
             my_file = open(fresults.name, 'r')
             data = my_file.readlines()
-            try:
-              firstLine = data.pop(0) 
-            except:
-              pass
-
+            firstLine = data.pop(0) 
             outjson = []
             val ={}
             for line in data:
@@ -92,4 +90,3 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
         finally:
             os.unlink(f.name)
         return {'issues': issues}
-
