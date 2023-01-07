@@ -23,8 +23,19 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
 
     def analyze(self, file_revision):
         issues = []
+        tmpdir = "/tmp/"+file_revision.project.pk
+
+        if not os.path.exists(os.path.dirname(tmpdir+"/"+file_revision.path)):
+            try:
+                os.makedirs(os.path.dirname(tmpdir+"/"+file_revision.path))
+            except OSError as exc:  # Guard against race condition
+                if exc.errno != errno.EEXIST:
+                    raise
+        result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
+
+        f = open(tmpdir+"/"+file_revision.path, "wb")
+
         result = ""
-        f = tempfile.NamedTemporaryFile(delete=False)
         fconf = tempfile.NamedTemporaryFile(delete=False)
         fresults = tempfile.NamedTemporaryFile(delete=False)
 
@@ -67,7 +78,6 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
               val["data"]=line[6]
               outjson.append(val)
               val={}
-             
             try:
                 for issue in outjson:
                   line = issue["line"]
