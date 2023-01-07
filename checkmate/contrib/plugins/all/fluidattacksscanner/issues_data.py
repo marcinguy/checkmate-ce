@@ -1,6 +1,6 @@
 issues_data = {
     "I001": {
-        "title": "%(issue.data)s",
+        "title": "Fluidattacks issues",
         "description": "%(issue.data)s",
         "severity": 3,
         "categories": []

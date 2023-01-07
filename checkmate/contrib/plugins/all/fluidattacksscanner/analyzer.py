@@ -31,7 +31,6 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
             except OSError as exc:  # Guard against race condition
                 if exc.errno != errno.EEXIST:
                     raise
-        result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
 
         f = open(tmpdir+"/"+file_revision.path, "wb")
 
