@@ -23,6 +23,9 @@ import datetime
 import logging
 import copy
 import traceback
+import random
+from secrets import choice
+import string
 
 logger = logging.getLogger(__name__)
 
@@ -89,6 +92,10 @@ class GitRepository(BaseDocument):
 
     def get_file_revisions(self, commit_sha, filters=None):
 
+        pck_mngr = [ "buildscript-gradle.lockfile", "Cargo.lock", "composer.lock",
+                    "Gemfile.lock", "go.mod", "gradle.lockfile", "mix.lock", "package-lock.json",
+                    "packages.lock.json", "Pipfile.lock", "pnpm-lock.yaml", "poetry.lock",
+                    "pom.xml", "pubspec.lock", "requirements.txt", "yarn.lock" ]
         files = self.repository.get_files_in_commit(commit_sha)
 
         if filters:
@@ -102,15 +109,25 @@ class GitRepository(BaseDocument):
             hasher = Hasher()
             file_revision = FileRevision(file_obj)
 
-            hasher.add(file_revision.path)
-            hasher.add(file_revision.sha)
+            if not (file_revision.path == ".checkmate/config.json" or file_revision.path == ".checkmate/db.sqlite" \
+                or file_revision.path == "report.html" or file_revision.path == "report.json" \
+                or file_revision.path == "report.sarif" or file_revision.path == "style.css"):
+                hasher.add(file_revision.path)
+                hasher.add(file_revision.sha)
 
-            file_revision.project = self.project
-            file_revision.hash = hasher.digest.hexdigest()
-            file_revision.pk = uuid.uuid4().hex
-            file_revision._file_content = lambda commit_sha = commit_sha, file_revision = file_revision: self.repository.get_file_content(
-                commit_sha, file_revision.path)
-            file_revisions.append(file_revision)
+                file_revision.project = self.project
+                if(file_revision.path in pck_mngr):
+                  logger.info("No state for package databases - always scanning package database for vulnerabilities  %s", file_revision.path)
+                  hasher.add(''.join(random.choices(string.ascii_uppercase + string.digits, k=64)))
+                  file_revision.hash = hasher.digest.hexdigest()
+                else:
+                  file_revision.hash = hasher.digest.hexdigest()
+                file_revision.pk = uuid.uuid4().hex
+                file_revision._file_content = lambda commit_sha = commit_sha, file_revision = file_revision: self.repository.get_file_content(
+                    commit_sha, file_revision.path)
+                file_revisions.append(file_revision)
+
+       
         return file_revisions
 
     def get_default_branch(self):

@@ -4,10 +4,17 @@
 from checkmate.management.commands.analyze import Command as AnalyzeCommand
 from .base import Command as BaseCommand
 from ..lib.repository import group_snapshots_by_date, get_first_date_for_group
-from ..models import GitBranch, GitSnapshot
+from ..models import GitBranch
+from checkmate.contrib.plugins.git.models import GitSnapshot
 from checkmate.lib.models import Diff, Snapshot
 from checkmate.helpers.hashing import Hasher
 from checkmate.helpers.settings import update
+from checkmate.lib.models import (Snapshot,
+                                  Project,
+                                  BaseDocument,
+                                  FileRevision,
+                                  Diff,
+                                  IssueOccurrence)
 
 import time
 import datetime
@@ -133,7 +140,6 @@ class Command(BaseCommand, AnalyzeCommand):
                 with self.backend.transaction():
                     self.backend.filter(GitSnapshot, query).delete()
                 analyze_snapshot = True
-
             if analyze_snapshot:
 
                 try:
@@ -144,13 +150,24 @@ class Command(BaseCommand, AnalyzeCommand):
                         git_snapshot.sha, self.project.pk))
                     continue
 
-                code_environment.file_revisions = file_revisions
-                git_snapshot.snapshot = code_environment.analyze(
-                    file_revisions, save_if_empty=True, snapshot=snapshot)
 
-                new_analyzed_snapshots[git_snapshot.sha] = git_snapshot
+            try:     
+                file_revisions = self.project.git.get_file_revisions(
+                        git_snapshot.sha)
+            except:
+                logger.error("Cannot fetch file revisions for snapshot %s in project %s" % (
+                        git_snapshot.sha, self.project.pk))
+                continue
 
-                with self.backend.transaction():
+
+
+            code_environment.file_revisions = file_revisions
+            git_snapshot.snapshot = code_environment.analyze(
+                  file_revisions, save_if_empty=True, snapshot=snapshot)
+
+            new_analyzed_snapshots[git_snapshot.sha] = git_snapshot
+
+            with self.backend.transaction():
                     git_snapshot.snapshot.hash = git_snapshot.sha
                     self.backend.save(git_snapshot.snapshot)
                     git_snapshot.project = self.project
@@ -333,7 +350,6 @@ class Command(BaseCommand, AnalyzeCommand):
 
             if 'diffs' in self.opts and self.opts['diffs'] is not None:
                 diffs_to_generate = self.opts['diffs']
-
             try:
                 analyzed_snapshots, diffs = self.analyze_and_generate_diffs(branch_name,
                                                                             snapshots_to_analyze, diffs_to_generate)
