@@ -69,10 +69,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
 
             my_file = open(fresults.name, 'r')
             reader = csv.reader(my_file)
-            try:
-              next(reader)
-            except:
-              pass
+            next(reader)
 
             outjson = []
             val ={}
