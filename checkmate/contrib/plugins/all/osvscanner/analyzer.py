@@ -54,7 +54,10 @@ class OSVscannerAnalyzer(BaseAnalyzer):
             except subprocess.CalledProcessError as e:
                 json_result = e.output
 
-            json_result = json.loads(json_result)
+            try:
+              json_result = json.loads(json_result)
+            except:
+              pass
 
             try:
                if "Cargo.lock" in file_revision.path or "packages.lock.json" in file_revision.path or  "package-lock.json" in file_revision.path or  "yarn.lock" in file_revision.path or  "pnpm-lock.yaml" in file_revision.path or  "composer.lock" in file_revision.path or  "Gemfile.lock" in file_revision.path or  "go.mod" in file_revision.path or  "mix.lock" in file_revision.path or  "poetry.lock" in file_revision.path or "pubsepc.lock" in file_revision.path or "pom.xml" in file_revision.path or  "requirements.txt" in file_revision.path or "gradle.lockfile" in file_revision.path or  "buildscript-gradle.lockfile" in file_revision.path:
