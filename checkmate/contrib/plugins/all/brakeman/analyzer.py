@@ -42,7 +42,10 @@ class BrakemanAnalyzer(BaseAnalyzer):
         result = {}
         try:
             with f:
-                f.write(file_revision.get_file_content().decode("utf-8"))
+                try:
+                  f.write(file_revision.get_file_content().decode("utf-8"))
+                except:
+                  pass
             try:
                 result = subprocess.check_output(["brakeman",
                                                   "-q",

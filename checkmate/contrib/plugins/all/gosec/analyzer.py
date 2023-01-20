@@ -35,7 +35,10 @@ class GosecAnalyzer(BaseAnalyzer):
         result = {}
         try:
             with f:
-                f.write(file_revision.get_file_content().decode("utf-8"))
+                try:
+                  f.write(file_revision.get_file_content().decode("utf-8"))
+                except:
+                  pass
             os.chdir(tmpdir)
             os.environ["PATH"] = "/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/:/usr/local/go/bin/"
 
