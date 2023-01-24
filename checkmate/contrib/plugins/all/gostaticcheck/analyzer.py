@@ -44,12 +44,12 @@ class GostaticcheckAnalyzer(BaseAnalyzer):
                 except UnicodeDecodeError:
                   pass
             os.chdir(tmpdir)
-            os.environ["PATH"] = "/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/:/usr/local/go/bin/"
+            os.environ["PATH"] = "/root/.go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/:/usr/local/go/bin/"
 
             try:
                 result = subprocess.check_output(["/root/bin/staticcheck",
                                                   "-f", "json",
-                                                  "./..."],
+                                                  f.name],
                                                   stderr=subprocess.DEVNULL).strip()
             except subprocess.CalledProcessError as e:
                 if e.returncode == 2:
