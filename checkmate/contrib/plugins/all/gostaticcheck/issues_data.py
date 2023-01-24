@@ -2,7 +2,6 @@
 
 
 issues_data = {
-        {
   "SA4020": {
     "title": "Unreachable case clause in a type switch",
     "severity": "1",
@@ -1242,7 +1241,6 @@ issues_data = {
       "security"
     ],
     "description": ""
-  }
-}
+    }
 }
 
