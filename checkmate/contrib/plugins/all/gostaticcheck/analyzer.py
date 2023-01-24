@@ -59,18 +59,15 @@ class GostaticcheckAnalyzer(BaseAnalyzer):
                     pass
                 else:
                     result = []
-            try:
-                json_result = json.loads(result)
-            except ValueError:
-                json_result = []
-                pass
 
-            try:
-                for issue in json_result['Issues']:
-                   
-                   
-
-
+            for line in result.splitlines():
+              try:
+                  json_result = json.loads(line)
+              except ValueError:
+                  json_result = []
+                  pass
+              try:
+                    issue = json_result
                     value = issue['location']['line']
 
                     location = (((value,None),
@@ -78,7 +75,7 @@ class GostaticcheckAnalyzer(BaseAnalyzer):
 
                    
 
-                    if ".go" in file_revision.path and file_revision.path in issue['file']:
+                    if ".go" in file_revision.path:
                         issues.append({
                             'code': issue['code'],
                             'location': location,
@@ -88,9 +85,10 @@ class GostaticcheckAnalyzer(BaseAnalyzer):
                             'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['message'])
                         })
 
-            except:
+              except:
                 pass
 
         finally:
             pass
         return {'issues': issues}
+
