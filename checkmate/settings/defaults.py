@@ -40,6 +40,9 @@ plugins = {
     'yara': 'checkmate.contrib.plugins.all.yara',
     'osvscanner': 'checkmate.contrib.plugins.all.osvscanner',
     'fluidattacksscanner': 'checkmate.contrib.plugins.all.fluidattacksscanner',
+    'gostaticcheck': 'checkmate.contrib.plugins.all.gostaticcheck',
+  
+
   
     
     
