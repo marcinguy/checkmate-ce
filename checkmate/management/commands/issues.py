@@ -56,6 +56,7 @@ class Command(BaseCommand):
 
           table.add_column("Analyzer", style="cyan", no_wrap=True)
           table.add_column("Description", style="magenta")
+          table.add_column("Severity", justify="right", style="green")
           table.add_column("File", justify="right", style="green")
           table.add_column("Line", justify="right", style="green")
 
@@ -63,18 +64,18 @@ class Command(BaseCommand):
           for issue in issues:
             if issue["line"]==1:
               unique.append(issue)
-            if all(unique_issue["line"] != issue["line"] for unique_issue in unique):
+            if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
               unique.append(issue)
 
           for issue in unique:
               if not issue['code'] == "AnalysisError":
-                table.add_row(issue['analyzer'], issue['data'], issue['file'], str(issue['line']), "❌")
+                table.add_row(issue['analyzer'], issue['data'], "Warning", issue['file'], str(issue['line']), "❌")
 
           console = Console()
           console.print(table)
           print("[bold red]Note:[/bold red] Issues include findings accross all revisions i.e it can be that you have fixed it in your latest revision, but the finding will still appear here (for the affected revision)")
 
-          print("This scan could be 4x+ faster with PRO version :thumbs_up: https://www.betterscan.io/product/betterscan-platform-cli-terminal-and-html-2-3-times-faster/")
+          print("This scan could be 4x+ faster with PRO version :thumbs_up: https://www.betterscan.io/pricing")
 
           #for issue in issues:
           #    print(("%(analyzer)s\t%(code)s\t" % {'analyzer': issue['analyzer'],
@@ -86,7 +87,7 @@ class Command(BaseCommand):
           for issue in issues:
             if issue["line"]==1:
               unique.append(issue)
-            if all(unique_issue["line"] != issue["line"] for unique_issue in unique):
+            if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
               unique.append(issue)
 
 
@@ -95,6 +96,7 @@ class Command(BaseCommand):
                 out={}
                 out['hash'] =  issue['hash']
                 out['description'] = issue['data']
+                out['severity'] = "Warning"
                 out['file'] = issue['file']
                 out['line'] = issue['line']
                 jsonout.append(out)
@@ -111,7 +113,7 @@ class Command(BaseCommand):
 
   <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-  <link href="https://www.betterscan.io/assets/css/reportstyle.css" rel="stylesheet">
+  <link href="https://dl.betterscan.io/assets/css/reportstyle.css" rel="stylesheet">
 
 
 
@@ -171,8 +173,10 @@ data.sort(sort_by('risk_no', true, parseInt));
 
 
 for(var i = 0; i < data.length; i++) {
-$('#findings').append("<tbody><tr><th>Hash</th><td>"+data[i].hash+"</td></tr>");
-$('#findings').append("<tr><th>Description</th><td>"+data[i].description+"</td></tr></tbody></table>");
+$('#findings').append("<tbody><tr><th>File</th><td>"+data[i].file+"</td></tr>");
+$('#findings').append("<tr><th>Description</th><td>"+data[i].description+"</td></tr>");
+$('#findings').append("<tr><th>Severity</th><td>Warning</td></tr>");
+$('#findings').append("<tr><th>Line</th><td>"+data[i].line+"</td></tr></tbody></table>");
 $('#hr').append("<hr>");
 
 }
@@ -190,7 +194,7 @@ $('#hr').append("<hr>");
 
 
 
-<p style="margin-bottom: 25px;"><img src="https://www.betterscan.io/wp-content/uploads/2022/05/logo-nobackground-164x32-1.png" style="position:relative; top:-40px;"></p>
+<p style="margin-bottom: 25px;"><img src="https://dl.betterscan.io/wp-content/uploads/2022/05/logo-nobackground-164x32-1.png" style="position:relative; top:-40px;"></p>
 
 <div class="tabbable tabs-left">
     <ul class="nav nav-tabs">
@@ -344,5 +348,4 @@ $('#hr').append("<hr>");
          
           print("Check your report in report.html file")
 
-          print("This scan could be 4x+ faster with PRO version :thumbs_up: https://www.betterscan.io/product/betterscan-platform-cli-terminal-and-html-2-3-times-faster/")
-
+          print("This scan could be 4x+ faster with PRO version :thumbs_up: https://www.betterscan.io/pricing")

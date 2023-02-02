@@ -8,6 +8,8 @@ import os
 import tempfile
 import json
 import subprocess
+from os.path import exists
+
 
 logger = logging.getLogger(__name__)
 
@@ -57,10 +59,13 @@ class InsiderseckotlinAnalyzer(BaseAnalyzer):
                                                   "-target",
                                                   f.name],
                                                   stderr=subprocess.DEVNULL).strip()
-                result = subprocess.check_output(["mv",
+                file_exists = exists("report.json")
+                if file_exists:     
+                    result = subprocess.check_output(["mv",
                                                   "report.json",
                                                   tmpdir],
                                                   stderr=subprocess.DEVNULL).strip()
+        
 
             except subprocess.CalledProcessError as e:
                 if e.returncode == 1:

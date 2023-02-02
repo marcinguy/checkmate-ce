@@ -7,22 +7,25 @@ version='0.2.0',
 author=u'Andreas Dewes - QuantifiedCode UG (haftungsbeschränkt)',
 author_email = 'andreas@quantifiedcode.com',
 license = 'MIT',
-install_requires = """
-pylint
-pyflakes
-pep8
-six
-chardet
-blitzdb
-pyyaml
-sqlalchemy
-""",
+install_requires = [
+'blitzdb3_ce==4.0.0',
+'pylint',
+'pyflakes',
+'pep8',
+'six',
+'chardet',
+'pyyaml',
+'sqlalchemy'
+],
+dependency_links=[
+      'https://github.com/marcinguy/blitzdb3-ce/archive/refs/tags/v4.0.0.tar.gz#egg=blitzdb3_ce-4.0.0',
+],
 entry_points = {
         'console_scripts': [
                'checkmate = checkmate.scripts.manage:main',
         ],
     },
-url='https://github.com/quantifiedcode/checkmate',
+url='https://github.com/marcinguy/checkmate-ce',
 packages=find_packages(),
 zip_safe = False,
 description='A meta-code checker written in Python.',
@@ -34,12 +37,12 @@ to provide clear, actionable insights to the user.
 Documentation
 =============
 
-The documentation can be found `here <https://docs.quantifiedcode.com/checkmate>`.
+The documentation can be found `here <https://github.com/marcinguy/checkmate-ce>`.
 
 Source Code
 ===========
 
-The source code can be found on `Github <https://github.com/quantifiedcode/checkmate>`.
+The source code can be found on `Github <https://github.com/marcinguy/checkmate-ce>`.
 
 Changelog
 =========
