@@ -64,6 +64,8 @@ class Command(BaseCommand):
           for issue in issues:
             if issue["line"]==1:
               unique.append(issue)
+            if issue["line"]==0:
+              issue["line"]=1
             if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
               unique.append(issue)
 
@@ -87,6 +89,8 @@ class Command(BaseCommand):
           for issue in issues:
             if issue["line"]==1:
               unique.append(issue)
+            if issue["line"]==0:
+              issue["line"]=1
             if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
               unique.append(issue)
 
