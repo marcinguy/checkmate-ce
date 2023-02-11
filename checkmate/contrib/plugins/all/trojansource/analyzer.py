@@ -31,6 +31,8 @@ class TrojansourceAnalyzer(BaseAnalyzer):
                   pass
             try:
                 result = subprocess.check_output(["/usr/local/bin/find_unicode_control2.py",
+                                                  "-p",
+                                                  "bidi",
                                                   "-d",
                                                   f.name],
                                                   stderr=subprocess.DEVNULL).strip()
