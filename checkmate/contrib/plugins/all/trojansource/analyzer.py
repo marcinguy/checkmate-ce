@@ -28,6 +28,8 @@ class TrojansourceAnalyzer(BaseAnalyzer):
                 f.write(file_revision.get_file_content())
             try:
                 result = subprocess.check_output(["/usr/local/bin/find_unicode_control2.py",
+                                                  "-p",
+                                                  "bidi",
                                                   "-d",
                                                   f.name])
             except subprocess.CalledProcessError as e:
