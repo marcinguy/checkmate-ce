@@ -85,14 +85,16 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
                   location = (((line, line),
                              (line, None)),)
 
+                  data = issue["data"]
+                  data = data.split(' ', 1)[1]
                   if ".go" in file_revision.path or ".cs" in file_revision.path or ".java" in file_revision.path or ".js" in file_revision.path or ".ts" in file_revision.path:
                     issues.append({
                       'code': "I001",
                       'location': location,
-                      'data': issue["data"],
+                      'data': data,
                       'file': file_revision.path,
                       'line': line,
-                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["data"])
+                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=data)
                     })
 
             except KeyError:
