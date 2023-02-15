@@ -71,6 +71,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
             try:
               next(reader)
             except:
+              logger.error("Fluidattacksscanner error. Continuing ...")
               pass
 
             outjson = []
