@@ -31,7 +31,7 @@ issues_data = {
     "description": "Use `sys.exit` over the python shell `exit` built-in. `exit` is a helper for the interactive shell and may not be available on all Python implementations. https://stackoverflow.com/questions/6501121/difference-between-exit-and-sys-exit-in-python"
   },
   "HeaderXssLusca": {
-    "title": "njsscan: header xss lusca",
+    "title": "header xss lusca",
     "display_name": "HeaderXssLusca",
     "severity": "1",
     "categories": [
@@ -76,7 +76,7 @@ issues_data = {
     "description": "It is generally a bad practices to set overly permissive file permission such as read+write+exec for all users.\nIf the file affected is a configuration, a binary, a script or sensitive data, it can lead to privilege escalation or information leakage."
   },
   "ExpressBodyparser": {
-    "title": "njsscan: express bodyparser",
+    "title": "express bodyparser",
     "display_name": "ExpressBodyparser",
     "severity": "1",
     "categories": [
@@ -103,7 +103,7 @@ issues_data = {
     "description": "Cannot determine what '$UNK' is and it is used with a '<script>' tag. This\ncould be susceptible to cross-site scripting (XSS). Ensure '$UNK' is not\nexternally controlled, or sanitize this data."
   },
   "HelmetHeaderXssFilter": {
-    "title": "njsscan: helmet header xss filter",
+    "title": "helmet header xss filter",
     "display_name": "HelmetHeaderXssFilter",
     "severity": "1",
     "categories": [
@@ -112,7 +112,7 @@ issues_data = {
     "description": "X-XSS-Protection header is present. More information: https://helmetjs.github.io/docs/xss-filter/"
   },
   "GenericOsCommandExec": {
-    "title": "njsscan: generic os command exec",
+    "title": "generic os command exec",
     "display_name": "GenericOsCommandExec",
     "severity": "1",
     "categories": [
@@ -130,7 +130,7 @@ issues_data = {
     "description": "'render text: ...' actually sets the content-type to 'text/html'.\nIf external data can reach here, this exposes your application\nto cross-site scripting (XSS) attacks. Instead, use 'render plain: ...' to\nrender non-HTML text."
   },
   "HelmetHeaderDnsPrefetch": {
-    "title": "njsscan: helmet header dns prefetch",
+    "title": "helmet header dns prefetch",
     "display_name": "HelmetHeaderDnsPrefetch",
     "severity": "1",
     "categories": [
@@ -166,7 +166,7 @@ issues_data = {
     "description": "You are using environment variables inside django app. Use `django-environ` as it a better alternative for deployment."
   },
   "GenericHeaderInjection": {
-    "title": "njsscan: generic header injection",
+    "title": "generic header injection",
     "display_name": "GenericHeaderInjection",
     "severity": "1",
     "categories": [
@@ -211,7 +211,7 @@ issues_data = {
     "description": "Detected possible formatted SQL query. Use parameterized queries instead."
   },
   "CookieSessionNoHttponly": {
-    "title": "njsscan: cookie session no httponly",
+    "title": "cookie session no httponly",
     "display_name": "CookieSessionNoHttponly",
     "severity": "1",
     "categories": [
@@ -274,7 +274,7 @@ issues_data = {
     "description": "It appears that `$DICT[$KEY]` is a dict with items being deleted while in a for loop. This is usually a bad idea and will likely lead to a RuntimeError: dictionary changed size during iteration"
   },
   "SerializetojsDeserialize": {
-    "title": "njsscan: serializetojs deserialize",
+    "title": "serializetojs deserialize",
     "display_name": "SerializetojsDeserialize",
     "severity": "1",
     "categories": [
@@ -508,7 +508,7 @@ issues_data = {
     "description": "Found request data opening a file into FileResponse. This is dangerous because an attacker could specify an arbitrary file to read, leaking data. Be sure to validate or sanitize the filename before using it in FileResponse."
   },
   "ElectronExperimentalFeatures": {
-    "title": "njsscan: electron experimental features",
+    "title": "electron experimental features",
     "display_name": "ElectronExperimentalFeatures",
     "severity": "1",
     "categories": [
@@ -517,7 +517,7 @@ issues_data = {
     "description": "Experimental features are not expected to be in production ready applications."
   },
   "HandlebarsNoescape": {
-    "title": "njsscan: handlebars noescape",
+    "title": "handlebars noescape",
     "display_name": "HandlebarsNoescape",
     "severity": "1",
     "categories": [
@@ -670,7 +670,7 @@ issues_data = {
     "description": "The requests library has a convenient shortcut for reading JSON responses,\nwhich lets you stop worrying about deserializing the response yourself."
   },
   "ElectronAllowHttp": {
-    "title": "njsscan: electron allow http",
+    "title": "electron allow http",
     "display_name": "ElectronAllowHttp",
     "severity": "1",
     "categories": [
@@ -841,7 +841,7 @@ issues_data = {
     "description": "XML external entities are enabled for this XMLInputFactory. This is vulnerable to XML external entity\nattacks. Disable external entities by setting \"javax.xml.stream.isSupportingExternalEntities\" to false."
   },
   "VmCompilefunctionInjection": {
-    "title": "njsscan: vm compilefunction injection",
+    "title": "vm compilefunction injection",
     "display_name": "VmCompilefunctionInjection",
     "severity": "1",
     "categories": [
@@ -877,7 +877,7 @@ issues_data = {
     "description": "Cluster is disabling TLS certificate verification when communicating with\nthe server. This makes your HTTPS connections insecure. Remove the\n'insecure-skip-tls-verify: true' key to secure communication."
   },
   "HelmetFeatureDisabled": {
-    "title": "njsscan: helmet feature disabled",
+    "title": "helmet feature disabled",
     "display_name": "HelmetFeatureDisabled",
     "severity": "1",
     "categories": [
@@ -904,7 +904,7 @@ issues_data = {
     "description": "Detected Blowfish cipher algorithm which is considered insecure. The algorithm has many\nknown vulnerabilities. Use AES instead."
   },
   "ElectronDisableWebsecurity": {
-    "title": "njsscan: electron disable websecurity",
+    "title": "electron disable websecurity",
     "display_name": "ElectronDisableWebsecurity",
     "severity": "1",
     "categories": [
@@ -940,7 +940,7 @@ issues_data = {
     "description": "Possible open redirect"
   },
   "GenericCors": {
-    "title": "njsscan: generic cors",
+    "title": "generic cors",
     "display_name": "GenericCors",
     "severity": "1",
     "categories": [
@@ -1030,7 +1030,7 @@ issues_data = {
     "description": "Detected use of the 'none' algorithm in a JWT token.\nThe 'none' algorithm assumes the integrity of the token has already\nbeen verified. This would allow a malicious actor to forge a JWT token\nthat will automatically be verified. Do not explicitly use the 'none'\nalgorithm. Instead, use an algorithm such as 'HS256'."
   },
   "ServerSideTemplateInjection": {
-    "title": "njsscan: server side template injection",
+    "title": "server side template injection",
     "display_name": "ServerSideTemplateInjection",
     "severity": "1",
     "categories": [
@@ -1039,7 +1039,7 @@ issues_data = {
     "description": "Untrusted user input in templating engine's compile() function can result in Remote Code Execution via server side template injection."
   },
   "PlaywrightSsrf": {
-    "title": "njsscan: playwright ssrf",
+    "title": "playwright ssrf",
     "display_name": "PlaywrightSsrf",
     "severity": "1",
     "categories": [
@@ -1066,7 +1066,7 @@ issues_data = {
     "description": "Data from request object is passed to a new server-side request.\nThis could lead to a server-side request forgery (SSRF). To mitigate,\nensure that schemes and hosts are validated against an allowlist,\ndo not forward the response to the user, and ensure proper authentication\nand transport-layer security in the proxied request.\nSee https://owasp.org/www-community/attacks/Server_Side_Request_Forgery to\nlearn more about SSRF vulnerabilities."
   },
   "JoinResolvePathTraversal": {
-    "title": "njsscan: join resolve path traversal",
+    "title": "join resolve path traversal",
     "display_name": "JoinResolvePathTraversal",
     "severity": "1",
     "categories": [
@@ -1183,7 +1183,7 @@ issues_data = {
     "description": "If unverified user data can reach the `evaluate` method it can result in Server-Side Request Forgery vulnerabilities"
   },
   "NodeAesNoiv": {
-    "title": "njsscan: node aes noiv",
+    "title": "node aes noiv",
     "display_name": "NodeAesNoiv",
     "severity": "1",
     "categories": [
@@ -1219,7 +1219,7 @@ issues_data = {
     "description": "Detected a paramiko host key policy that implicitly trusts a server's\nhost key. Host keys should be verified to ensure the connection\nis not to a malicious server. Use RejectPolicy or a custom subclass\ninstead."
   },
   "ShelljsOsCommandExec": {
-    "title": "njsscan: shelljs os command exec",
+    "title": "shelljs os command exec",
     "display_name": "ShelljsOsCommandExec",
     "severity": "1",
     "categories": [
@@ -1264,7 +1264,7 @@ issues_data = {
     "description": "Using == on char* performs pointer comparison, use strcmp instead"
   },
   "CookieSessionNoMaxage": {
-    "title": "njsscan: cookie session no maxage",
+    "title": "cookie session no maxage",
     "display_name": "CookieSessionNoMaxage",
     "severity": "1",
     "categories": [
@@ -1354,7 +1354,7 @@ issues_data = {
     "description": "The use of $translateProvider.translations method can be dangerous if user input is provided to this API."
   },
   "NodeAesEcb": {
-    "title": "njsscan: node aes ecb",
+    "title": "node aes ecb",
     "display_name": "NodeAesEcb",
     "severity": "1",
     "categories": [
@@ -1480,7 +1480,7 @@ issues_data = {
     "description": "This is a last resort. You should be careful when using QuerySet.extra due to SQLi https://docs.djangoproject.com/en/3.0/ref/models/querysets/#django.db.models.query.QuerySet.extra"
   },
   "BufferNoassert": {
-    "title": "njsscan: buffer noassert",
+    "title": "buffer noassert",
     "display_name": "BufferNoassert",
     "severity": "1",
     "categories": [
@@ -1552,7 +1552,7 @@ issues_data = {
     "description": "MailChimp API Key detected"
   },
   "NodeEntityExpansion": {
-    "title": "njsscan: node entity expansion",
+    "title": "node entity expansion",
     "display_name": "NodeEntityExpansion",
     "severity": "1",
     "categories": [
@@ -1579,7 +1579,7 @@ issues_data = {
     "description": "Make sure that unverified user data can not reach vm.runInContext."
   },
   "XssDisableMustacheEscape": {
-    "title": "njsscan: xss disable mustache escape",
+    "title": "xss disable mustache escape",
     "display_name": "XssDisableMustacheEscape",
     "severity": "1",
     "categories": [
@@ -1759,7 +1759,7 @@ issues_data = {
     "description": "this function is only available on Python 3.7+"
   },
   "CookieSessionNoPath": {
-    "title": "njsscan: cookie session no path",
+    "title": "cookie session no path",
     "display_name": "CookieSessionNoPath",
     "severity": "1",
     "categories": [
@@ -1777,7 +1777,7 @@ issues_data = {
     "description": "this function is only available on Python 3.7+"
   },
   "ExpressOpenRedirect": {
-    "title": "njsscan: express open redirect",
+    "title": "express open redirect",
     "display_name": "ExpressOpenRedirect",
     "severity": "1",
     "categories": [
@@ -1849,7 +1849,7 @@ issues_data = {
     "description": "Special requests can determine whether a file exists on a filesystem that's outside the Ruby app's\nroot directory. To fix this, set config.serve_static_assets = false."
   },
   "NodeCurlSslVerifyDisable": {
-    "title": "njsscan: node curl ssl verify disable",
+    "title": "node curl ssl verify disable",
     "display_name": "NodeCurlSslVerifyDisable",
     "severity": "1",
     "categories": [
@@ -1885,7 +1885,7 @@ issues_data = {
     "description": "Detected empty trust manager implementations. This is dangerous because it accepts any\ncertificate, enabling man-in-the-middle attacks. Consider using a KeyStore\nand TrustManagerFactory isntead.\nSee https://stackoverflow.com/questions/2642777/trusting-all-certificates-using-httpclient-over-https\nfor more information."
   },
   "JwtExposedData": {
-    "title": "njsscan: jwt exposed data",
+    "title": "jwt exposed data",
     "display_name": "JwtExposedData",
     "severity": "1",
     "categories": [
@@ -1903,7 +1903,7 @@ issues_data = {
     "description": "Detected an insufficient curve size for EC. NIST recommends\na key size of 224 or higher. For example, use 'ec.SECP256R1'."
   },
   "HelmetHeaderCheckCsp": {
-    "title": "njsscan: helmet header check csp",
+    "title": "helmet header check csp",
     "display_name": "HelmetHeaderCheckCsp",
     "severity": "1",
     "categories": [
@@ -2155,7 +2155,7 @@ issues_data = {
     "description": "The `__html__` method indicates to the Django template engine that the\nvalue is 'safe' for rendering. This means that normal HTML escaping will\nnot be applied to the return value. This exposes your application to\ncross-site scripting (XSS) vulnerabilities. If you need to render raw HTML,\nconsider instead using `mark_safe()` which more clearly marks the intent\nto render raw HTML than a class with a magic method."
   },
   "ElectronBlinkIntegration": {
-    "title": "njsscan: electron blink integration",
+    "title": "electron blink integration",
     "display_name": "ElectronBlinkIntegration",
     "severity": "1",
     "categories": [
@@ -2200,7 +2200,7 @@ issues_data = {
     "description": "The output is not sanitized when calling with SecurityContext.NONE."
   },
   "CookieSessionNoDomain": {
-    "title": "njsscan: cookie session no domain",
+    "title": "cookie session no domain",
     "display_name": "CookieSessionNoDomain",
     "severity": "1",
     "categories": [
@@ -2236,7 +2236,7 @@ issues_data = {
     "description": "This HTML element '$EL' and attribute '$ATTR' together may load an external resource. This means that if dynamic content can enter this attribute it may be possible for an attacker to send HTTP requests to unintended locations which may leak data about your users. If this element is reaching out to a known host, consider hardcoding the host (or loading from a configuration) and appending the dynamic path. See https://github.com/cure53/HTTPLeaks for more information."
   },
   "NodeJwtNoneAlgorithm": {
-    "title": "njsscan: node jwt none algorithm",
+    "title": "node jwt none algorithm",
     "display_name": "NodeJwtNoneAlgorithm",
     "severity": "1",
     "categories": [
@@ -2326,7 +2326,7 @@ issues_data = {
     "description": "Using QUERY.count() instead of len(QUERY.all()) sends less data to the client since the SQLAlchemy method is performed server-side."
   },
   "HelmetHeaderNosniff": {
-    "title": "njsscan: helmet header nosniff",
+    "title": "helmet header nosniff",
     "display_name": "HelmetHeaderNosniff",
     "severity": "1",
     "categories": [
@@ -2353,7 +2353,7 @@ issues_data = {
     "description": "If unverified user data can reach the `phantom` methods it can result in Server-Side Request Forgery vulnerabilities"
   },
   "PuppeteerSsrf": {
-    "title": "njsscan: puppeteer ssrf",
+    "title": "puppeteer ssrf",
     "display_name": "PuppeteerSsrf",
     "severity": "1",
     "categories": [
@@ -2389,7 +2389,7 @@ issues_data = {
     "description": "Creating and using a large number of zlib objects simultaneously\ncan cause significant memory fragmentation. It is strongly recommended\nthat the results of compression operations be cached or made synchronous\nto avoid duplication of effort."
   },
   "JwtExpressHardcoded": {
-    "title": "njsscan: jwt express hardcoded",
+    "title": "jwt express hardcoded",
     "display_name": "JwtExpressHardcoded",
     "severity": "1",
     "categories": [
@@ -2407,7 +2407,7 @@ issues_data = {
     "description": "Authentication detected over HTTP. HTTP does not provide any\nencryption or protection for these authentication credentials.\nThis may expose these credentials to unauthhorized parties.\nUse 'https://' instead."
   },
   "HelmetHeaderCheckCrossdomain": {
-    "title": "njsscan: helmet header check crossdomain",
+    "title": "helmet header check crossdomain",
     "display_name": "HelmetHeaderCheckCrossdomain",
     "severity": "1",
     "categories": [
@@ -2470,7 +2470,7 @@ issues_data = {
     "description": "found prompt() call; should this be in production code?"
   },
   "RateLimitControl": {
-    "title": "njsscan: rate limit control",
+    "title": "rate limit control",
     "display_name": "RateLimitControl",
     "severity": "1",
     "categories": [
@@ -2506,7 +2506,7 @@ issues_data = {
     "description": "This location block contains a 'proxy_pass' directive but does not contain the 'internal' directive. The 'internal' directive restricts access to this location to internal requests. Without 'internal', an attacker could use your server for server-side request forgeries (SSRF). Include the 'internal' directive in this block to limit exposure.\n{\"include\": [\"*.conf\", \"*.vhost\", \"sites-available/*\", \"sites-enabled/*\"]}"
   },
   "HardcodedJwtSecret": {
-    "title": "njsscan: hardcoded jwt secret",
+    "title": "hardcoded jwt secret",
     "display_name": "HardcodedJwtSecret",
     "severity": "1",
     "categories": [
@@ -2578,7 +2578,7 @@ issues_data = {
     "description": "Inject arbitrary props into the new element. It may introduce an XSS vulnerability."
   },
   "SequelizeTls": {
-    "title": "njsscan: sequelize tls",
+    "title": "sequelize tls",
     "display_name": "SequelizeTls",
     "severity": "1",
     "categories": [
@@ -2695,7 +2695,7 @@ issues_data = {
     "description": "The HTTPSConnection API has changed frequently with minor releases of Python.\nEnsure you are using the API for your version of Python securely.\nFor example, Python 3 versions prior to 3.4.3 will not verify SSL certificates by default.\nSee https://docs.python.org/3/library/http.client.html#http.client.HTTPSConnection\nfor more information."
   },
   "NodeWeakCrypto": {
-    "title": "njsscan: node weak crypto",
+    "title": "node weak crypto",
     "display_name": "NodeWeakCrypto",
     "severity": "1",
     "categories": [
@@ -2848,7 +2848,7 @@ issues_data = {
     "description": "The use of $sce.trustAsUrl can be dangerous if unsantiized user input flows through this API."
   },
   "NodeSha1": {
-    "title": "njsscan: node sha1",
+    "title": "node sha1",
     "display_name": "NodeSha1",
     "severity": "1",
     "categories": [
@@ -2866,7 +2866,7 @@ issues_data = {
     "description": "'apt-get' is preferred as an unattended tool for stability. 'apt' is discouraged.\n{\"include\": [\"*dockerfile*\", \"*Dockerfile*\"]}"
   },
   "VmRunincontextInjection": {
-    "title": "njsscan: vm runincontext injection",
+    "title": "vm runincontext injection",
     "display_name": "VmRunincontextInjection",
     "severity": "1",
     "categories": [
@@ -2884,7 +2884,7 @@ issues_data = {
     "description": "Finding triggers whenever there is a strcpy or strncpy used.\nThis is an issue because strcpy or strncpy can lead to buffer overflow vulns.\nFix this by using strcpy_s instead."
   },
   "WkhtmltoimageSsrf": {
-    "title": "njsscan: wkhtmltoimage ssrf",
+    "title": "wkhtmltoimage ssrf",
     "display_name": "WkhtmltoimageSsrf",
     "severity": "1",
     "categories": [
@@ -2911,7 +2911,7 @@ issues_data = {
     "description": "This 'apt-get install' is missing the '-y' switch. This might stall\nbuilds because it requires human intervention. Add the '-y' switch.\n\n{\"include\": [\"*dockerfile*\", \"*Dockerfile*\"]}"
   },
   "EvalRequire": {
-    "title": "njsscan: eval require",
+    "title": "eval require",
     "display_name": "EvalRequire",
     "severity": "1",
     "categories": [
@@ -2920,7 +2920,7 @@ issues_data = {
     "description": "Untrusted user input in `require()` function allows an attacker to load arbitrary code."
   },
   "XxeSax": {
-    "title": "njsscan: xxe sax",
+    "title": "xxe sax",
     "display_name": "XxeSax",
     "severity": "1",
     "categories": [
@@ -2983,7 +2983,7 @@ issues_data = {
     "description": "Application redirects to a destination URL specified by a user-supplied\nparameter that is not validated. This could direct users to malicious locations.\nConsider using an allowlist to validate URLs."
   },
   "ExpressXss": {
-    "title": "njsscan: express xss",
+    "title": "express xss",
     "display_name": "ExpressXss",
     "severity": "1",
     "categories": [
@@ -3109,7 +3109,7 @@ issues_data = {
     "description": "If unverified user data can reach the `wkhtmltopdf` it can result in Server-Side Request Forgery vulnerabilities"
   },
   "Layer7ObjectDos": {
-    "title": "njsscan: layer7 object dos",
+    "title": "layer7 object dos",
     "display_name": "Layer7ObjectDos",
     "severity": "1",
     "categories": [
@@ -3136,7 +3136,7 @@ issues_data = {
     "description": "This zypper command does not end with '&& zypper clean'. Running 'zypper clean' will remove cached data and reduce package size. (This must be performed in the same RUN step.)\n\n{\"include\": [\"*dockerfile*\", \"*Dockerfile*\"]}"
   },
   "XssSerializeJavascript": {
-    "title": "njsscan: xss serialize javascript",
+    "title": "xss serialize javascript",
     "display_name": "XssSerializeJavascript",
     "severity": "1",
     "categories": [
@@ -3199,7 +3199,7 @@ issues_data = {
     "description": "Make sure that unverified user data can not reach vm.runInNewContext."
   },
   "HelmetHeaderHsts": {
-    "title": "njsscan: helmet header hsts",
+    "title": "helmet header hsts",
     "display_name": "HelmetHeaderHsts",
     "severity": "1",
     "categories": [
@@ -3253,7 +3253,7 @@ issues_data = {
     "description": "DefaultHttpClient is deprecated. Further, it does not support connections\nusing TLS1.2, which makes using DefaultHttpClient a security hazard.\nUse SystemDefaultHttpClient instead, which supports TLS1.2."
   },
   "NodeErrorDisclosure": {
-    "title": "njsscan: node error disclosure",
+    "title": "node error disclosure",
     "display_name": "NodeErrorDisclosure",
     "severity": "1",
     "categories": [
@@ -3262,7 +3262,7 @@ issues_data = {
     "description": "Error messages with stack traces can expose sensitive information about the application."
   },
   "RegexDos": {
-    "title": "njsscan: regex dos",
+    "title": "regex dos",
     "display_name": "RegexDos",
     "severity": "1",
     "categories": [
@@ -3289,7 +3289,7 @@ issues_data = {
     "description": "Detected a relative WORKDIR. Use absolute paths. This prevents issues based on assumptions about the WORKDIR of previous containers.\n{\"include\": [\"*dockerfile*\", \"*Dockerfile*\"]}"
   },
   "VmRuninnewcontextInjection": {
-    "title": "njsscan: vm runinnewcontext injection",
+    "title": "vm runinnewcontext injection",
     "display_name": "VmRuninnewcontextInjection",
     "severity": "1",
     "categories": [
@@ -3478,7 +3478,7 @@ issues_data = {
     "description": "Detected an unsecured transmission channel. 'URLopener.retrieve(...)' is\nbeing used with 'http://'. Use 'https://' instead to secure the channel."
   },
   "Vm2CodeInjection": {
-    "title": "njsscan: vm2 code injection",
+    "title": "vm2 code injection",
     "display_name": "Vm2CodeInjection",
     "severity": "1",
     "categories": [
@@ -3577,7 +3577,7 @@ issues_data = {
     "description": "Importing the python debugger; did you mean to leave this in?"
   },
   "NodeKnexSqliInjection": {
-    "title": "njsscan: node knex sqli injection",
+    "title": "node knex sqli injection",
     "display_name": "NodeKnexSqliInjection",
     "severity": "1",
     "categories": [
@@ -3613,7 +3613,7 @@ issues_data = {
     "description": "django.db.backends.base.BaseDatabaseOperations.check_aggregate_support() is removed in Django 2.0."
   },
   "ZipPathOverwrite": {
-    "title": "njsscan: zip path overwrite",
+    "title": "zip path overwrite",
     "display_name": "ZipPathOverwrite",
     "severity": "1",
     "categories": [
@@ -3640,7 +3640,7 @@ issues_data = {
     "description": "JSP scriptlet detected. Scriptlets are difficult to use securely and\nare considered bad practice. See https://stackoverflow.com/a/3180202.\nInstead, consider migrating to JSF or using the Expression Language\n'${...}' with the escapeXml function in your JSP files."
   },
   "HelmetHeaderFrameGuard": {
-    "title": "njsscan: helmet header frame guard",
+    "title": "helmet header frame guard",
     "display_name": "HelmetHeaderFrameGuard",
     "severity": "1",
     "categories": [
@@ -3694,7 +3694,7 @@ issues_data = {
     "description": "Use `click.secho($X)` instead. It combines click.echo() and click.style()."
   },
   "HandlebarsSafestring": {
-    "title": "njsscan: handlebars safestring",
+    "title": "handlebars safestring",
     "display_name": "HandlebarsSafestring",
     "severity": "1",
     "categories": [
@@ -3802,7 +3802,7 @@ issues_data = {
     "description": "Detected string concatenation with a non-literal variable in a go-pg\nSQL statement. This could lead to SQL injection if the variable is user-controlled\nand not properly sanitized. In order to prevent SQL injection,\nused parameterized queries instead of string concatenation. You can use parameterized queries like so:\n'(SELECT ? FROM table, data1)'"
   },
   "SandboxCodeInjection": {
-    "title": "njsscan: sandbox code injection",
+    "title": "sandbox code injection",
     "display_name": "SandboxCodeInjection",
     "severity": "1",
     "categories": [
@@ -4000,7 +4000,7 @@ issues_data = {
     "description": "Detected a segment of a Flask template where autoescaping is explicitly disabled with '| safe' filter. This allows rendering of raw HTML in this segment. Ensure no user data is rendered here, otherwise this is a cross-site scripting (XSS) vulnerability."
   },
   "JwtNotRevoked": {
-    "title": "njsscan: jwt not revoked",
+    "title": "jwt not revoked",
     "display_name": "JwtNotRevoked",
     "severity": "1",
     "categories": [
@@ -4036,7 +4036,7 @@ issues_data = {
     "description": "The use of $sce.trustAsResourceUrl can be dangerous if unsantiized user input flows through this API."
   },
   "NodeMd5": {
-    "title": "njsscan: node md5",
+    "title": "node md5",
     "display_name": "NodeMd5",
     "severity": "1",
     "categories": [
@@ -4063,7 +4063,7 @@ issues_data = {
     "description": "Django cookies should be handled securely by setting secure=True, httponly=True, and samesite='Lax' in\nresponse.set_cookie(...). If your situation calls for different settings, explicitly disable the setting.\nIf you want to send the cookie over http, set secure=False.  If you want to let client-side JavaScript\nread the cookie, set httponly=False. If you want to attach cookies to requests for external sites,\nset samesite=None."
   },
   "NodeTimingAttack": {
-    "title": "njsscan: node timing attack",
+    "title": "node timing attack",
     "display_name": "NodeTimingAttack",
     "severity": "1",
     "categories": [
@@ -4234,7 +4234,7 @@ issues_data = {
     "description": "Hardcoded JWT secret or private key is used.\nThis is a Insufficiently Protected Credentials weakness: https://cwe.mitre.org/data/definitions/522.html\nConsider using an appropriate security mechanism to protect the credentials (e.g. keeping secrets in environment variables)"
   },
   "NodeInsecureRandomGenerator": {
-    "title": "njsscan: node insecure random generator",
+    "title": "node insecure random generator",
     "display_name": "NodeInsecureRandomGenerator",
     "severity": "1",
     "categories": [
@@ -4279,7 +4279,7 @@ issues_data = {
     "description": "Detected a request using 'http://'. This request will be unencrypted. Use 'https://' instead."
   },
   "WkhtmltopdfSsrf": {
-    "title": "njsscan: wkhtmltopdf ssrf",
+    "title": "wkhtmltopdf ssrf",
     "display_name": "WkhtmltopdfSsrf",
     "severity": "1",
     "categories": [
@@ -4315,7 +4315,7 @@ issues_data = {
     "description": "It is a good practice to avoid spreading for JSX attributes. This forces the code to be explicit about which props are given to the component. This avoids situations where warnings are caused by invalid HTML props passed to HTML elements, and further, it avoids passing unintentional extra props by malicious actors. Instead, consider explicitly passing props to the component."
   },
   "ElectronNodejsIntegration": {
-    "title": "njsscan: electron nodejs integration",
+    "title": "electron nodejs integration",
     "display_name": "ElectronNodejsIntegration",
     "severity": "1",
     "categories": [
@@ -4459,7 +4459,7 @@ issues_data = {
     "description": "Mass assignment detected. This can result in assignment to\nmodel fields that are unintended and can be exploited by\nan attacker. Instead of using '**request.$W', assign each field you\nwant to edit individually to prevent mass assignment. You can read\nmore about mass assignment at\nhttps://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html."
   },
   "PhantomSsrf": {
-    "title": "njsscan: phantom ssrf",
+    "title": "phantom ssrf",
     "display_name": "PhantomSsrf",
     "severity": "1",
     "categories": [
@@ -4468,7 +4468,7 @@ issues_data = {
     "description": "If unverified user data can reach the `phantom` methods it can result in Server-Side Request Forgery vulnerabilities."
   },
   "TarPathOverwrite": {
-    "title": "njsscan: tar path overwrite",
+    "title": "tar path overwrite",
     "display_name": "TarPathOverwrite",
     "severity": "1",
     "categories": [
@@ -4558,7 +4558,7 @@ issues_data = {
     "description": "Checks if HTML escaping is globally disabled for JSON output. This could lead to XSS."
   },
   "NodeApiKey": {
-    "title": "njsscan: node api key",
+    "title": "node api key",
     "display_name": "NodeApiKey",
     "severity": "1",
     "categories": [
@@ -4576,7 +4576,7 @@ issues_data = {
     "description": "Found use of the native Python XML libraries, which is vulnerable to XML external entity (XXE)\nattacks. The Python documentation recommends the 'defusedxml' library instead. Use 'defusedxml'.\nSee https://github.com/tiran/defusedxml for more information."
   },
   "ElectronContextIsolation": {
-    "title": "njsscan: electron context isolation",
+    "title": "electron context isolation",
     "display_name": "ElectronContextIsolation",
     "severity": "1",
     "categories": [
@@ -4603,7 +4603,7 @@ issues_data = {
     "description": "Pod may use the node network namespace. This gives the pod access to the\nloopback device, services listening on localhost, and could be used to\nsnoop on network activity of other pods on the same node. Remove the\n'hostNetwork' key to disable this functionality."
   },
   "ExpressLfrWarning": {
-    "title": "njsscan: express lfr warning",
+    "title": "express lfr warning",
     "display_name": "ExpressLfrWarning",
     "severity": "1",
     "categories": [
@@ -4648,7 +4648,7 @@ issues_data = {
     "description": "The 'baseURL' is set to localhost. This may cause links to not work if deployed."
   },
   "SquirrellyAutoescape": {
-    "title": "njsscan: squirrelly autoescape",
+    "title": "squirrelly autoescape",
     "display_name": "SquirrellyAutoescape",
     "severity": "1",
     "categories": [
@@ -4666,7 +4666,7 @@ issues_data = {
     "description": "Use of $window.location.href can lead to open-redirect if user input is used for redirection."
   },
   "NodeNosqliJsInjection": {
-    "title": "njsscan: node nosqli js injection",
+    "title": "node nosqli js injection",
     "display_name": "NodeNosqliJsInjection",
     "severity": "1",
     "categories": [
@@ -4747,7 +4747,7 @@ issues_data = {
     "description": "Detected a possible denial-of-service via a zip bomb attack. By limiting the max bytes read, you can mitigate this attack. `io.CopyN()` can specify a size. Refer to https://bomb.codes/ to learn more about this attack and other ways to mitigate it."
   },
   "ZipPathOverwrite2": {
-    "title": "njsscan: zip path overwrite2",
+    "title": "zip path overwrite2",
     "display_name": "ZipPathOverwrite2",
     "severity": "1",
     "categories": [
@@ -4792,7 +4792,7 @@ issues_data = {
     "description": "Backticks use may lead to command injection vulnerabilities."
   },
   "Vm2ContextInjection": {
-    "title": "njsscan: vm2 context injection",
+    "title": "vm2 context injection",
     "display_name": "Vm2ContextInjection",
     "severity": "1",
     "categories": [
@@ -5098,7 +5098,7 @@ issues_data = {
     "description": "Detected user data flowing into exec. This is code injection and should be avoided."
   },
   "HostHeaderInjection": {
-    "title": "njsscan: host header injection",
+    "title": "host header injection",
     "display_name": "HostHeaderInjection",
     "severity": "1",
     "categories": [
@@ -5170,7 +5170,7 @@ issues_data = {
     "description": "An object-returning LDAP search will allow attackers to control the LDAP response. This could\nlead to Remote Code Execution."
   },
   "RegexInjectionDos": {
-    "title": "njsscan: regex injection dos",
+    "title": "regex injection dos",
     "display_name": "RegexInjectionDos",
     "severity": "1",
     "categories": [
@@ -5206,7 +5206,7 @@ issues_data = {
     "description": "Packages in base images should be up-to-date, removing the need for\n'zypper update'. If packages are out-of-date, consider contacting the\nbase image maintainer.\n\n{\"include\": [\"*dockerfile*\", \"*Dockerfile*\"]}"
   },
   "HelmetHeaderReferrerPolicy": {
-    "title": "njsscan: helmet header referrer policy",
+    "title": "helmet header referrer policy",
     "display_name": "HelmetHeaderReferrerPolicy",
     "severity": "1",
     "categories": [
@@ -5242,7 +5242,7 @@ issues_data = {
     "description": "Pod is sharing the host process ID namespace. When paired with ptrace\nthis can be used to escalate privileges outside of the container. Remove\nthe 'hostPID' key to disable this functionality."
   },
   "HeaderXssGeneric": {
-    "title": "njsscan: header xss generic",
+    "title": "header xss generic",
     "display_name": "HeaderXssGeneric",
     "severity": "1",
     "categories": [
@@ -5269,7 +5269,7 @@ issues_data = {
     "description": "Twilio API Key detected"
   },
   "HardcodedPassportSecret": {
-    "title": "njsscan: hardcoded passport secret",
+    "title": "hardcoded passport secret",
     "display_name": "HardcodedPassportSecret",
     "severity": "1",
     "categories": [
@@ -5296,7 +5296,7 @@ issues_data = {
     "description": "Warning MONGODB-CR was deprecated with the release of MongoDB 3.6 and is no longer supported by MongoDB 4.0 (see https://api.mongodb.com/python/current/examples/authentication.html for details)."
   },
   "GrpcInsecureConnection": {
-    "title": "njsscan: grpc insecure connection",
+    "title": "grpc insecure connection",
     "display_name": "GrpcInsecureConnection",
     "severity": "1",
     "categories": [
@@ -5413,7 +5413,7 @@ issues_data = {
     "description": "Detected the use of require(variable). Calling require with a non-literal argument might\nallow an attacker to load an run arbitrary code, or access arbitrary files."
   },
   "ExpressCors": {
-    "title": "njsscan: express cors",
+    "title": "express cors",
     "display_name": "ExpressCors",
     "severity": "1",
     "categories": [
@@ -5440,7 +5440,7 @@ issues_data = {
     "description": "`return` should never appear inside a class __init__ function. This will cause a runtime error."
   },
   "NodeXpathInjection": {
-    "title": "njsscan: node xpath injection",
+    "title": "node xpath injection",
     "display_name": "NodeXpathInjection",
     "severity": "1",
     "categories": [
@@ -5548,7 +5548,7 @@ issues_data = {
     "description": "Detected DES cipher algorithm which is considered insecure. The algorithm is\nconsidered weak and has been deprecated. Use AES instead."
   },
   "NodeSecret": {
-    "title": "njsscan: node secret",
+    "title": "node secret",
     "display_name": "NodeSecret",
     "severity": "1",
     "categories": [
@@ -5728,7 +5728,7 @@ issues_data = {
     "description": "Detected the use of an insecure deserizliation library in a Flask route. These libraries\nare prone to code execution vulnerabilities. Ensure user data does not enter this function.\nTo fix this, try to avoid serializing whole objects. Consider instead using a serializer\nsuch as JSON."
   },
   "NodeTlsReject": {
-    "title": "njsscan: node tls reject",
+    "title": "node tls reject",
     "display_name": "NodeTlsReject",
     "severity": "1",
     "categories": [
@@ -5737,7 +5737,7 @@ issues_data = {
     "description": "Setting 'NODE_TLS_REJECT_UNAUTHORIZED' to 0 will allow node server to accept self signed certificates and is not a secure behaviour."
   },
   "GenericErrorDisclosure": {
-    "title": "njsscan: generic error disclosure",
+    "title": "generic error disclosure",
     "display_name": "GenericErrorDisclosure",
     "severity": "1",
     "categories": [
@@ -5764,7 +5764,7 @@ issues_data = {
     "description": "Detected the decoding of a JWT token without a verify step.\nJWT tokens must be verified before use, otherwise the token's\nintegrity is unknown. This means a malicious actor could forge\na JWT token with any claims. Call '.verify()' before using the token."
   },
   "EvalNodejs": {
-    "title": "njsscan: eval nodejs",
+    "title": "eval nodejs",
     "display_name": "EvalNodejs",
     "severity": "1",
     "categories": [
@@ -5854,7 +5854,7 @@ issues_data = {
     "description": "Detected a unquoted template variable as an attribute. If unquoted, a malicious actor could inject custom JavaScript handlers. To fix this, add quotes around the template expression, like this: \"{{ expr }}\"."
   },
   "CookieSessionNoSecure": {
-    "title": "njsscan: cookie session no secure",
+    "title": "cookie session no secure",
     "display_name": "CookieSessionNoSecure",
     "severity": "1",
     "categories": [
@@ -5863,7 +5863,7 @@ issues_data = {
     "description": "Default session middleware settings: `secure` not set. It ensures the browser only sends the cookie over HTTPS."
   },
   "HelmetHeaderIenoopen": {
-    "title": "njsscan: helmet header ienoopen",
+    "title": "helmet header ienoopen",
     "display_name": "HelmetHeaderIenoopen",
     "severity": "1",
     "categories": [
@@ -5872,7 +5872,7 @@ issues_data = {
     "description": "X-Download-Options header is present. More information: https://helmetjs.github.io/docs/ienoopen/"
   },
   "AdmzipPathOverwrite": {
-    "title": "njsscan: admzip path overwrite",
+    "title": "admzip path overwrite",
     "display_name": "AdmzipPathOverwrite",
     "severity": "1",
     "categories": [
@@ -5908,7 +5908,7 @@ issues_data = {
     "description": "Detected the use of new Function(), which can be dangerous if used to evaluate\ndynamic content. If this content can be input from outside the program, this\nmay be a code injection vulnerability. Ensure evaluated content is not definable\nby external sources."
   },
   "GenericPathTraversal": {
-    "title": "njsscan: generic path traversal",
+    "title": "generic path traversal",
     "display_name": "GenericPathTraversal",
     "severity": "1",
     "categories": [
@@ -5989,7 +5989,7 @@ issues_data = {
     "description": "If unverified user data can reach the `phantom` methods it can result in Server-Side Request Forgery vulnerabilities"
   },
   "SequelizeWeakTls": {
-    "title": "njsscan: sequelize weak tls",
+    "title": "sequelize weak tls",
     "display_name": "SequelizeWeakTls",
     "severity": "1",
     "categories": [
@@ -5998,7 +5998,7 @@ issues_data = {
     "description": "The Sequelize connection string indicates that an older version of TLS is in use. TLS1.0 and TLS1.1 are deprecated and should be used. By default, Sequelize use TLSv1.2 but it's recommended to use TLS1.3. Not applicable to SQLite database."
   },
   "ExpressLfr": {
-    "title": "njsscan: express lfr",
+    "title": "express lfr",
     "display_name": "ExpressLfr",
     "severity": "1",
     "categories": [
@@ -6052,7 +6052,7 @@ issues_data = {
     "description": "Default session middleware settings: `secure` not set.\nIt ensures the browser only sends the cookie over HTTPS."
   },
   "NodeDeserialize": {
-    "title": "njsscan: node deserialize",
+    "title": "node deserialize",
     "display_name": "NodeDeserialize",
     "severity": "1",
     "categories": [
@@ -6079,7 +6079,7 @@ issues_data = {
     "description": "Detected manual creation of an ERB template. Manual creation of templates\nmay expose your application to server-side template injection (SSTI) or\ncross-site scripting (XSS) attacks if user input is used to create the\ntemplate. Instead, create a '.erb' template file and use 'render'."
   },
   "NodeUsername": {
-    "title": "njsscan: node username",
+    "title": "node username",
     "display_name": "NodeUsername",
     "severity": "1",
     "categories": [
@@ -6088,7 +6088,7 @@ issues_data = {
     "description": "A hardcoded username in plain text is identified. Store it properly in an environment variable."
   },
   "NodeSqliInjection": {
-    "title": "njsscan: node sqli injection",
+    "title": "node sqli injection",
     "display_name": "NodeSqliInjection",
     "severity": "1",
     "categories": [
@@ -6151,7 +6151,7 @@ issues_data = {
     "description": "Class `$A` has defined `__eq__` which means it should also have defined `__hash__`;"
   },
   "YamlDeserialize": {
-    "title": "njsscan: yaml deserialize",
+    "title": "yaml deserialize",
     "display_name": "YamlDeserialize",
     "severity": "1",
     "categories": [
@@ -6160,7 +6160,7 @@ issues_data = {
     "description": "User controlled data in 'yaml.load()' function can result in Remote Code Injection."
   },
   "ExpressOpenRedirect2": {
-    "title": "njsscan: express open redirect2",
+    "title": "express open redirect2",
     "display_name": "ExpressOpenRedirect2",
     "severity": "1",
     "categories": [
@@ -6205,7 +6205,7 @@ issues_data = {
     "description": "Detected non-static command inside Exec. Audit the input to 'syscall.Exec'.\nIf unverified user data can reach this call site, this is a code injection\nvulnerability. A malicious actor can inject a malicious script to execute\narbitrary code."
   },
   "XxeExpat": {
-    "title": "njsscan: xxe expat",
+    "title": "xxe expat",
     "display_name": "XxeExpat",
     "severity": "1",
     "categories": [
@@ -6268,7 +6268,7 @@ issues_data = {
     "description": "'$VAR' is the empty string and is being used to set the password on '$MODEL'.\nIf you meant to set an unusable password, set the password to None or call\n'set_unusable_password()'."
   },
   "HelmetHeaderCheckExpectCt": {
-    "title": "njsscan: helmet header check expect ct",
+    "title": "helmet header check expect ct",
     "display_name": "HelmetHeaderCheckExpectCt",
     "severity": "1",
     "categories": [
@@ -6358,7 +6358,7 @@ issues_data = {
     "description": "'wget' and 'curl' are similar tools. Choose one and do not install the other to decrease image size.\n\n{\"include\": [\"*dockerfile*\", \"*Dockerfile*\"]}"
   },
   "JwtExposedCredentials": {
-    "title": "njsscan: jwt exposed credentials",
+    "title": "jwt exposed credentials",
     "display_name": "JwtExposedCredentials",
     "severity": "1",
     "categories": [
@@ -6430,7 +6430,7 @@ issues_data = {
     "description": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities"
   },
   "HelmetHeaderFeaturePolicy": {
-    "title": "njsscan: helmet header feature policy",
+    "title": "helmet header feature policy",
     "display_name": "HelmetHeaderFeaturePolicy",
     "severity": "1",
     "categories": [
@@ -6466,7 +6466,7 @@ issues_data = {
     "description": "The use of $sce.trustAsCss can be dangerous if unsantiized user input flows through this API."
   },
   "NodeXxe": {
-    "title": "njsscan: node xxe",
+    "title": "node xxe",
     "display_name": "NodeXxe",
     "severity": "1",
     "categories": [
@@ -6529,7 +6529,7 @@ issues_data = {
     "description": "AWS Access Key ID Value detected"
   },
   "NodePassword": {
-    "title": "njsscan: node password",
+    "title": "node password",
     "display_name": "NodePassword",
     "severity": "1",
     "categories": [
@@ -6844,7 +6844,7 @@ issues_data = {
     "description": "Cross-site scripting detected in HttpServletResponse writer with variable '$VAR'. User\ninput was detected going directly from the HttpServletRequest into output. Ensure your\ndata is properly encoded using org.owasp.encoder.Encode.forHtml: 'Encode.forHtml($VAR)'."
   },
   "VmCodeInjection": {
-    "title": "njsscan: vm code injection",
+    "title": "vm code injection",
     "display_name": "VmCodeInjection",
     "severity": "1",
     "categories": [
@@ -6898,7 +6898,7 @@ issues_data = {
     "description": "Avoid using user-controlled format strings passed into 'sprintf', 'printf' and 'vsprintf'.\nThese functions put you at risk of buffer overflow vulnerabilities through the use of format string exploits.\nInstead, use 'snprintf' and 'vsnprintf'."
   },
   "AntiCsrfControl": {
-    "title": "njsscan: anti csrf control",
+    "title": "anti csrf control",
     "display_name": "AntiCsrfControl",
     "severity": "1",
     "categories": [
@@ -7087,7 +7087,7 @@ issues_data = {
     "description": "Detected SHA1 hash algorithm which is considered insecure. SHA1 is not\ncollision resistant and is therefore not suitable as a cryptographic\nsignature. Use SHA256 or SHA3 instead."
   },
   "NodeNosqliInjection": {
-    "title": "njsscan: node nosqli injection",
+    "title": "node nosqli injection",
     "display_name": "NodeNosqliInjection",
     "severity": "1",
     "categories": [
@@ -7420,7 +7420,7 @@ issues_data = {
     "description": "Expect permissions to be `0600` or less for os.Chmod, os.Mkdir, os.OpenFile, os.MkdirAll, and ioutil.WriteFile"
   },
   "NodeLogicBypass": {
-    "title": "njsscan: node logic bypass",
+    "title": "node logic bypass",
     "display_name": "NodeLogicBypass",
     "severity": "1",
     "categories": [
@@ -7429,7 +7429,7 @@ issues_data = {
     "description": "User controlled data is used for application business logic decision making. This expose protected data or functionality."
   },
   "SequelizeTlsCertValidation": {
-    "title": "njsscan: sequelize tls cert validation",
+    "title": "sequelize tls cert validation",
     "display_name": "SequelizeTlsCertValidation",
     "severity": "1",
     "categories": [
@@ -7501,7 +7501,7 @@ issues_data = {
     "description": "this function is only available on Python 3.7+"
   },
   "HelmetHeaderXPoweredBy": {
-    "title": "njsscan: helmet header x powered by",
+    "title": "helmet header x powered by",
     "display_name": "HelmetHeaderXPoweredBy",
     "severity": "1",
     "categories": [
@@ -7537,7 +7537,7 @@ issues_data = {
     "description": "Found non static data as an index to 'globals()'. This is extremely\ndangerous because it allows an attacker to execute arbitrary code\non the system. Refactor your code not to use 'globals()'."
   },
   "XxeXml2json": {
-    "title": "njsscan: xxe xml2json",
+    "title": "xxe xml2json",
     "display_name": "XxeXml2json",
     "severity": "1",
     "categories": [
@@ -7609,7 +7609,7 @@ issues_data = {
     "description": "Detected Flask route directly returning a formatted string. This\nis subject to cross-site scripting if user input can reach the string.\nConsider using the template engine instead and rendering pages with\n'render_template()'."
   },
   "NodeSsrf": {
-    "title": "njsscan: node ssrf",
+    "title": "node ssrf",
     "display_name": "NodeSsrf",
     "severity": "1",
     "categories": [
@@ -7627,7 +7627,7 @@ issues_data = {
     "description": "Remote debugging protocol does not perform any authentication, so exposing it too widely can be a security risk."
   },
   "CookieSessionNoSamesite": {
-    "title": "njsscan: cookie session no samesite",
+    "title": "cookie session no samesite",
     "display_name": "CookieSessionNoSamesite",
     "severity": "1",
     "categories": [
@@ -7690,7 +7690,7 @@ issues_data = {
     "description": "The 'ssl' module disables insecure cipher suites by default. Therefore,\nuse of 'set_ciphers()' should only be used when you have very specialized\nrequirements. Otherwise, you risk lowering the security of the SSL channel."
   },
   "CookieSessionDefault": {
-    "title": "njsscan: cookie session default",
+    "title": "cookie session default",
     "display_name": "CookieSessionDefault",
     "severity": "1",
     "categories": [
