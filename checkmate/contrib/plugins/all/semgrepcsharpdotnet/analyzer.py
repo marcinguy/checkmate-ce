@@ -75,7 +75,7 @@ class SemgrepCsharpDotnetAnalyzer(BaseAnalyzer):
                     location = (((issue['start']['line'], None),
                                  (issue['start']['line'], None)),)
 
-                    if ".js" in file_revision.path:
+                    if ".cs" in file_revision.path or ".config" in file_revision.path or ".cshtml" in file_revision.path:
                         val = issue['check_id']
                         val = val.replace("root.semgrepcsharpdotnet.","")
                         val = val.replace("_","")
