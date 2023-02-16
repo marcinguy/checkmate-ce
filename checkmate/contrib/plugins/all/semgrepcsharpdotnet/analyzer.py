@@ -78,7 +78,9 @@ class SemgrepCsharpDotnetAnalyzer(BaseAnalyzer):
                     if ".js" in file_revision.path:
                         val = issue['check_id']
                         val = val.replace("root.semgrepcsharpdotnet.","")
-                        val = val.title().replace("_","")
+                        val = val.replace("_","")
+                        val = val.replace("-","")
+
                         issues.append({
                             'code': val,
                             'location': location,
