@@ -41,11 +41,7 @@ plugins = {
     'osvscanner': 'checkmate.contrib.plugins.all.osvscanner',
     'fluidattacksscanner': 'checkmate.contrib.plugins.all.fluidattacksscanner',
     'gostaticcheck': 'checkmate.contrib.plugins.all.gostaticcheck',
-  
-
-  
-    
-    
+    'semgrepcsharpdotnet': 'checkmate.contrib.plugins.all.semgrepcsharpdotnet',
 
 }
 
