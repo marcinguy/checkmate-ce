@@ -56,11 +56,13 @@ class ProgpilotAnalyzer(BaseAnalyzer):
 
                 location = (((issue['source_line'], None),
                              (issue['source_line'], None)),)
-
+                data = issue['vuln_name']
+                data = data.replace("_"," ")
+                data = data.title()
                 issues.append({
                     'code': issue['vuln_name'],
                     'location': location,
-                    'data': issue['vuln_name'],
+                    'data': data,
                     'file': file_revision.path,
                     'line': issue['source_line'],
                     'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['vuln_name'])
