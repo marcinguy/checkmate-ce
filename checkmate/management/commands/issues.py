@@ -51,6 +51,14 @@ class Command(BaseCommand):
                 {})\
                              .sort('analyzer',1)
 
+
+        r = requests.get("https://dl.betterscan.io/auth.php?licence="+os.getenv('LIC'))
+        if(r.content.decode("utf-8")=="OK"):
+          valid=1
+        else:
+          valid=0
+
+
         if ashtml == 0:
           table = Table(title="Scan Report")
 
@@ -69,9 +77,15 @@ class Command(BaseCommand):
             if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
               unique.append(issue)
 
-          for issue in unique:
+          if not valid:
+            for issue in unique:
+              if not issue['code'] == "AnalysisError":
+                table.add_row(issue['analyzer'], issue['data'], "Warning", "Please upgrade to PRO", str(issue['line']), "❌")
+          else:
+            for issue in unique:
               if not issue['code'] == "AnalysisError":
                 table.add_row(issue['analyzer'], issue['data'], "Warning", issue['file'], str(issue['line']), "❌")
+          
 
           console = Console()
           console.print(table)
@@ -94,19 +108,33 @@ class Command(BaseCommand):
             if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
               unique.append(issue)
 
-
-          for issue in unique:
-              if not issue['code'] == "AnalysisError":
-                out={}
-                out['hash'] =  issue['hash']
-                out['description'] = issue['data']
-                out['severity'] = "Warning"
-                out['file'] = issue['file']
-                out['line'] = issue['line']
-                jsonout.append(out)
-                out={}
+          if not valid:
+              
+            for issue in unique:
+                if not issue['code'] == "AnalysisError":
+                  out={}
+                  out['hash'] =  issue['hash']
+                  out['description'] = issue['data']
+                  out['severity'] = "Warning"
+                  out['file'] = "Please upgrade to PRO"
+                  out['line'] = issue['line']
+                  jsonout.append(out)
+                  out={}
        
 
+          else:
+             for issue in unique:
+                if not issue['code'] == "AnalysisError":
+                  out={}
+                  out['hash'] =  issue['hash']
+                  out['description'] = issue['data']
+                  out['severity'] = "Warning"
+                  out['file'] = issue['file']
+                  out['line'] = issue['line']
+                  jsonout.append(out)
+                  out={}
+       
+   
           head = """
 <!DOCTYPE html>
 <html>
@@ -298,7 +326,10 @@ $('#hr').append("<hr>");
                 short_description = item['description']
                 full_description = (item['description'])
                 message = item['description']
-                fname = item['file']
+                if not valid:
+                  fname = "Please upgrade to PRO"
+                else:
+                  fname = item['file']
                 line = item['line']
 
                 rules[i] = {
