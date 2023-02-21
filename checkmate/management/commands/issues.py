@@ -4,6 +4,8 @@ from checkmate.contrib.plugins.git.models import GitSnapshot
 from checkmate.management.commands.base import BaseCommand
 import logging
 import json
+import requests
+import os
 from rich.console import Console
 from rich.table import Table
 from rich import print
