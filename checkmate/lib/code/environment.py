@@ -537,10 +537,22 @@ class CodeEnvironment(object):
         for file_revision in filtered_file_revisions:
             logger.info("Analyzing file revision "+file_revision['path'])
             file_revision.language = self.get_language(file_revision)
-            file_revision.results = self.analyze_file_revision(file_revision,
+            one = self.analyze_file_revision(file_revision,
                                                                {analyzer_name: analyzer_params
                                                                 for analyzer_name, analyzer_params in list(self.analyzers.items())
                                                                    if analyzer_params['language'] == file_revision.language})
+            data = list(self.analyzers.items())
+            for analyzer_name, analyzer_params in data:
+              if(analyzer_name=="trojansource"):
+                two = self.analyze_file_revision(file_revision,{"trojansource":analyzer_params})
+              if(analyzer_name=="trufflehog3"):
+                three = self.analyze_file_revision(file_revision,{"trufflehog3":analyzer_params})
+              if(analyzer_name=="yara"):
+                four = self.analyze_file_revision(file_revision,{"yara":analyzer_params})
+
+
+            file_revision.results = {**one, **two, **three, **four}
+
 
         return filtered_file_revisions
 
