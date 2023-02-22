@@ -79,7 +79,7 @@ else:
     'gosec':  'checkmate.contrib.plugins.golang.gosec',
     'confused': 'checkmate.contrib.plugins.supply.confused',
     'pmd': 'checkmate.contrib.plugins.java.pmd',
-    'apex': 'checkmate.contrib.plugins.apex.pmd',
+    'apex': 'checkmate.contrib.plugins.apex.pmdapex',
     'semgrep': 'checkmate.contrib.plugins.java.semgrep',
     'semgrepdefi': 'checkmate.contrib.plugins.solidity.semgrepdefi',
     'semgrepjs': 'checkmate.contrib.plugins.javascript.semgrepjs',
