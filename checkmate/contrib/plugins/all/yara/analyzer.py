@@ -23,10 +23,12 @@ class YaraAnalyzer(BaseAnalyzer):
     def analyze(self, file_revision):
         issues = []
         tmpdir = "/tmp/"+file_revision.project.pk
-        f = open(tmpdir+"/"+file_revision.path, "wb")
         try:
-            with f:
-                f.write(file_revision.get_file_content())
+          f = open(tmpdir+"/"+file_revision.path, "wb")
+        except:
+          pass
+        try:
+            f.write(file_revision.get_file_content())
             try:
                 result = subprocess.check_output(["scan",
                                                   "-Y",
