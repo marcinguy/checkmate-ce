@@ -31,7 +31,6 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
             except OSError as exc:  # Guard against race condition
                 if exc.errno != errno.EEXIST:
                     raise
-        result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
 
         f = open(tmpdir+"/"+file_revision.path, "wb")
 
@@ -78,6 +77,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
             outjson = []
             val ={}
             for line in reader:
+              val["code"]=line[0]
               val["line"]=line[3]
               val["data"]=line[6]
               outjson.append(val)
@@ -89,16 +89,14 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
                   location = (((line, line),
                              (line, None)),)
 
-                  data = issue["data"]
-                  data = data.split(' ', 1)[1]
                   if ".go" in file_revision.path or ".cs" in file_revision.path or ".java" in file_revision.path or ".js" in file_revision.path or ".ts" in file_revision.path:
                     issues.append({
-                      'code': "I001",
+                      'code': issue["code"],
                       'location': location,
-                      'data': data,
+                      'data': issue["data"],
                       'file': file_revision.path,
                       'line': line,
-                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=data)
+                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["data"])
                     })
 
             except KeyError:
