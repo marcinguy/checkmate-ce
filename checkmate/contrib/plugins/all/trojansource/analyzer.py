@@ -61,5 +61,7 @@ class TrojansourceAnalyzer(BaseAnalyzer):
 
             except KeyError:
                 pass
+        except:
+            pass
 
         return {'issues': issues}
