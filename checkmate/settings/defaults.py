@@ -94,7 +94,7 @@ else:
     'semgrepeslint': 'checkmate.contrib.plugins.javascript.semgrepeslint',
     'graudit': 'checkmate.contrib.plugins.perl.graudit',
     'text4shell': 'checkmate.contrib.plugins.cve.text4shell',
-    'osvscanner': 'checkmate.contrib.plugins.all.osvscanner',
+    'osvscanner': 'checkmate.contrib.plugins.supply.osvscanner',
     'fluidattacksscannercsharp': 'checkmate.contrib.plugins.csharp.fluidattacksscanner',
     'fluidattacksscannergolang': 'checkmate.contrib.plugins.golang.fluidattacksscanner',
     'fluidattacksscannerjava': 'checkmate.contrib.plugins.java.fluidattacksscanner',
