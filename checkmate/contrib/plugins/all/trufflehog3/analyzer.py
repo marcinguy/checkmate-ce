@@ -63,6 +63,4 @@ class Trufflehog3Analyzer(BaseAnalyzer):
                     'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['reason'])
                 })
 
-        finally:
-            os.unlink(f.name)
         return {'issues': issues}
