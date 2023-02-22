@@ -54,12 +54,15 @@ class Command(BaseCommand):
                              .sort('analyzer',1)
 
 
-        r = requests.get("https://dl.betterscan.io/auth.php?licence="+os.getenv('LIC'))
-        if(r.content.decode("utf-8")=="OK"):
-          valid=1
-        else:
+        try:
+          r = requests.get("https://dl.betterscan.io/auth.php?licence="+os.getenv('LIC'))
+          if(r.content.decode("utf-8")=="OK"):
+            valid=1
+          else:
+            valid=0
+        except:
           valid=0
-
+          pass
 
         if ashtml == 0:
           table = Table(title="Scan Report")
