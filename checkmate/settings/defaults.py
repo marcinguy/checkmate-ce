@@ -150,7 +150,7 @@ else:
      },
      'supply' : {
           'name' : 'Supply Chain',
-          'patterns' : [u'package\.json$'],
+          'patterns' : [u'package\.json$',u'Cargo\.lock$', u'packages\.lock\.json$',u'yarn\.lock$',u'pnpm-lock\.yaml$',u'composer\.lock$',u'Gemfile\.lock$',u'go\.mod$',u'mix\.lock$',u'poetry\.lock$',u'pubsepc\.lock$',u'pom\.xml$',u'requirements\.txt$',u'gradle\.lockfile$',u'buildscript-gradle\.lockfile$'],
      },
      'php' : {
           'name' : 'PHP',
