@@ -61,6 +61,4 @@ class YaraAnalyzer(BaseAnalyzer):
             except KeyError:
                 pass
 
-        finally:
-            os.unlink(f.name)
         return {'issues': issues}

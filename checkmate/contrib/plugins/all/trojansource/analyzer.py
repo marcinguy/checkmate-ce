@@ -56,6 +56,4 @@ class TrojansourceAnalyzer(BaseAnalyzer):
             except KeyError:
                 pass
 
-        finally:
-            os.unlink(f.name)
         return {'issues': issues}
