@@ -158,7 +158,7 @@ else:
      },
      'ruby' : {
           'name' : 'Ruby',
-          'patterns' : [u'\.rb'],
+          'patterns' : [u'\.rb$'],
      },
      'golang' : {
           'name' : 'Golang',
