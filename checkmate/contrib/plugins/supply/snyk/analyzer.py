@@ -31,12 +31,15 @@ class SnykAnalyzer(BaseAnalyzer):
                 except UnicodeDecodeError:
                   pass
 
+            tmpdir = "/tmp/"+file_revision.project.pk
+
             try:
                 result = subprocess.check_output(["snyk",
                                                   "test",
-                                                  "--file="+file_revision.path,
+                                                  "--file="+tmpdir+"/"+file_revision.path,
                                                   "--json"],
                                                   stderr=subprocess.DEVNULL).strip()
+
             except subprocess.CalledProcessError as e:
                 result = e.output
                 pass
