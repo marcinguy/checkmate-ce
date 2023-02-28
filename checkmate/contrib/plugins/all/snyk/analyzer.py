@@ -33,8 +33,8 @@ class SnykAnalyzer(BaseAnalyzer):
             try:
                 result = subprocess.check_output(["snyk",
                                                   "test",
-                                                  "file=",
-                                                  f.name],
+                                                  "file="+f.name,
+                                                  "--json"],
                                                   stderr=subprocess.DEVNULL).strip()
             except subprocess.CalledProcessError as e:
                 pass
