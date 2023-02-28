@@ -7,7 +7,7 @@ analyzers = {
             'name': 'snyk',
             'title': 'snyk',
             'class': SnykAnalyzer,
-            'language': 'all',
+            'language': 'supply',
             'issues_data': issues_data,
         },
 }
