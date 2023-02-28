@@ -30,13 +30,15 @@ class SnykAnalyzer(BaseAnalyzer):
                   f.write(file_revision.get_file_content())
                 except UnicodeDecodeError:
                   pass
+
             try:
                 result = subprocess.check_output(["snyk",
                                                   "test",
-                                                  "file="+f.name,
+                                                  "--file="+file_revision.path,
                                                   "--json"],
                                                   stderr=subprocess.DEVNULL).strip()
             except subprocess.CalledProcessError as e:
+                result = e.output
                 pass
             try:
                 json_result = json.loads(result)
@@ -50,15 +52,14 @@ class SnykAnalyzer(BaseAnalyzer):
                   location = (((line, line),
                              (line, None)),)
 
-                  if "package-lock.json" in file_revision.path or "Gemfile.lock" in file_revision or "Pipfile.locl" in file_revision:
-                    issues.append({
+                  issues.append({
                       'code': "I001",
                       'location': location,
                       'data': issue["title"],
                       'file': file_revision.path,
                       'line': line,
-                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["data"])
-                    })
+                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["title"])
+                  })
 
             except KeyError:
                 pass
