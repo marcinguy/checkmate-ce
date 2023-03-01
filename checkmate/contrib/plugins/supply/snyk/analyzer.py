@@ -30,13 +30,17 @@ class SnykAnalyzer(BaseAnalyzer):
                   f.write(file_revision.get_file_content())
                 except UnicodeDecodeError:
                   pass
+            tmpdir = "/tmp/"+file_revision.project.pk
+
+            result = subprocess.check_output(["rsync -r . "+tmpdir+" --exclude .git"],shell=True).strip()
 
             try:
                 result = subprocess.check_output(["snyk",
                                                   "test",
-                                                  "--file="+file_revision.path,
+                                                  "--file="+tmpdir+"/"+file_revision.path,
                                                   "--json"],
                                                   stderr=subprocess.DEVNULL).strip()
+
             except subprocess.CalledProcessError as e:
                 result = e.output
                 pass
