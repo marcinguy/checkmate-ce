@@ -61,7 +61,7 @@ class SnykAnalyzer(BaseAnalyzer):
                   issues.append({
                       'code': "I001",
                       'location': location,
-                      'data': issue["title"],
+                      'data': issue["title"]+" ("+issue["id"]+")",
                       'file': file_revision.path,
                       'line': line,
                       'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["title"])
