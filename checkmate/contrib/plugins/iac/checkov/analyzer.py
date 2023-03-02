@@ -38,7 +38,7 @@ class CheckovAnalyzer(BaseAnalyzer):
                 if exc.errno != errno.EEXIST:
                     raise
 
-        result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
+        result = subprocess.check_output(["rsync -r . "+tmpdir+" --exclude .git"],shell=True).strip()
 
         f = open(tmpdir+"/"+file_revision.path, "wb")
 
