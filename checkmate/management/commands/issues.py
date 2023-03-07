@@ -390,4 +390,8 @@ $('#hr').append("<hr>");
          
           print("Check your report in report.html file")
 
-          print("This scan could be 4x+ faster with PRO version :thumbs_up: https://www.betterscan.io/pricing")
+          if not valid:
+            print("This scan could be 8-10x+ faster with PRO version :thumbs_up: https://www.betterscan.io/pricing")
+          else:
+            print("Thank you for using the PRO version. Your scans are 8-10x+ faster :thumbs_up:")
+
