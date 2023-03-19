@@ -18,14 +18,21 @@ Default settings values
 hooks = defaultdict(list)
 
 try:
-  r = requests.get("https://dl.betterscan.io/auth.php?licence="+os.getenv('LIC'))
+  lic = os.getenv('LIC')
+except:
+  lic = ""
+  pass
+
+try:
+  r = requests.get("https://dl.betterscan.io/auth.php?licence="+str(lic))
   if(r.content.decode("utf-8")=="OK"):
     valid=1
   else:
     code_dir = os.getenv('CODE_DIR')
-    if not os.path.isfile(code_dir+"/.checkmate/setup"):
-      Path(code_dir+"/.checkmate/setup").touch()
-    target = Path(code_dir+"/.checkmate/setup")
+    if not os.path.isfile(code_dir+"/.status/setup"):
+      os.mkdir(code_dir+"/.status")
+      Path(code_dir+"/.status/setup").touch()
+    target = Path(code_dir+"/.status/setup")
     mtime = target.stat().st_mtime
     now = time.time()
     if(now>int(mtime)+432000):
@@ -35,6 +42,7 @@ try:
 except:
   valid=0
   pass
+
 
 if not valid:
   plugins = {
