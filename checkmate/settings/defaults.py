@@ -28,11 +28,10 @@ try:
   if(r.content.decode("utf-8")=="OK"):
     valid=1
   else:
-    code_dir = os.getenv('CODE_DIR')
-    if not os.path.isfile(code_dir+"/.status/setup"):
-      os.mkdir(code_dir+"/.status")
-      Path(code_dir+"/.status/setup").touch()
-    target = Path(code_dir+"/.status/setup")
+    if not os.path.isfile("/srv/scanmycode/setup_state/setup"):
+      os.mkdir("/srv/scanmycode/setup_state/")
+      Path("/srv/scanmycode/setup_state/setup").touch()
+    target = Path("/srv/scanmycode/setup_state/setup")
     mtime = target.stat().st_mtime
     now = time.time()
     if(now>int(mtime)+432000):
