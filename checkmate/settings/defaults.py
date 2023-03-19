@@ -7,6 +7,8 @@ from checkmate.contrib.plugins.git.models import GitSnapshot
 from collections import defaultdict
 import requests
 import os
+import time
+from pathlib import Path
 
 """
 Default settings values
@@ -19,7 +21,16 @@ try:
   if(r.content.decode("utf-8")=="OK"):
     valid=1
   else:
-    valid=0
+    code_dir = os.getenv('CODE_DIR')
+    if not os.path.isfile(code_dir+"/.checkmate/setup"):
+      Path(code_dir+"/.checkmate/setup").touch()
+    target = Path(code_dir+"/.checkmate/setup")
+    mtime = target.stat().st_mtime
+    now = time.time()
+    if(now>int(mtime)+432000):
+      valid = 0
+    else:
+      valid = 1
 except:
   valid=0
   pass
