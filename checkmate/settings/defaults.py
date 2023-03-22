@@ -17,22 +17,7 @@ Default settings values
 
 hooks = defaultdict(list)
 
-try:
-  lic = os.getenv('LIC')
-except:
-  lic = ""
-  pass
-
-try:
-  r = requests.get("https://dl.betterscan.io/auth.php?licence="+str(lic))
-  if(r.content.decode("utf-8")=="OK"):
-    valid=1
-  else:
-    valid=0
-except:
-  valid=0
-  pass
-
+valid=1
 
 if not valid:
   plugins = {
