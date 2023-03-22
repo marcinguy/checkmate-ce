@@ -79,6 +79,35 @@ issues_data = {
         "description": "w32api Command Injection detected",
         "categories": ["security"],
         "title": "w32api Command Injection"
+    },
+    "path_traversal": {
+        "severity": "1",
+        "description": "Path Traversal detected",
+        "categories": ["security"],
+        "title": "Path traversal"
+    },
+    "eval code_injection": {
+        "severity": "1",
+        "description": "Eval Code Injection detected",
+        "categories": ["security"],
+        "title": "Eval Code Injection"
+    },
+    "assert code_injection": {
+        "severity": "1",
+        "description": "Assert Code Injection detected",
+        "categories": ["security"],
+        "title": "Assert Code Injection"
+    },
+    "create_function code_injection": {
+        "severity": "1",
+        "description": "Create Function Code Injection detected",
+        "categories": ["security"],
+        "title": "Create Function Code Injection"
+    },
+    "redos": {
+        "severity": "1",
+        "description": "Redos detected",
+        "categories": ["security"],
+        "title": "Redos"
     }
-
 }
