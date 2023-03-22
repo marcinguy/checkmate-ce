@@ -28,16 +28,7 @@ try:
   if(r.content.decode("utf-8")=="OK"):
     valid=1
   else:
-    if not os.path.isfile("/srv/scanmycode/setup_state/setup"):
-      os.mkdir("/srv/scanmycode/setup_state/")
-      Path("/srv/scanmycode/setup_state/setup").touch()
-    target = Path("/srv/scanmycode/setup_state/setup")
-    mtime = target.stat().st_mtime
-    now = time.time()
-    if(now>int(mtime)+432000):
-      valid = 0
-    else:
-      valid = 1
+    valid=0
 except:
   valid=0
   pass
