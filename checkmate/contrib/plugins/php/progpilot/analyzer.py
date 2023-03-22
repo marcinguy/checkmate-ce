@@ -30,7 +30,7 @@ class ProgpilotAnalyzer(BaseAnalyzer):
                 except UnicodeDecodeError:
                   pass
             try:
-                result = subprocess.check_output(["/root/phpscan/progpilot_dev20180720-215434.phar",
+                result = subprocess.check_output(["/root/phpscan/progpilot.phar",
                                                   f.name],
                                                   stderr=subprocess.DEVNULL).strip()
             except subprocess.CalledProcessError as e:
