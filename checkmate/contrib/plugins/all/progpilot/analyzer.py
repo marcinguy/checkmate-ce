@@ -27,7 +27,7 @@ class ProgpilotAnalyzer(BaseAnalyzer):
             with f:
                 f.write(file_revision.get_file_content())
             try:
-                result = subprocess.check_output(["/root/phpscan/progpilot_dev20180720-215434.phar",
+                result = subprocess.check_output(["/root/phpscan/progpilot.phar",
                                                   f.name])
             except subprocess.CalledProcessError as e:
                 if e.returncode == 2:
