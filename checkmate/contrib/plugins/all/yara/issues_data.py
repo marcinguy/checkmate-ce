@@ -20833,5 +20833,95 @@ issues_data = {
 		"description": "%(issue.data)s",
 		"severity": 3,
 		"categories": []
-	}
+	},
+        "APT_MAL_NK_3CX_Malicious_Samples_Mar23_1": {
+                "title": "APT_MAL_NK_3CX_Malicious_Samples_Mar23_1",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "APT_MAL_NK_3CX_Malicious_Samples_Mar23_2": {
+                "title": "APT_MAL_NK_3CX_Malicious_Samples_Mar23_2",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "APT_MAL_NK_3CX_Malicious_Samples_Mar23_3": {
+                "title": "APT_MAL_NK_3CX_Malicious_Samples_Mar23_3",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "SUSP_APT_MAL_NK_3CX_Malicious_Samples_Mar23_1": {
+                "title": "SUSP_APT_MAL_NK_3CX_Malicious_Samples_Mar23_1",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "APT_SUSP_NK_3CX_RC4_Key_Mar23_1": {
+                "title": "APT_SUSP_NK_3CX_RC4_Key_Mar23_1",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "SUSP_3CX_App_Signed_Binary_Mar23_1": {
+                "title": "SUSP_3CX_App_Signed_Binary_Mar23_1",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "SUSP_3CX_MSI_Signed_Binary_Mar23_1": {
+                "title": "SUSP_3CX_MSI_Signed_Binary_Mar23_1",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "APT_MAL_macOS_NK_3CX_Malicious_Samples_Mar23_1": {
+                "title": "APT_MAL_macOS_NK_3CX_Malicious_Samples_Mar23_1",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "APT_MAL_MacOS_NK_3CX_DYLIB_Mar23_1": {
+                "title": "APT_MAL_MacOS_NK_3CX_DYLIB_Mar23_1",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "APT_SUSP_NK_3CX_Malicious_Samples_Mar23_1": {
+                "title": "APT_SUSP_NK_3CX_Malicious_Samples_Mar23_1",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "APT_MAL_NK_3CX_Malicious_Samples_Mar23_4": {
+                "title": "APT_MAL_NK_3CX_Malicious_Samples_Mar23_4",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "MAL_3CXDesktopApp_MacOS_Backdoor_Mar23": {
+                "title": "MAL_3CXDesktopApp_MacOS_Backdoor_Mar23",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "APT_MAL_NK_3CX_ICONIC_Stealer_Mar23_1": {
+                "title": "APT_MAL_NK_3CX_ICONIC_Stealer_Mar23_1",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "APT_MAL_NK_3CX_macOS_Elextron_App_Mar23_1": {
+                "title": "APT_MAL_NK_3CX_macOS_Elextron_App_Mar23_1",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        },
+        "MAL_3CXDesktopApp_MacOS_UpdateAgent_Mar23": {
+                "title": "MAL_3CXDesktopApp_MacOS_UpdateAgent_Mar23",
+                "description": "%(issue.data)s",
+                "severity": 3,
+                "categories": []
+        }
 }
