@@ -67,7 +67,6 @@ class Command(BaseCommand):
         if ashtml == 0:
           table = Table(title="Scan Report")
 
-          table.add_column("Analyzer", style="cyan", no_wrap=True)
           table.add_column("Description", style="magenta")
           table.add_column("Severity", justify="right", style="green")
           table.add_column("File", justify="right", style="green")
@@ -85,11 +84,11 @@ class Command(BaseCommand):
           if not valid:
             for issue in unique:
               if not issue['code'] == "AnalysisError":
-                table.add_row(issue['analyzer'], issue['data'], "Warning", "Please upgrade to PRO", str(issue['line']), "❌")
+                table.add_row(issue['data'], "Warning", "Please upgrade to PRO", str(issue['line']), "❌")
           else:
             for issue in unique:
               if not issue['code'] == "AnalysisError":
-                table.add_row(issue['analyzer'], issue['data'], "Warning", issue['file'], str(issue['line']), "❌")
+                table.add_row(issue['data'], "Warning", issue['file'], str(issue['line']), "❌")
           
 
           console = Console()
