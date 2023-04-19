@@ -74,12 +74,15 @@ class Command(BaseCommand):
 
           unique = []
           for issue in issues:
-            if issue["line"]==1:
-              unique.append(issue)
-            if issue["line"]==0:
-              issue["line"]=1
-            if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
-              unique.append(issue)
+            try:
+              if issue["line"]==1:
+                unique.append(issue)
+              if issue["line"]==0:
+                issue["line"]=1
+              if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
+                unique.append(issue)
+            except:
+              pass
 
           if not valid:
             for issue in unique:
@@ -107,12 +110,15 @@ class Command(BaseCommand):
           out = {}
           unique = []
           for issue in issues:
-            if issue["line"]==1:
-              unique.append(issue)
-            if issue["line"]==0:
-              issue["line"]=1
-            if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
-              unique.append(issue)
+            try:
+              if issue["line"]==1:
+                unique.append(issue)
+              if issue["line"]==0:
+                issue["line"]=1
+              if all(((unique_issue["line"] != issue["line"]) | (unique_issue["file"] != issue["file"])) for unique_issue in unique):
+                unique.append(issue)
+            except:
+              pass
 
           if not valid:
               
