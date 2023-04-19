@@ -549,9 +549,12 @@ class CodeEnvironment(object):
                 three = self.analyze_file_revision(file_revision,{"trufflehog3":analyzer_params})
               if(analyzer_name=="yara"):
                 four = self.analyze_file_revision(file_revision,{"yara":analyzer_params})
+              if(analyzer_name=="ptpt"):
+                five = self.analyze_file_revision(file_revision,{"ptpt":analyzer_params})
 
 
-            file_revision.results = {**one, **two, **three, **four}
+
+            file_revision.results = {**one, **two, **three, **four, **five}
 
 
         return filtered_file_revisions
