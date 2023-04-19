@@ -67,7 +67,7 @@ class GPTAnalyzer(BaseAnalyzer):
                   json_result = []
                   pass
             try:
-                  issue = json_result
+              for issue in json_result:
                   value = issue['line']
 
                   location = (((value,None),
