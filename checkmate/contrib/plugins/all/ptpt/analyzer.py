@@ -83,7 +83,7 @@ class GPTAnalyzer(BaseAnalyzer):
                       'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["finding"])
                   })
 
-              except:
+            except:
                 pass
 
         finally:
