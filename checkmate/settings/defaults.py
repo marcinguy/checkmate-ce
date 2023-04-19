@@ -19,6 +19,21 @@ hooks = defaultdict(list)
 
 valid=1
 
+try:
+  gpt = os.getenv('OPENAI_GPT_API')
+except:
+  gpt = ""
+  pass
+
+if gpt:
+    path = '/root/.config/ptpt'
+    filename = "config.yaml"
+    fullname = os.path.join(path, filename)
+    myfile = open(fullname, "w")
+    myfile.write("api_key: "+gpt)
+    myfile.close()
+
+
 if not valid:
   plugins = {
     'git': 'checkmate.contrib.plugins.git',
@@ -51,6 +66,7 @@ if not valid:
     'fluidattacksscanner': 'checkmate.contrib.plugins.all.fluidattacksscanner',
     'gostaticcheck': 'checkmate.contrib.plugins.all.gostaticcheck',
     'semgrepcsharpdotnet': 'checkmate.contrib.plugins.all.semgrepcsharpdotnet',
+    'ptpt': 'checkmate.contrib.plugins.all.ptpt',
 
   }
 
@@ -98,6 +114,7 @@ else:
     'fluidattacksscannerjavascript': 'checkmate.contrib.plugins.javascript.fluidattacksscanner',
     'gostaticcheck': 'checkmate.contrib.plugins.golang.gostaticcheck',
     'semgrepcsharpdotnet': 'checkmate.contrib.plugins.csharp.semgrepcsharpdotnet',
+    'ptpt': 'checkmate.contrib.plugins.all.ptpt',
   }
 
 
