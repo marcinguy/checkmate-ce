@@ -27,6 +27,7 @@ except:
 
 if gpt:
     path = '/root/.config/ptpt'
+    os.system("mkdir -r /root/.config/ptpt")
     filename = "config.yaml"
     fullname = os.path.join(path, filename)
     myfile = open(fullname, "w")
