@@ -73,7 +73,7 @@ class GPTAnalyzer(BaseAnalyzer):
                   location = (((value,None),
                              (value,None)),)
 
-                        issues.append({
+                  issues.append({
                             'code': "I001",
                             'location': location,
                             'data': issue['finding'],
@@ -82,7 +82,7 @@ class GPTAnalyzer(BaseAnalyzer):
                             'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['message'])
                         })
 
-              except:
+            except:
                 pass
 
         finally:
