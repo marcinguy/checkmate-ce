@@ -66,7 +66,7 @@ class OSVscannerAnalyzer(BaseAnalyzer):
                         location = (((1,None),
                               (1,None)),)
                         issues.append({
-                          'code' : vuln['id'],
+                          'code' : "I001",
                           'location' : location,
                           'data' : vuln['id'],
                           'file': file_revision.path,
