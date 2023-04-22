@@ -533,6 +533,12 @@ class CodeEnvironment(object):
 
     def analyze_file_revisions(self, file_revisions):
 
+        try:
+          gpt = os.getenv('OPENAI_GPT_API')
+        except:
+          gpt = ""
+          pass
+
         filtered_file_revisions = self.filter_file_revisions(file_revisions)
 
         for file_revision in tqdm(filtered_file_revisions):
@@ -554,7 +560,10 @@ class CodeEnvironment(object):
                 five = self.analyze_file_revision(file_revision,{"ptpt":analyzer_params})
 
 
-            file_revision.results = {**one, **two, **three, **four, **five}
+            if gpt: 
+              file_revision.results = {**one, **two, **three, **four, **five}
+            else:
+              file_revision.results = {**one, **two, **three, **four}
 
         return filtered_file_revisions
 
