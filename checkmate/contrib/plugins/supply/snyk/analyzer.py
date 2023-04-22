@@ -70,6 +70,7 @@ class SnykAnalyzer(BaseAnalyzer):
                 pass
 
         finally:
-            os.unlink(f.name)
+            #os.unlink(f.name)
+            pass
         return {'issues': issues}
 
