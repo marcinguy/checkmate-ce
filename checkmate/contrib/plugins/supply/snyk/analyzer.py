@@ -23,16 +23,17 @@ class SnykAnalyzer(BaseAnalyzer):
     def analyze(self, file_revision):
         issues = []
         result = ""
-        f = tempfile.NamedTemporaryFile(delete=False)
-        try:
-            with f:
-                try:
-                  f.write(file_revision.get_file_content())
-                except UnicodeDecodeError:
-                  pass
-            tmpdir = "/tmp/"+file_revision.project.pk
+        f=open("/tmp/"+file_revision.project.pk+"/"+file_revision.path, 'wb')
+        f.write(file_revision.get_file_content())
+         
+        f.close()
 
-            result = subprocess.check_output(["rsync -r . "+tmpdir+" --exclude .git"],shell=True).strip()
+        tmpdir = "/tmp/"+file_revision.project.pk
+
+        result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
+
+
+        try:
 
             try:
                 result = subprocess.check_output(["snyk",
@@ -50,8 +51,7 @@ class SnykAnalyzer(BaseAnalyzer):
                 json_result = {}
                 pass
 
-            try:
-                for issue in json_result["vulnerabilities"]:
+            for issue in json_result["vulnerabilities"]:
                   line = 1
                   location = (((line, line),
                              (line, None)),)
@@ -65,10 +65,9 @@ class SnykAnalyzer(BaseAnalyzer):
                       'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["title"])
                   })
 
-            except KeyError:
-                pass
 
         finally:
-            os.unlink(f.name)
+            #os.unlink(f.name)
+            f.close()
         return {'issues': issues}
 
