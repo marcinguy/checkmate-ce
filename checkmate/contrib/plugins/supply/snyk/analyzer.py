@@ -32,9 +32,6 @@ class SnykAnalyzer(BaseAnalyzer):
 
         result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
 
-        result = subprocess.check_output(["tree"],shell=True).strip()
-
-
         try:
 
             try:
