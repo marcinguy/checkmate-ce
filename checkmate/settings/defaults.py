@@ -227,7 +227,7 @@ else:
      },
      'all': {
         'name': 'All',
-        'patterns': [u'.*\.*$'],
+        'patterns': ['\.*$'],
      },
   }
 
