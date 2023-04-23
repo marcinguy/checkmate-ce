@@ -8,6 +8,7 @@ import os
 import tempfile
 import json
 import subprocess
+import pprint
 import re
 
 
@@ -22,6 +23,7 @@ class GptAnalyzer(BaseAnalyzer):
     def summarize(self, items):
         pass
 
+
     def analyze(self, file_revision):
         issues = []
         tmpdir = "/tmp/"+file_revision.project.pk
@@ -33,23 +35,47 @@ class GptAnalyzer(BaseAnalyzer):
                 if exc.errno != errno.EEXIST:
                     raise
         
-        result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
+        result = subprocess.check_output(["rsync -r . "+tmpdir+" --exclude .git"],shell=True).strip()
                                         
         f = open(tmpdir+"/"+file_revision.path, "wb")
 
         result = {}
-        f.write(file_revision.get_file_content())
-        f.close()
-        os.chdir(tmpdir)
-        os.environ["PATH"] = "/root/.go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/:/usr/local/go/bin/"
-
         try:
+            with f:
+                try:
+                  f.write(file_revision.get_file_content())
+                except UnicodeDecodeError:
+                  pass
+            os.chdir(tmpdir)
+            os.environ["PATH"] = "/root/.go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/:/usr/local/go/bin/"
+
+            try:
+                myjson = {}
                 result = subprocess.check_output(["/root/bin/ptpt",
                                                   "run",
-                                                  "scr",
-                                                  tmpdir+"/"+file_revision.path],
+                                                  "scrt",
+                                                  f.name],
                                                   stderr=subprocess.DEVNULL).strip()
-        except subprocess.CalledProcessError as e:
+                splitstr = result.decode().split(":")
+
+
+                out = re.findall(r'\d+', splitstr[0])
+                try:
+                  myjson['line'] = int(out[0])
+                except:
+                  pass
+                string = splitstr[1][:splitstr[1].rfind('\n')]
+                string = string.replace("'","")
+                string = string.replace("`","")
+                string = string.replace("\"","")
+                string = string.strip()
+                string = re.sub('[^A-Za-z0-9 ]+', '', string)
+
+
+                myjson['finding'] = string
+
+                result = json.dumps(myjson)
+            except subprocess.CalledProcessError as e:
                 if e.returncode == 2:
                     result = e.output
                 elif e.returncode == 1:
@@ -58,28 +84,24 @@ class GptAnalyzer(BaseAnalyzer):
                 else:
                     result = []
 
-        try:
-                  json_result = json.loads(result)
-        except ValueError:
-                  json_result = []
-                  pass
-        for issue in json_result:
-                  value = int(issue['line'])
+            json_result = json.loads(result)
+            value = int(json_result["line"])
 
-                  location = (((value,None),
+            location = (((value,None),
                              (value,None)),)
 
-                  finding = re.sub('[^A-Za-z0-9 ]+', '', issue["finding"])
-                  finding = finding.replace("\n","")
- 
-                  issues.append({
-                      'code': "I001",
+
+            issues.append({
+                      'code': "C001",
                       'location': location,
-                      'data': finding,
-                      'file': file_revision.path,
+                      'data': json_result["finding"],
+                      'data': "test",
                       'line': value,
-                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=finding)
-                  })
+                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=json_result["finding"])
+                })
+
+        finally:
+              pass
         return {'issues': issues}
 
 
