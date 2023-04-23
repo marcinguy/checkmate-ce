@@ -563,7 +563,7 @@ class CodeEnvironment(object):
 
             if gpt:
               file_revision.results = {**one, **two, **three, **four, **five}
-           else:
+            else:
               file_revision.results = {**one, **two, **three, **four}
 
         return filtered_file_revisions
