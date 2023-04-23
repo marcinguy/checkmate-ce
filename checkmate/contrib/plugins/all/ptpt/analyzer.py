@@ -14,10 +14,10 @@ import re
 logger = logging.getLogger(__name__)
 
 
-class GPTAnalyzer(BaseAnalyzer):
+class GptAnalyzer(BaseAnalyzer):
 
     def __init__(self, *args, **kwargs):
-        super(GPTAnalyzer, self).__init__(*args, **kwargs)
+        super(GptAnalyzer, self).__init__(*args, **kwargs)
 
     def summarize(self, items):
         pass
