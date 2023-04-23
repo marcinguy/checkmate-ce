@@ -49,8 +49,9 @@ class SnykAnalyzer(BaseAnalyzer):
             except ValueError:
                 json_result = {}
                 pass
-
-            for issue in json_result["vulnerabilities"]:
+            
+            try:
+              for issue in json_result["vulnerabilities"]:
                   line = 1
                   location = (((line, line),
                              (line, None)),)
@@ -63,7 +64,8 @@ class SnykAnalyzer(BaseAnalyzer):
                       'line': line,
                       'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["title"])
                   })
-
+           except:
+             pass
 
         finally:
             #os.unlink(f.name)
