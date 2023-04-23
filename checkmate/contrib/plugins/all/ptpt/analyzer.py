@@ -78,7 +78,7 @@ class GPTAnalyzer(BaseAnalyzer):
                       'data': finding,
                       'file': file_revision.path,
                       'line': value,
-                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["finding"])
+                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=finding)
                   })
         return {'issues': issues}
 
