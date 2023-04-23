@@ -67,7 +67,7 @@ if not valid:
     'fluidattacksscanner': 'checkmate.contrib.plugins.all.fluidattacksscanner',
     'gostaticcheck': 'checkmate.contrib.plugins.all.gostaticcheck',
     'semgrepcsharpdotnet': 'checkmate.contrib.plugins.all.semgrepcsharpdotnet',
-    'ptpt': 'checkmate.contrib.plugins.all.ptpt',
+    'gptanalyzer': 'checkmate.contrib.plugins.all.gptanalyzer',
 
   }
 
@@ -116,7 +116,7 @@ else:
       'fluidattacksscannerjavascript': 'checkmate.contrib.plugins.javascript.fluidattacksscanner',
       'gostaticcheck': 'checkmate.contrib.plugins.golang.gostaticcheck',
       'semgrepcsharpdotnet': 'checkmate.contrib.plugins.csharp.semgrepcsharpdotnet',
-      'ptpt': 'checkmate.contrib.plugins.all.ptpt',
+      'gptanalyzer': 'checkmate.contrib.plugins.all.gptanalyzer',
     }
   else:
     plugins = {
