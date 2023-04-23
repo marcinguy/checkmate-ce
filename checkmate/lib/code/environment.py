@@ -556,8 +556,8 @@ class CodeEnvironment(object):
                 three = self.analyze_file_revision(file_revision,{"trufflehog3":analyzer_params})
               if(analyzer_name=="yara"):
                 four = self.analyze_file_revision(file_revision,{"yara":analyzer_params})
-              if(analyzer_name=="ptpt"):
-                five = self.analyze_file_revision(file_revision,{"ptpt":analyzer_params})
+              if(analyzer_name=="gptanalyzer"):
+                five = self.analyze_file_revision(file_revision,{"gptanalyzer":analyzer_params})
 
 
             if gpt: 

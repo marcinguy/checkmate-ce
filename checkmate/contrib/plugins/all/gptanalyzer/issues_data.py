@@ -1,6 +1,6 @@
 issues_data = {
     "I001": {
-        "title": "OpenAI CHAT GPT4",
+        "title": "OpenAI",
         "description": "%(issue.data)s",
         "severity": 3,
         "categories": []
