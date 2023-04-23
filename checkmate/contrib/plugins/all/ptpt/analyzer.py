@@ -8,6 +8,7 @@ import os
 import tempfile
 import json
 import subprocess
+import re
 
 
 logger = logging.getLogger(__name__)
@@ -37,22 +38,18 @@ class GPTAnalyzer(BaseAnalyzer):
         f = open(tmpdir+"/"+file_revision.path, "wb")
 
         result = {}
-        try:
-            with f:
-                try:
-                  f.write(file_revision.get_file_content())
-                except UnicodeDecodeError:
-                  pass
-            os.chdir(tmpdir)
-            os.environ["PATH"] = "/root/.go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/:/usr/local/go/bin/"
+        f.write(file_revision.get_file_content())
+        f.close()
+        os.chdir(tmpdir)
+        os.environ["PATH"] = "/root/.go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/:/usr/local/go/bin/"
 
-            try:
+        try:
                 result = subprocess.check_output(["/root/bin/ptpt",
                                                   "run",
                                                   "scr",
-                                                  f.name],
+                                                  tmpdir+"/"+file_revision.path],
                                                   stderr=subprocess.DEVNULL).strip()
-            except subprocess.CalledProcessError as e:
+        except subprocess.CalledProcessError as e:
                 if e.returncode == 2:
                     result = e.output
                 elif e.returncode == 1:
@@ -61,32 +58,28 @@ class GPTAnalyzer(BaseAnalyzer):
                 else:
                     result = []
 
-            try:
+        try:
                   json_result = json.loads(result)
-            except ValueError:
+        except ValueError:
                   json_result = []
                   pass
-            try:
-              for issue in json_result:
-                  value = issue['line']
+        for issue in json_result:
+                  value = int(issue['line'])
 
                   location = (((value,None),
                              (value,None)),)
 
-
+                  finding = re.sub('[^A-Za-z0-9 ]+', '', issue["finding"])
+                  finding = finding.replace("\n","")
+ 
                   issues.append({
                       'code': "I001",
                       'location': location,
-                      'data': issue["finding"],
+                      'data': finding,
                       'file': file_revision.path,
                       'line': value,
                       'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["finding"])
                   })
-
-            except:
-                pass
-
-        finally:
-            pass
         return {'issues': issues}
+
 
