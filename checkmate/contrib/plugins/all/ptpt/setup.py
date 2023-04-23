@@ -1,4 +1,4 @@
-from .analyzer import GPTAnalyzer
+from .analyzer import GptAnalyzer
 from .issues_data import issues_data
 
 analyzers = {
@@ -6,7 +6,7 @@ analyzers = {
         {
             'name': 'ptpt',
             'title': 'ptpt',
-            'class': GPTAnalyzer,
+            'class': GptAnalyzer,
             'language': 'all',
             'issues_data': issues_data,
         },
