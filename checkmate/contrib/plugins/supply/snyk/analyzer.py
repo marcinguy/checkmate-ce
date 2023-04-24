@@ -30,7 +30,7 @@ class SnykAnalyzer(BaseAnalyzer):
 
         tmpdir = "/tmp/"+file_revision.project.pk
 
-        result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
+        result = subprocess.check_output(["rsync -r . "+tmpdir+" --exclude .git"],shell=True).strip()
 
         try:
 
