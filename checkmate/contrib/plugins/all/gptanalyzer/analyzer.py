@@ -87,6 +87,7 @@ class GptAnalyzer(BaseAnalyzer):
                       'code': "C001",
                       'location': location,
                       'data': json_result["finding"],
+                      'file': file_revision.path,  
                       'line': value,
                       'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=json_result["finding"])
                 })
