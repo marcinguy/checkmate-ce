@@ -23,10 +23,13 @@ class SnykAnalyzer(BaseAnalyzer):
     def analyze(self, file_revision):
         issues = []
         result = ""
-        f=open("/tmp/"+file_revision.project.pk+"/"+file_revision.path, 'wb')
-        f.write(file_revision.get_file_content())
+        try:
+          f=open("/tmp/"+file_revision.project.pk+"/"+file_revision.path, 'wb')
+          f.write(file_revision.get_file_content())
          
-        f.close()
+          f.close()
+        except:
+          pass
 
         tmpdir = "/tmp/"+file_revision.project.pk
 
