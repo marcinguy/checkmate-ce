@@ -1,6 +1,6 @@
 issues_data = {
     "C001": {
-        "title": "OpenAI",
+        "title": "Openai",
         "description": "%(issue.data)s",
         "severity": 3,
         "categories": []
