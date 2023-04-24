@@ -84,7 +84,7 @@ class GptAnalyzer(BaseAnalyzer):
 
 
           issues.append({
-                      'code': "C001",
+                      'code': "I001",
                       'location': location,
                       'data': json_result["finding"],
                       'file': file_revision.path,  
