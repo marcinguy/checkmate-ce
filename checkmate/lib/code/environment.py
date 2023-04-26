@@ -554,8 +554,10 @@ class CodeEnvironment(object):
               if(analyzer_name=="gptanalyzer"):
                 five = self.analyze_file_revision(file_revision,{"gptanalyzer":analyzer_params})
 
-
-            file_revision.results = {**one, **two, **three, **four, **five}
+            if five:
+              file_revision.results = {**one, **two, **three, **four, **five}
+            else:
+              file_revision.results = {**one, **two, **three, **four}
 
         return filtered_file_revisions
 
