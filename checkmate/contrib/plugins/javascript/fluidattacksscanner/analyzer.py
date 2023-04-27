@@ -76,12 +76,15 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
 
             outjson = []
             val ={}
-            for line in reader:
-              val["code"]=line[0]
-              val["line"]=line[3]
-              val["data"]=line[6]
-              outjson.append(val)
-              val={}
+            try:
+              for line in reader:
+                val["code"]=line[0]
+                val["line"]=line[3]
+                val["data"]=line[6]
+                outjson.append(val)
+                val={}
+            except:
+              pass
             try:
                 for issue in outjson:
                   line = issue["line"]
