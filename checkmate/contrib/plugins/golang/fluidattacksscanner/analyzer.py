@@ -78,8 +78,8 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
             outjson = []
             val ={}
             for line in reader:
-              val["line"]=line[3]
-              val["data"]=line[6]
+              val["line"]=line[7]
+              val["data"]=line[0]
               outjson.append(val)
               val={}
             try:
@@ -89,11 +89,12 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
                   location = (((line, line),
                              (line, None)),)
 
-                  data = issue["data"]
-                  data = data.split(' ', 1)[1]
+                  code = issue["data"]
+                  code = code.split(' ', 1)[0]
+                  code = code.replace(".","")
                   if ".go" in file_revision.path or ".cs" in file_revision.path or ".java" in file_revision.path or ".js" in file_revision.path or ".ts" in file_revision.path:
                     issues.append({
-                      'code': "I001",
+                      'code': code,
                       'location': location,
                       'data': data,
                       'file': file_revision.path,
