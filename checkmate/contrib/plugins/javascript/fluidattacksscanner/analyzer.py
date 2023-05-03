@@ -94,6 +94,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
                   code = issue["data"]
                   code = code.split(' ', 1)[0]
                   code = code.replace(".","")
+                  code = "F"+code
 
                   if ".go" in file_revision.path or ".cs" in file_revision.path or ".java" in file_revision.path or ".js" in file_revision.path or ".ts" in file_revision.path:
                     issues.append({
