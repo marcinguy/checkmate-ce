@@ -75,7 +75,7 @@ if not valid:
   language_patterns = {
     'all': {
         'name': 'All',
-        'patterns': [u'\..*$'],
+        'patterns': [u'.*\..*$'],
     },
   }
 
@@ -227,7 +227,7 @@ else:
      },
      'all': {
         'name': 'All',
-        'patterns': [u'\..*$'],
+        'patterns': [u'.*\..*$'],
      },
   }
 
