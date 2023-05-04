@@ -18,14 +18,6 @@ issues_data = {
     ],
     "title": "RSA private key"
   },
-  "GenericAPIKey": {
-    "severity": "1",
-    "description": "Generic API Key",
-    "categories": [
-      "security"
-    ],
-    "title": "Generic API Key"
-  },
   "GenericSecret": {
     "severity": "1",
     "description": "Generic Secret",
@@ -49,14 +41,6 @@ issues_data = {
       "security"
     ],
     "title": "AWS API Key"
-  },
-  "Highentropy": {
-    "severity": "1",
-    "description": "High entropy",
-    "categories": [
-      "security"
-    ],
-    "title": "High entropy"
   },
   "PasswordinURL": {
     "severity": "1",
@@ -457,14 +441,6 @@ issues_data = {
       "security"
     ],
     "description": "Slack token"
-  },
-  "GenericAPIKey": {
-    "title": "Generic API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Generic API Key"
   },
   "AsanaClientID": {
     "title": "Asana Client ID",
