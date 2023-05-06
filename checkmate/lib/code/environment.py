@@ -27,6 +27,8 @@ from checkmate.lib.models import (Issue,
 from collections import defaultdict
 from functools import reduce
 
+import os
+
 logger = logging.getLogger(__name__)
 
 
@@ -560,7 +562,7 @@ class CodeEnvironment(object):
                 five = self.analyze_file_revision(file_revision,{"gptanalyzer":analyzer_params})
 
 
-            if gpt: 
+            if len(gpt)>0: 
               file_revision.results = {**one, **two, **three, **four, **five}
             else:
               file_revision.results = {**one, **two, **three, **four}
