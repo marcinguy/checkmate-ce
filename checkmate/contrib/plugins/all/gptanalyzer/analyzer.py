@@ -22,52 +22,38 @@ class GptAnalyzer(BaseAnalyzer):
     def summarize(self, items):
         pass
 
-
     def analyze(self, file_revision):
         issues = []
         tmpdir = "/tmp/"+file_revision.project.pk
 
         if not os.path.exists(os.path.dirname(tmpdir+"/"+file_revision.path)):
-          os.makedirs(os.path.dirname(tmpdir+"/"+file_revision.path))
+            try:
+                os.makedirs(os.path.dirname(tmpdir+"/"+file_revision.path))
+            except OSError as exc:  # Guard against race condition
+                if exc.errno != errno.EEXIST:
+                    raise
         
+        result = subprocess.check_output(["rsync -r . "+tmpdir+" --exclude .git"],shell=True).strip()
                                         
         f = open(tmpdir+"/"+file_revision.path, "wb")
 
         result = {}
-        f.write(file_revision.get_file_content())
-        f.close()
-        os.environ["PATH"] = "/root/.go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/:/usr/local/go/bin/"
-
         try:
-                myjson = {}
+            with f:
+                try:
+                  f.write(file_revision.get_file_content())
+                except UnicodeDecodeError:
+                  pass
+            os.chdir(tmpdir)
+            os.environ["PATH"] = "/root/.go/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/:/usr/local/go/bin/"
+
+            try:
                 result = subprocess.check_output(["/root/bin/ptpt",
                                                   "run",
-                                                  "scrt",
-                                                  tmpdir+"/"+file_revision.path],
+                                                  "scr",
+                                                  f.name],
                                                   stderr=subprocess.DEVNULL).strip()
-                splitstr = result.decode().split(":")
-
-
-                out = re.findall(r'\d+', splitstr[0])
-                try:
-                  myjson['line'] = int(out[0])
-                except:
-                  pass
-                
-                try:
-                  string = splitstr[1][:splitstr[1].rfind('\n')]
-                  string = string.replace("'","")
-                  string = string.replace("`","")
-                  string = string.replace("\"","")
-                  string = string.strip()
-                  string = re.sub('[^A-Za-z0-9 ]+', '', string)
-
-                  myjson['finding'] = string
-                  result = json.dumps(myjson)
-                except:
-                  pass
-
-        except subprocess.CalledProcessError as e:
+            except subprocess.CalledProcessError as e:
                 if e.returncode == 2:
                     result = e.output
                 elif e.returncode == 1:
@@ -75,23 +61,39 @@ class GptAnalyzer(BaseAnalyzer):
                     pass
                 else:
                     result = []
-        try:
-          json_result = json.loads(result)
-          value = int(json_result["line"])
 
-          location = (((value,None),
+            try:
+                  json_result = json.loads(result)
+            except ValueError:
+                  json_result = []
+                  pass
+            try:
+              for issue in json_result:
+                  value = issue['line']
+
+                  location = (((value,None),
                              (value,None)),)
 
+                  string = issue["finding"]
+                  string = string.replace("'","")
+                  string = string.replace("`","")
+                  string = string.replace("\"","")
+                  string = string.strip()
+                  string = re.sub('[^A-Za-z0-9 ]+', '', string)
 
-          issues.append({
-                      'code': "I001",
-                      'location': location,
-                      'data': json_result["finding"],
-                      'file': file_revision.path,  
-                      'line': value,
-                      'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=json_result["finding"])
-                })
-        except:
-          pass
+                  issues.append({
+                            'code': "I001",
+                            'location': location,
+                            'data': string,
+                            'file': file_revision.path,
+                            'line': value,
+                            'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=string)
+                        })
+
+            except:
+                pass
+
+        finally:
+            pass
         return {'issues': issues}
 
