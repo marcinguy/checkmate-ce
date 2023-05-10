@@ -96,7 +96,7 @@ class InsidersecswiftAnalyzer(BaseAnalyzer):
 
                     if ".swift" in file_revision.path:
                       issues.append({
-                            'code': "I001",
+                            'code': issue['cwe'],
                             'location': location,
                             'data': issue['description'],
                             'file': file_revision.path,
