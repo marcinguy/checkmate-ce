@@ -97,7 +97,7 @@ class InsiderseckotlinAnalyzer(BaseAnalyzer):
 
                     if ".kt" in file_revision.path:
                       issues.append({
-                            'code': issue['cwe'],
+                            'code': "I001",
                             'location': location,
                             'data': issue['description'],
                             'file': file_revision.path,
