@@ -532,7 +532,11 @@ class CodeEnvironment(object):
 
     def analyze_file_revisions(self, file_revisions):
 
-        five=""
+        try:
+          gpt = os.getenv('OPENAI_GPT_API')
+        except:
+          gpt = ""
+          pass
 
         filtered_file_revisions = self.filter_file_revisions(file_revisions)
 
@@ -554,7 +558,7 @@ class CodeEnvironment(object):
               if(analyzer_name=="gptanalyzer"):
                 five = self.analyze_file_revision(file_revision,{"gptanalyzer":analyzer_params})
 
-            if five:
+            if gpt and len(gpt)>0:
               file_revision.results = {**one, **two, **three, **four, **five}
             else:
               file_revision.results = {**one, **two, **three, **four}
