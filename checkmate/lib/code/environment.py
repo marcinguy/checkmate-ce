@@ -562,7 +562,7 @@ class CodeEnvironment(object):
                 five = self.analyze_file_revision(file_revision,{"gptanalyzer":analyzer_params})
 
 
-            if len(gpt)>0: 
+            if gpt and len(gpt)>0: 
               file_revision.results = {**one, **two, **three, **four, **five}
             else:
               file_revision.results = {**one, **two, **three, **four}
