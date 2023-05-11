@@ -54,7 +54,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
             os.environ["PATH"] = "/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
             try:
                 result = subprocess.check_output(["/root/.nix-profile/bin/m",
-                                                  "gitlab:fluidattacks/universe@d75ce419eb3ae60bd15544bbb4de5fd675558b20",
+                                                  "gitlab:fluidattacks/universe@2061c6097d66adf4e2f9feb1e4df43447ee51984",
                                                   "/skims",
                                                   "scan",
                                                   fconf.name],
