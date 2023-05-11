@@ -23,18 +23,22 @@ class SnykAnalyzer(BaseAnalyzer):
     def analyze(self, file_revision):
         issues = []
         result = ""
-        f = tempfile.NamedTemporaryFile(delete=False)
+        tmpdir = "/tmp/"+file_revision.project.pk
+        os.mkdir(tmpdir)
         try:
-            with f:
-                try:
-                  f.write(file_revision.get_file_content())
-                except UnicodeDecodeError:
-                  pass
+          f=open("/tmp/"+file_revision.project.pk+"/"+file_revision.path, 'wb')
+          f.write(file_revision.get_file_content())
+         
+          f.close()
+        except:
+          pass
 
-            tmpdir = "/tmp/"+file_revision.project.pk
+ 
+        os.chdir(tmpdir)
+        out = subprocess.check_output(["npm install"],shell=True).strip()
+        #result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
 
-            #result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
-
+        try:
 
             try:
                 result = subprocess.check_output(["snyk",
@@ -51,9 +55,9 @@ class SnykAnalyzer(BaseAnalyzer):
             except ValueError:
                 json_result = {}
                 pass
-
+            
             try:
-                for issue in json_result["vulnerabilities"]:
+              for issue in json_result["vulnerabilities"]:
                   line = 1
                   location = (((line, line),
                              (line, None)),)
@@ -66,12 +70,10 @@ class SnykAnalyzer(BaseAnalyzer):
                       'line': line,
                       'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue["title"])
                   })
-
-            except KeyError:
-                pass
+            except:
+              pass
 
         finally:
             #os.unlink(f.name)
             pass
         return {'issues': issues}
-
