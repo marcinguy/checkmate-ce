@@ -23,6 +23,8 @@ class SnykAnalyzer(BaseAnalyzer):
     def analyze(self, file_revision):
         issues = []
         result = ""
+        tmpdir = "/tmp/"+file_revision.project.pk
+        os.mkdir(tmpdir)
         try:
           f=open("/tmp/"+file_revision.project.pk+"/"+file_revision.path, 'wb')
           f.write(file_revision.get_file_content())
@@ -31,7 +33,7 @@ class SnykAnalyzer(BaseAnalyzer):
         except:
           pass
 
-        tmpdir = "/tmp/"+file_revision.project.pk
+ 
         os.chdir(tmpdir)
         out = subprocess.check_output(["npm install"],shell=True).strip()
         #result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
