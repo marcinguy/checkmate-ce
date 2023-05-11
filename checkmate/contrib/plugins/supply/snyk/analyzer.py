@@ -32,7 +32,8 @@ class SnykAnalyzer(BaseAnalyzer):
           pass
 
         tmpdir = "/tmp/"+file_revision.project.pk
-
+        os.chdir(tmpdir)
+        out = subprocess.check_output(["npm install"],shell=True).strip()
         #result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
 
         try:
