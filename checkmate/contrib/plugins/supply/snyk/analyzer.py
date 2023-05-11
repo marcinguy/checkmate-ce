@@ -72,5 +72,4 @@ class SnykAnalyzer(BaseAnalyzer):
 
         finally:
             #os.unlink(f.name)
-            f.close()
         return {'issues': issues}
