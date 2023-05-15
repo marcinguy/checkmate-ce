@@ -2,10 +2,10 @@ from .analyzer import FluidAttacksAnalyzer
 from .issues_data import issues_data
 
 analyzers = {
-    'fluidattacks':
+    'fluidattackspython':
         {
-            'name': 'fluidattacks',
-            'title': 'fluidattacks',
+            'name': 'fluidattackspython',
+            'title': 'fluidattackspython',
             'class': FluidAttacksAnalyzer,
             'language': 'python',
             'issues_data': issues_data,

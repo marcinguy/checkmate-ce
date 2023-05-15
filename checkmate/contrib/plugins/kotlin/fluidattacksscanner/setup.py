@@ -2,12 +2,12 @@ from .analyzer import FluidAttacksAnalyzer
 from .issues_data import issues_data
 
 analyzers = {
-    'fluidattacks':
+    'fluidattackskotlin':
         {
-            'name': 'fluidattacks',
-            'title': 'fluidattacks',
+            'name': 'fluidattackskotlin',
+            'title': 'fluidattackskotlin',
             'class': FluidAttacksAnalyzer,
-            'language': 'swift',
+            'language': 'kotlin',
             'issues_data': issues_data,
         },
 }
