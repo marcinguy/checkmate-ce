@@ -83,7 +83,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
                 outjson.append(val)
                 val={}
             except:
-               pass
+              pass
             try:
                 for issue in outjson:
                   line = issue["line"]
