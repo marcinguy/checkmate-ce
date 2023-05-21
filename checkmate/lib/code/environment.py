@@ -540,6 +540,12 @@ class CodeEnvironment(object):
         except:
           gpt = ""
           pass
+    
+        try:
+          privgpt = os.getenv('PRIVATEGPT_URL')
+        except:
+          privgpt = ""
+          pass
 
         filtered_file_revisions = self.filter_file_revisions(file_revisions)
 
@@ -560,12 +566,20 @@ class CodeEnvironment(object):
                 four = self.analyze_file_revision(file_revision,{"yara":analyzer_params})
               if(analyzer_name=="gptanalyzer"):
                 five = self.analyze_file_revision(file_revision,{"gptanalyzer":analyzer_params})
+              if(analyzer_name=="privategptanalyzer"):
+                six = self.analyze_file_revision(file_revision,{"privategptanalyzer":analyzer_params})
+
 
 
             if gpt and len(gpt)>0: 
               file_revision.results = {**one, **two, **three, **four, **five}
+              if privgpt and len(privgpt)>0:
+                   file_revision.results = {**one, **two, **three, **four, **five, **six}
             else:
-              file_revision.results = {**one, **two, **three, **four}
+              if privgpt and len(privgpt)>0:
+                file_revision.results = {**one, **two, **three, **four, **six},   
+              else:
+                file_revision.results = {**one, **two, **three, **four}
 
         return filtered_file_revisions
 

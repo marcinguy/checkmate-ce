@@ -28,6 +28,12 @@ except:
   gpt = ""
   pass
 
+try:
+  privgpt = os.getenv('PRIVATEGPT_URL')
+except:
+  privgpt = ""
+  pass
+
 if gpt:
     path = '/root/.config/ptpt'
     os.system("mkdir -p /root/.config/ptpt")
@@ -104,7 +110,8 @@ if not valid:
 
 else:
   if gpt:
-    plugins = {
+    if privgpt:
+      plugins = {
       'git': 'checkmate.contrib.plugins.git',
       'trufflehog3':  'checkmate.contrib.plugins.all.trufflehog3',
       'trojansource': 'checkmate.contrib.plugins.all.trojansource',
@@ -143,9 +150,10 @@ else:
       'gostaticcheck': 'checkmate.contrib.plugins.golang.gostaticcheck',
       'semgrepcsharpdotnet': 'checkmate.contrib.plugins.csharp.semgrepcsharpdotnet',
       'gptanalyzer': 'checkmate.contrib.plugins.all.gptanalyzer',
-    }
-  else:
-     plugins = {
+      'privategptanalyzer': 'checkmate.contrib.plugins.all.privategptanalyzer',
+      }
+    else:
+      plugins = {
       'git': 'checkmate.contrib.plugins.git',
       'trufflehog3':  'checkmate.contrib.plugins.all.trufflehog3',
       'trojansource': 'checkmate.contrib.plugins.all.trojansource',
@@ -183,7 +191,91 @@ else:
       'fluidattacksscannerpython': 'checkmate.contrib.plugins.python.fluidattacksscanner',
       'gostaticcheck': 'checkmate.contrib.plugins.golang.gostaticcheck',
       'semgrepcsharpdotnet': 'checkmate.contrib.plugins.csharp.semgrepcsharpdotnet',
-    }
+      'gptanalyzer': 'checkmate.contrib.plugins.all.gptanalyzer',
+      }
+  else:
+     if privgpt:
+       plugins = {
+      'git': 'checkmate.contrib.plugins.git',
+      'trufflehog3':  'checkmate.contrib.plugins.all.trufflehog3',
+      'trojansource': 'checkmate.contrib.plugins.all.trojansource',
+      'yara': 'checkmate.contrib.plugins.all.yara',
+      'metrics': 'checkmate.contrib.plugins.all.metrics',
+      'bandit': 'checkmate.contrib.plugins.python.bandit',
+      'brakeman': 'checkmate.contrib.plugins.ruby.brakeman',
+      'phpanalyzer':  'checkmate.contrib.plugins.php.progpilot',
+      'gosec':  'checkmate.contrib.plugins.golang.gosec',
+      'confused': 'checkmate.contrib.plugins.supply.confused',
+      'snyk': 'checkmate.contrib.plugins.supply.snyk',
+      'pmd': 'checkmate.contrib.plugins.java.pmd',
+      'apex': 'checkmate.contrib.plugins.apex.pmdapex',
+      'semgrep': 'checkmate.contrib.plugins.java.semgrep',
+      'semgrepdefi': 'checkmate.contrib.plugins.solidity.semgrepdefi',
+      'semgrepjs': 'checkmate.contrib.plugins.javascript.semgrepjs',
+      'checkov': 'checkmate.contrib.plugins.iac.checkov',
+      'kubescape': 'checkmate.contrib.plugins.iac.kubescape',
+      'insidersecswift': 'checkmate.contrib.plugins.swift.insidersecswift',
+      'insiderseckotlin': 'checkmate.contrib.plugins.kotlin.insiderseckotlin',
+      'insiderseccsharp': 'checkmate.contrib.plugins.csharp.insiderseccsharp',
+      'pmdapex': 'checkmate.contrib.plugins.apex.pmdapex',
+      'semgrepccpp': 'checkmate.contrib.plugins.ccpp.semgrepccpp',
+      'semgrepjava': 'checkmate.contrib.plugins.java.semgrepjava',
+      'semgrepeslint': 'checkmate.contrib.plugins.javascript.semgrepeslint',
+      'graudit': 'checkmate.contrib.plugins.perl.graudit',
+      'text4shell': 'checkmate.contrib.plugins.cve.text4shell',
+      'osvscanner': 'checkmate.contrib.plugins.supply.osvscanner',
+      'fluidattacksscannercsharp': 'checkmate.contrib.plugins.csharp.fluidattacksscanner',
+      'fluidattacksscannergolang': 'checkmate.contrib.plugins.golang.fluidattacksscanner',
+      'fluidattacksscannerjava': 'checkmate.contrib.plugins.java.fluidattacksscanner',
+      'fluidattacksscannerjavascript': 'checkmate.contrib.plugins.javascript.fluidattacksscanner',
+      'fluidattacksscannerswift': 'checkmate.contrib.plugins.swift.fluidattacksscanner',
+      'fluidattacksscannerkotlin': 'checkmate.contrib.plugins.kotlin.fluidattacksscanner',
+      'fluidattacksscannerpython': 'checkmate.contrib.plugins.python.fluidattacksscanner',
+      'gostaticcheck': 'checkmate.contrib.plugins.golang.gostaticcheck',
+      'semgrepcsharpdotnet': 'checkmate.contrib.plugins.csharp.semgrepcsharpdotnet',
+      'privategptanalyzer': 'checkmate.contrib.plugins.all.privategptanalyzer',
+      }
+     else:
+      plugins = {
+      'git': 'checkmate.contrib.plugins.git',
+      'trufflehog3':  'checkmate.contrib.plugins.all.trufflehog3',
+      'trojansource': 'checkmate.contrib.plugins.all.trojansource',
+      'yara': 'checkmate.contrib.plugins.all.yara',
+      'metrics': 'checkmate.contrib.plugins.all.metrics',
+      'bandit': 'checkmate.contrib.plugins.python.bandit',
+      'brakeman': 'checkmate.contrib.plugins.ruby.brakeman',
+      'phpanalyzer':  'checkmate.contrib.plugins.php.progpilot',
+      'gosec':  'checkmate.contrib.plugins.golang.gosec',
+      'confused': 'checkmate.contrib.plugins.supply.confused',
+      'snyk': 'checkmate.contrib.plugins.supply.snyk',
+      'pmd': 'checkmate.contrib.plugins.java.pmd',
+      'apex': 'checkmate.contrib.plugins.apex.pmdapex',
+      'semgrep': 'checkmate.contrib.plugins.java.semgrep',
+      'semgrepdefi': 'checkmate.contrib.plugins.solidity.semgrepdefi',
+      'semgrepjs': 'checkmate.contrib.plugins.javascript.semgrepjs',
+      'checkov': 'checkmate.contrib.plugins.iac.checkov',
+      'kubescape': 'checkmate.contrib.plugins.iac.kubescape',
+      'insidersecswift': 'checkmate.contrib.plugins.swift.insidersecswift',
+      'insiderseckotlin': 'checkmate.contrib.plugins.kotlin.insiderseckotlin',
+      'insiderseccsharp': 'checkmate.contrib.plugins.csharp.insiderseccsharp',
+      'pmdapex': 'checkmate.contrib.plugins.apex.pmdapex',
+      'semgrepccpp': 'checkmate.contrib.plugins.ccpp.semgrepccpp',
+      'semgrepjava': 'checkmate.contrib.plugins.java.semgrepjava',
+      'semgrepeslint': 'checkmate.contrib.plugins.javascript.semgrepeslint',
+      'graudit': 'checkmate.contrib.plugins.perl.graudit',
+      'text4shell': 'checkmate.contrib.plugins.cve.text4shell',
+      'osvscanner': 'checkmate.contrib.plugins.supply.osvscanner',
+      'fluidattacksscannercsharp': 'checkmate.contrib.plugins.csharp.fluidattacksscanner',
+      'fluidattacksscannergolang': 'checkmate.contrib.plugins.golang.fluidattacksscanner',
+      'fluidattacksscannerjava': 'checkmate.contrib.plugins.java.fluidattacksscanner',
+      'fluidattacksscannerjavascript': 'checkmate.contrib.plugins.javascript.fluidattacksscanner',
+      'fluidattacksscannerswift': 'checkmate.contrib.plugins.swift.fluidattacksscanner',
+      'fluidattacksscannerkotlin': 'checkmate.contrib.plugins.kotlin.fluidattacksscanner',
+      'fluidattacksscannerpython': 'checkmate.contrib.plugins.python.fluidattacksscanner',
+      'gostaticcheck': 'checkmate.contrib.plugins.golang.gostaticcheck',
+      'semgrepcsharpdotnet': 'checkmate.contrib.plugins.csharp.semgrepcsharpdotnet',
+       }
+        
  
 
   language_patterns = {
