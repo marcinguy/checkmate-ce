@@ -150,7 +150,7 @@ else:
       'gostaticcheck': 'checkmate.contrib.plugins.golang.gostaticcheck',
       'semgrepcsharpdotnet': 'checkmate.contrib.plugins.csharp.semgrepcsharpdotnet',
       'gptanalyzer': 'checkmate.contrib.plugins.all.gptanalyzer',
-      'privategptanalyzer': 'checkmate.contrib.plugins.all.privategptanalyzer',
+      'privategptanalyzer': 'checkmate.contrib.plugins.all.privategpt',
       }
     else:
       plugins = {
@@ -233,7 +233,7 @@ else:
       'fluidattacksscannerpython': 'checkmate.contrib.plugins.python.fluidattacksscanner',
       'gostaticcheck': 'checkmate.contrib.plugins.golang.gostaticcheck',
       'semgrepcsharpdotnet': 'checkmate.contrib.plugins.csharp.semgrepcsharpdotnet',
-      'privategptanalyzer': 'checkmate.contrib.plugins.all.privategptanalyzer',
+      'privategptanalyzer': 'checkmate.contrib.plugins.all.privategpt',
       }
      else:
       plugins = {
