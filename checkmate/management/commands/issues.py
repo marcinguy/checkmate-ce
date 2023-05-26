@@ -221,7 +221,7 @@ $('#findings').append("<tbody><tr><th>File</th><td>"+data[i].file+"</td></tr>");
 $('#findings').append("<tr><th>Description</th><td>"+data[i].description+"</td></tr>");
 $('#findings').append("<tr><th>Severity</th><td>Warning</td></tr>");
 $('#findings').append("<tr><th>Line</th><td>"+data[i].line+"</td></tr></tbody></table>");
-$('#hr').append("<hr>");
+$('#findings').append("<hr>");
 
 }
 
