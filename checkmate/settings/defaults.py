@@ -393,4 +393,5 @@ checkignore = """*/site-packages/*
 */migrations/*
 */alembic/versions/*
 */node_modules/*
+*/.checkmate/*
 """
