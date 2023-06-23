@@ -44,7 +44,7 @@ if gpt:
     myfile.close()
 
 try:
-  r = requests.get("https://dl.betterscan.io/auth.php?licence="+str(lic))
+  r = requests.get("https://dl.betterscan.io/auth?licence="+str(lic))
   if(r.content.decode("utf-8")=="OK"):
     valid=1
   else:
