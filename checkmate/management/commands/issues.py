@@ -88,7 +88,7 @@ class Command(BaseCommand):
             except:
               pass
 
-         
+          severity = "Warning"
           desc_lower = issue['data'].lower()
           res = desc_lower in (string.lower() for string in high)
           if res is True:
@@ -96,8 +96,7 @@ class Command(BaseCommand):
           res = desc_lower in (string.lower() for string in medium)
           if res is True:
             severity = "Medium"
-          else:
-            severity= "Warning"
+         
 
           if not valid:
             for issue in unique:
@@ -136,14 +135,14 @@ class Command(BaseCommand):
               pass
 
           desc_lower = issue['data'].lower()
+          severity = "Warning"
           res = desc_lower in (string.lower() for string in high)
           if res is True:
             severity = "High"
           res = desc_lower in (string.lower() for string in medium)
           if res is True:
             severity = "Medium"
-          else:
-            severity= "Warning"
+       
 
           if not valid:
               
@@ -369,6 +368,7 @@ $('#findings').append("<hr>");
                   fname = item['file']
                 line = item['line']
 
+                severity = "Warning"
                 desc_lower = item['data'].lower()
                 res = desc_lower in (string.lower() for string in high)
                 if res is True:
@@ -376,8 +376,7 @@ $('#findings').append("<hr>");
                 res = desc_lower in (string.lower() for string in medium)
                 if res is True:
                   severity = "Medium"
-                else:
-                  severity= "Warning"
+               
                 rules[i] = {
                         "id": str(i),
                         "name": "BetterscanRule",
