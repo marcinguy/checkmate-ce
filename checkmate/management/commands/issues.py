@@ -260,7 +260,7 @@ data.sort(sort_by('risk_no', true, parseInt));
 for(var i = 0; i < data.length; i++) {
 $('#findings').append("<tbody><tr><th>File</th><td>"+data[i].file+"</td></tr>");
 $('#findings').append("<tr><th>Description</th><td>"+data[i].description+"</td></tr>");
-$('#findings').append("<tr><th>Severity</th><td>Warning</td></tr>");
+$('#findings').append("<tr><th>Severity</th><td>"+data[i].severity+"</td></tr>");
 $('#findings').append("<tr><th>Line</th><td>"+data[i].line+"</td></tr></tbody></table>");
 $('#findings').append("<hr>");
 
