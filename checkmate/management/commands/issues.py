@@ -23,6 +23,10 @@ class Command(BaseCommand):
         snapshot_pk = None
         filenames = None
         ashtml = 0
+
+        high = ["SQL", "injection", "unauthorized", "forgery", "overflow", "unescaped", "traversal", "overflow", "boundaries", "eval", "attacks"]
+        medium = ["insecurely", "insecure", "exec", "cross-site", "XSS", "unsafe"]
+        
         if self.extra_args:
             #if len(self.extra_args) == 1:
             #    snapshot_pk = self.extra_args[0]
@@ -84,6 +88,8 @@ class Command(BaseCommand):
             except:
               pass
 
+         
+
           if not valid:
             for issue in unique:
               if not issue['code'] == "AnalysisError":
@@ -91,7 +97,17 @@ class Command(BaseCommand):
           else:
             for issue in unique:
               if not issue['code'] == "AnalysisError":
-                table.add_row(issue['data'], "Warning", issue['file'], str(issue['line']), "❌")
+                desc_lower = issue['data'].lower()
+                res = desc_lower in (string.lower() for string in high)
+                if res is True:
+                  severity = "High"
+                res = desc_lower in (string.lower() for string in medium)
+                if res is True:
+                  severity = "Medium"
+                else:
+                  severity= "Warning"
+
+                table.add_row(issue['data'], severity, issue['file'], str(issue['line']), "❌")
           
 
           console = Console()
@@ -140,7 +156,16 @@ class Command(BaseCommand):
                   out={}
                   out['hash'] =  issue['hash']
                   out['description'] = issue['data']
-                  out['severity'] = "Warning"
+                  desc_lower = issue['data'].lower()
+                  res = desc_lower in (string.lower() for string in high)
+                  if res is True:
+                    severity = "High"
+                  res = desc_lower in (string.lower() for string in medium)
+                  if res is True:
+                    severity = "Medium"
+                  else:
+                    severity= "Warning"
+                  out['severity'] = severity
                   out['file'] = issue['file']
                   out['line'] = issue['line']
                   jsonout.append(out)
@@ -344,6 +369,15 @@ $('#findings').append("<hr>");
                   fname = item['file']
                 line = item['line']
 
+                desc_lower = item['data'].lower()
+                res = desc_lower in (string.lower() for string in high)
+                if res is True:
+                  severity = "High"
+                res = desc_lower in (string.lower() for string in medium)
+                if res is True:
+                  severity = "Medium"
+                else:
+                  severity= "Warning"
                 rules[i] = {
                         "id": str(i),
                         "name": "BetterscanRule",
@@ -358,7 +392,7 @@ $('#findings').append("<hr>");
                             # This property is not used if markdown is provided, but is required
                             "text": "",
                             },
-                        "defaultConfiguration": {"level": "warning"},
+                        "defaultConfiguration": {"level": severity},
                         "properties": {"tags": ["security"]},
                         }
 
