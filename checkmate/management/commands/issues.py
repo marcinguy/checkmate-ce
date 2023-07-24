@@ -89,24 +89,23 @@ class Command(BaseCommand):
               pass
 
          
+          desc_lower = issue['data'].lower()
+          res = desc_lower in (string.lower() for string in high)
+          if res is True:
+            severity = "High"
+          res = desc_lower in (string.lower() for string in medium)
+          if res is True:
+            severity = "Medium"
+          else:
+            severity= "Warning"
 
           if not valid:
             for issue in unique:
               if not issue['code'] == "AnalysisError":
-                table.add_row(issue['data'], "Warning", "Please upgrade to PRO", str(issue['line']), "❌")
+                table.add_row(issue['data'], severity, "Please upgrade to PRO", str(issue['line']), "❌")
           else:
             for issue in unique:
               if not issue['code'] == "AnalysisError":
-                desc_lower = issue['data'].lower()
-                res = desc_lower in (string.lower() for string in high)
-                if res is True:
-                  severity = "High"
-                res = desc_lower in (string.lower() for string in medium)
-                if res is True:
-                  severity = "Medium"
-                else:
-                  severity= "Warning"
-
                 table.add_row(issue['data'], severity, issue['file'], str(issue['line']), "❌")
           
 
@@ -136,6 +135,16 @@ class Command(BaseCommand):
             except:
               pass
 
+          desc_lower = issue['data'].lower()
+          res = desc_lower in (string.lower() for string in high)
+          if res is True:
+            severity = "High"
+          res = desc_lower in (string.lower() for string in medium)
+          if res is True:
+            severity = "Medium"
+          else:
+            severity= "Warning"
+
           if not valid:
               
             for issue in unique:
@@ -143,7 +152,7 @@ class Command(BaseCommand):
                   out={}
                   out['hash'] =  issue['hash']
                   out['description'] = issue['data']
-                  out['severity'] = "Warning"
+                  out['severity'] = severity
                   out['file'] = "Please upgrade to PRO"
                   out['line'] = issue['line']
                   jsonout.append(out)
@@ -156,15 +165,6 @@ class Command(BaseCommand):
                   out={}
                   out['hash'] =  issue['hash']
                   out['description'] = issue['data']
-                  desc_lower = issue['data'].lower()
-                  res = desc_lower in (string.lower() for string in high)
-                  if res is True:
-                    severity = "High"
-                  res = desc_lower in (string.lower() for string in medium)
-                  if res is True:
-                    severity = "Medium"
-                  else:
-                    severity= "Warning"
                   out['severity'] = severity
                   out['file'] = issue['file']
                   out['line'] = issue['line']
