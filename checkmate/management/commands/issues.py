@@ -88,23 +88,32 @@ class Command(BaseCommand):
             except:
               pass
 
-          severity = "Warning"
-          desc_lower = issue['data'].lower()
-          res = desc_lower in (string.lower() for string in high)
-          if res is True:
-            severity = "High"
-          res = desc_lower in (string.lower() for string in medium)
-          if res is True:
-            severity = "Medium"
+  
          
 
           if not valid:
             for issue in unique:
               if not issue['code'] == "AnalysisError":
+                severity = "Warning"
+                desc_lower = issue['data'].lower()
+                res = [ele for ele in high if(ele in desc_lower)]
+                if bool(res) is True:
+                 severity = "[red] High"
+                res = [ele for ele in medium if(ele in desc_lower)]
+                if bool(res) is True:
+                  severity = "[yellow] Medium"
                 table.add_row(issue['data'], severity, "Please upgrade to PRO", str(issue['line']), "❌")
           else:
             for issue in unique:
               if not issue['code'] == "AnalysisError":
+                severity = "Warning"
+                desc_lower = issue['data'].lower()
+                res = [ele for ele in high if(ele in desc_lower)]
+                if bool(res) is True:
+                 severity = "[red] High"
+                res = [ele for ele in medium if(ele in desc_lower)]
+                if bool(res) is True:
+                  severity = "[yellow] Medium"
                 table.add_row(issue['data'], severity, issue['file'], str(issue['line']), "❌")
           
 
@@ -134,21 +143,21 @@ class Command(BaseCommand):
             except:
               pass
 
-          desc_lower = issue['data'].lower()
-          severity = "Warning"
-          res = desc_lower in (string.lower() for string in high)
-          if res is True:
-            severity = "High"
-          res = desc_lower in (string.lower() for string in medium)
-          if res is True:
-            severity = "Medium"
-       
+
 
           if not valid:
               
             for issue in unique:
                 if not issue['code'] == "AnalysisError":
                   out={}
+                  severity = "Warning"
+                  desc_lower = issue['data'].lower()
+                  res = [ele for ele in high if(ele in desc_lower)]
+                  if bool(res) is True:
+                    severity = "High"
+                  res = [ele for ele in medium if(ele in desc_lower)]
+                  if bool(res) is True:
+                    severity = "Medium"
                   out['hash'] =  issue['hash']
                   out['description'] = issue['data']
                   out['severity'] = severity
@@ -162,6 +171,14 @@ class Command(BaseCommand):
              for issue in unique:
                 if not issue['code'] == "AnalysisError":
                   out={}
+                  severity = "Warning"
+                  desc_lower = issue['data'].lower()
+                  res = [ele for ele in high if(ele in desc_lower)]
+                  if bool(res) is True:
+                    severity = "High"
+                  res = [ele for ele in medium if(ele in desc_lower)]
+                  if bool(res) is True:
+                    severity = "Medium"
                   out['hash'] =  issue['hash']
                   out['description'] = issue['data']
                   out['severity'] = severity
@@ -369,12 +386,12 @@ $('#findings').append("<hr>");
                 line = item['line']
 
                 severity = "Warning"
-                desc_lower = item['data'].lower()
-                res = desc_lower in (string.lower() for string in high)
-                if res is True:
+                desc_lower = item['description'].lower()
+                res = [ele for ele in high if(ele in desc_lower)]
+                if bool(res) is True:
                   severity = "High"
-                res = desc_lower in (string.lower() for string in medium)
-                if res is True:
+                res = [ele for ele in medium if(ele in desc_lower)]
+                if bool(res) is True:
                   severity = "Medium"
                
                 rules[i] = {
@@ -432,4 +449,3 @@ $('#findings').append("<hr>");
             print("This scan will have all the features with PRO version :thumbs_up: https://www.betterscan.io/pricing")
           else:
             print("Thank you for using the PRO version. :thumbs_up:")
-
