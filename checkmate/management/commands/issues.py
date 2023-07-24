@@ -25,7 +25,7 @@ class Command(BaseCommand):
         ashtml = 0
 
         high = ["SQL", "injection", "unauthorized", "forgery", "overflow", "unescaped", "traversal", "overflow", "boundaries", "eval", "attacks"]
-        medium = ["insecurely", "insecure", "exec", "cross-site", "XSS", "unsafe"]
+        medium = ["insecurely", "insecure", "exec", "cross-site", "XSS", "unsafe", "redirect", "splitting"]
         
         if self.extra_args:
             #if len(self.extra_args) == 1:
