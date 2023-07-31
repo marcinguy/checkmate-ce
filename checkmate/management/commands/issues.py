@@ -96,6 +96,10 @@ class Command(BaseCommand):
               if not issue['code'] == "AnalysisError":
                 try:
                   severity = issue['severity']
+                  if issue['severity'] == "High":
+                    severity = "[red] High"
+                  elif issue['severity'] == "Medium":
+                    severity = "[yellow] Medium"
                 except:
                   severity = "Warning"
 
@@ -112,8 +116,13 @@ class Command(BaseCommand):
               if not issue['code'] == "AnalysisError":
                 try:
                   severity = issue['severity']
+                  if issue['severity'] == "High":
+                    severity = "[red] High"
+                  elif issue['severity'] == "Medium":
+                    severity = "[yellow] Medium"
                 except:
                   severity = "Warning"
+                
                 desc_lower = issue['data'].lower()
                 res = [ele for ele in high if(ele in desc_lower)]
                 if bool(res) is True:
