@@ -91,6 +91,7 @@ class KubescapeAnalyzer(BaseAnalyzer):
 
                     issues.append({
                             'code': control['controlID'],
+                            'severity': control['severity'],
                             'location': location,
                             'data': control['name'],
                             'file': file_revision.path,

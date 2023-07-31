@@ -94,7 +94,11 @@ class Command(BaseCommand):
           if not valid:
             for issue in unique:
               if not issue['code'] == "AnalysisError":
-                severity = "Warning"
+                try:
+                  severity = issue['severity']
+                except:
+                  severity = "Warning"
+
                 desc_lower = issue['data'].lower()
                 res = [ele for ele in high if(ele in desc_lower)]
                 if bool(res) is True:
@@ -106,7 +110,10 @@ class Command(BaseCommand):
           else:
             for issue in unique:
               if not issue['code'] == "AnalysisError":
-                severity = "Warning"
+                try:
+                  severity = issue['severity']
+                except:
+                  severity = "Warning"
                 desc_lower = issue['data'].lower()
                 res = [ele for ele in high if(ele in desc_lower)]
                 if bool(res) is True:
@@ -150,7 +157,10 @@ class Command(BaseCommand):
             for issue in unique:
                 if not issue['code'] == "AnalysisError":
                   out={}
-                  severity = "Warning"
+                  try:
+                    severity = issue['severity']
+                  except:
+                    severity = "Warning"
                   desc_lower = issue['data'].lower()
                   res = [ele for ele in high if(ele in desc_lower)]
                   if bool(res) is True:
@@ -171,7 +181,10 @@ class Command(BaseCommand):
              for issue in unique:
                 if not issue['code'] == "AnalysisError":
                   out={}
-                  severity = "Warning"
+                  try:
+                    severity = issue['severity']
+                  except:
+                    severity = "Warning"
                   desc_lower = issue['data'].lower()
                   res = [ele for ele in high if(ele in desc_lower)]
                   if bool(res) is True:
@@ -385,7 +398,10 @@ $('#findings').append("<hr>");
                   fname = item['file']
                 line = item['line']
 
-                severity = "Warning"
+                try:
+                  severity = item['severity']
+                except:
+                  severity = "Warning"
                 desc_lower = item['description'].lower()
                 res = [ele for ele in high if(ele in desc_lower)]
                 if bool(res) is True:
