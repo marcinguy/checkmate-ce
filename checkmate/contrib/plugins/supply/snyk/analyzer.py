@@ -38,7 +38,10 @@ class SnykAnalyzer(BaseAnalyzer):
 
  
         os.chdir(tmpdir)
-        out = subprocess.check_output(["npm install"],shell=True).strip()
+        try:
+          out = subprocess.check_output(["npm install"],shell=True).strip()
+        except:
+           pass
         #result = subprocess.check_output(["rsync . "+tmpdir+" --exclude .git"],shell=True).strip()
 
         try:
