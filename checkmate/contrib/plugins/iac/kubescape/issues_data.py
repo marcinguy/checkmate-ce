@@ -2,11 +2,11 @@
 
 
 issues_data = {
-
+    
   "C-0030": {
     "title": "Ingress and Egress blocked",
     "display_name": "Ingress and Egress blocked",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -24,7 +24,7 @@ issues_data = {
   "C-0063": {
     "title": "Portforwarding privileges",
     "display_name": "Portforwarding privileges",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -33,7 +33,7 @@ issues_data = {
   "C-0034": {
     "title": "Automatic mapping of service account",
     "display_name": "Automatic mapping of service account",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -42,7 +42,7 @@ issues_data = {
   "C-0002": {
     "title": "Exec into container",
     "display_name": "Exec into container",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -51,7 +51,7 @@ issues_data = {
   "C-0001": {
     "title": "Forbidden Container Registries",
     "display_name": "Forbidden Container Registries",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -60,7 +60,7 @@ issues_data = {
   "C-0006": {
     "title": "Allowed hostPath",
     "display_name": "Allowed hostPath",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -96,7 +96,7 @@ issues_data = {
   "C-0024": {
     "title": "Vulnerable application",
     "display_name": "Vulnerable application",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -141,7 +141,7 @@ issues_data = {
   "C-0021": {
     "title": "Exposed sensitive interfaces",
     "display_name": "Exposed sensitive interfaces",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -177,7 +177,7 @@ issues_data = {
   "C-0048": {
     "title": "HostPath mount",
     "display_name": "HostPath mount",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -195,7 +195,7 @@ issues_data = {
   "C-0046": {
     "title": "Insecure capabilities",
     "display_name": "Insecure capabilities",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -204,7 +204,7 @@ issues_data = {
   "C-0047": {
     "title": "Exposed dashboard",
     "display_name": "Exposed dashboard",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -240,7 +240,7 @@ issues_data = {
   "C-0065": {
     "title": "No impersonation",
     "display_name": "No impersonation",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -258,7 +258,7 @@ issues_data = {
   "C-0041": {
     "title": "HostNetwork access",
     "display_name": "HostNetwork access",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -303,7 +303,7 @@ issues_data = {
   "C-0081": {
     "title": "CVE-2022-24348-argocddirtraversal",
     "display_name": "CVE-2022-24348-argocddirtraversal",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -357,7 +357,7 @@ issues_data = {
   "C-0074": {
     "title": "Containers mounting Docker socket",
     "display_name": "Containers mounting Docker socket",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -384,7 +384,7 @@ issues_data = {
   "C-0038": {
     "title": "Host PID/IPC privileges",
     "display_name": "Host PID/IPC privileges",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -420,7 +420,7 @@ issues_data = {
   "C-0013": {
     "title": "Non-root containers",
     "display_name": "Non-root containers",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -501,7 +501,7 @@ issues_data = {
   "C-0016": {
     "title": "Allow privilege escalation",
     "display_name": "Allow privilege escalation",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -510,7 +510,7 @@ issues_data = {
   "C-0037": {
     "title": "CoreDNS poisoning",
     "display_name": "CoreDNS poisoning",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -537,7 +537,7 @@ issues_data = {
   "C-0078": {
     "title": "Images from allowed registry",
     "display_name": "Images from allowed registry",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -546,7 +546,7 @@ issues_data = {
   "C-0033": {
     "title": "Access tiller endpoint",
     "display_name": "Access tiller endpoint",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -555,7 +555,7 @@ issues_data = {
   "C-0059": {
     "title": "CVE-2021-25742-nginx-ingress-snippet-annotation-vulnerability",
     "display_name": "CVE-2021-25742-nginx-ingress-snippet-annotation-vulnerability",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -564,7 +564,7 @@ issues_data = {
   "C-0058": {
     "title": "CVE-2021-25741 - Using symlink for arbitrary host file system access.",
     "display_name": "CVE-2021-25741 - Using symlink for arbitrary host file system access.",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
@@ -618,7 +618,7 @@ issues_data = {
   "C-0053": {
     "title": "Access container service account",
     "display_name": "Access container service account",
-    "severity": "1",
+    "severity": "2",
     "categories": [
       "security"
     ],
