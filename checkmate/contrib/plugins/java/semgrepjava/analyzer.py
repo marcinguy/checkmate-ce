@@ -19,7 +19,7 @@ class SemgrepjavaAnalyzer(BaseAnalyzer):
         super(SemgrepjavaAnalyzer, self).__init__(*args, **kwargs)
         try:
             result = subprocess.check_output(
-                ["python3", "-m", "semgrep", "--version"],stderr=subprocess.DEVNULL).strip()
+                ["semgrep", "--version"],stderr=subprocess.DEVNULL).strip()
         except subprocess.CalledProcessError:
             logger.error(
                 "Cannot initialize semgrep analyzer: Executable is missing, please install it.")
@@ -49,7 +49,7 @@ class SemgrepjavaAnalyzer(BaseAnalyzer):
                 except UnicodeDecodeError:
                   pass
             try:
-                result = subprocess.check_output(["python3", "-m", "semgrep",
+                result = subprocess.check_output(["semgrep",
                                                   "--config",
                                                   "/root/find_sec_bugs.yml",
                                                   "--no-git-ignore",
