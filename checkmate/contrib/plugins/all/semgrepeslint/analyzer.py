@@ -18,7 +18,7 @@ class SemgrepeslintAnalyzer(BaseAnalyzer):
         super(SemgrepeslintAnalyzer, self).__init__(*args, **kwargs)
         try:
             result = subprocess.check_output(
-                ["python3", "-m", "semgrep", "--version"])
+                ["semgrep", "--version"])
         except subprocess.CalledProcessError:
             logger.error(
                 "Cannot initialize semgrep analyzer: Executable is missing, please install it.")
@@ -45,7 +45,7 @@ class SemgrepeslintAnalyzer(BaseAnalyzer):
             with f:
                 f.write(file_revision.get_file_content().decode("utf-8"))
             try:
-                result = subprocess.check_output(["python3", "-m", "semgrep",
+                result = subprocess.check_output(["semgrep",
                                                   "--config",
                                                   "/root/eslint.yml",
                                                   "--no-git-ignore",
