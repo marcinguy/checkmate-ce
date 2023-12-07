@@ -1,390 +1,288 @@
-# -*- coding: utf-8 -*-
-
-
-issues_data = {
-    "ExcessiveClassLength": {
-        "title": "ExcessiveClassLength",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ExcessiveParameterList": {
-        "title": "ExcessiveParameterList",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ExcessivePublicCount": {
-        "title": "ExcessivePublicCount",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "NcssConstructorCount": {
-        "title": "NcssConstructorCount",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },    
-    "NcssMethodCount": {
-        "title": "NcssMethodCount",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },   
-    "NcssTypeCount": {
-        "title": "NcssTypeCount",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "StdCyclomaticComplexity": {
-        "title": "StdCyclomaticComplexity",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "TooManyFields": {
-        "title": "TooManyFields",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "AvoidDeeplyNestedIfStmts": {
-        "title": "AvoidDeeplyNestedIfStmts",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CyclomaticComplexity": {
-        "title": "ExcessiveClassLength",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-   "OperationWithLimitsInLoop": {
-        "title": "OperationWithLimitsInLoop",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "AvoidDirectAccessTriggerMap": {
-        "title": "AvoidDirectAccessTriggerMap",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "AvoidLogicInTrigger": {
-        "title": "AvoidLogicInTrigger",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "AvoidGlobalModifier": {
-        "title": "AvoidGlobalModifier",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "AvoidNonExistentAnnotations": {
-        "title": "AvoidNonExistentAnnotations",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "AvoidHardcodingId": {
-        "title": "AvoidHardcodingId",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ClassNamingConventions": {
-        "title": "ClassNamingConventions",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "MethodNamingConventions": {
-        "title": "MethodNamingConventions",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "MethodWithSameNameAsEnclosingClass": {
-        "title": "MethodWithSameNameAsEnclosingClass",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "FieldNamingConventions": {
-        "title": "FieldNamingConventions",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "FormalParameterNamingConventions": {
-        "title": "FormalParameterNamingConventions",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "LocalVariableNamingConventions": {
-        "title": "LocalVariableNamingConventions",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "PropertyNamingConventions": {
-        "title": "PropertyNamingConventions",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexUnitTestClassShouldHaveAsserts": {
-        "title": "ApexUnitTestClassShouldHaveAsserts",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexUnitTestShouldNotUseSeeAllDataTrue": {
-        "title": "ApexUnitTestShouldNotUseSeeAllDataTrue",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexSharingViolations": {
-        "title": "ApexSharingViolations",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexInsecureEndpoint": {
-        "title": "ApexInsecureEndpoint",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexCSRF": {
-        "title": "ApexCSRF",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexOpenRedirect": {
-        "title": "ApexOpenRedirect",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexSOQLInjection": {
-        "title": "ApexSOQLInjection",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexXSSFromURLParam": {
-        "title": "ApexXSSFromURLParam",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexXSSFromEscapeFalse": {
-        "title": "ApexXSSFromEscapeFalse",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexBadCrypto": {
-        "title": "ApexBadCrypto",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexCRUDViolation": {
-        "title": "ApexCRUDViolation",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexDangerousMethods": {
-        "title": "ApexDangerousMethods",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexSuggestUsingNamedCred": {
-        "title": "ApexSuggestUsingNamedCred",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "IfStmtsMustUseBraces": {
-        "title": "IfStmtsMustUseBraces",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "WhileLoopsMustUseBraces": {
-        "title": "WhileLoopsMustUseBraces",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "IfElseStmtsMustUseBraces": {
-        "title": "IfElseStmtsMustUseBraces",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ForLoopsMustUseBraces": {
-        "title": "ForLoopsMustUseBraces",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "EmptyCatchBlock": {
-        "title": "EmptyCatchBlock",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "EmptyIfStmt": {
-        "title": "EmptyIfStmt",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "EmptyWhileStmt": {
-        "title": "EmptyWhileStmt",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "EmptyTryOrFinallyBlock": {
-        "title": "EmptyTryOrFinallyBlock",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "EmptyStatementBlock": {
-        "title": "EmptyStatementBlock",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "OneDeclarationPerLine": {
-        "title": "OneDeclarationPerLine",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "ApexDoc": {
-        "title": "ApexDoc",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "DebugsShouldUseLoggingLevel": {
-        "title": "DebugsShouldUseLoggingLevel",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    }
-
-}
+issues_data = {   'ApexBadCrypto': {   'categories': ['security'],
+                         'description': '%(issue.data)s',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': 3,
+                         'title': 'ApexBadCrypto'},
+    'ApexCRUDViolation': {   'categories': ['security'],
+                             'description': '%(issue.data)s',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': 3,
+                             'title': 'ApexCRUDViolation'},
+    'ApexCSRF': {   'categories': ['security'],
+                    'description': '%(issue.data)s',
+                    'file': '%(issue.file)s',
+                    'line': '%(issue.line)s',
+                    'severity': 3,
+                    'title': 'ApexCSRF'},
+    'ApexDangerousMethods': {   'categories': ['security'],
+                                'description': '%(issue.data)s',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': 3,
+                                'title': 'ApexDangerousMethods'},
+    'ApexDoc': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'ApexDoc'},
+    'ApexInsecureEndpoint': {   'categories': ['security'],
+                                'description': '%(issue.data)s',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': 3,
+                                'title': 'ApexInsecureEndpoint'},
+    'ApexOpenRedirect': {   'categories': ['security'],
+                            'description': '%(issue.data)s',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': 3,
+                            'title': 'ApexOpenRedirect'},
+    'ApexSOQLInjection': {   'categories': ['security'],
+                             'description': '%(issue.data)s',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': 3,
+                             'title': 'ApexSOQLInjection'},
+    'ApexSharingViolations': {   'categories': ['security'],
+                                 'description': '%(issue.data)s',
+                                 'file': '%(issue.file)s',
+                                 'line': '%(issue.line)s',
+                                 'severity': 3,
+                                 'title': 'ApexSharingViolations'},
+    'ApexSuggestUsingNamedCred': {   'categories': ['security'],
+                                     'description': '%(issue.data)s',
+                                     'file': '%(issue.file)s',
+                                     'line': '%(issue.line)s',
+                                     'severity': 3,
+                                     'title': 'ApexSuggestUsingNamedCred'},
+    'ApexUnitTestClassShouldHaveAsserts': {   'categories': ['security'],
+                                              'description': '%(issue.data)s',
+                                              'file': '%(issue.file)s',
+                                              'line': '%(issue.line)s',
+                                              'severity': 3,
+                                              'title': 'ApexUnitTestClassShouldHaveAsserts'},
+    'ApexUnitTestShouldNotUseSeeAllDataTrue': {   'categories': ['security'],
+                                                  'description': '%(issue.data)s',
+                                                  'file': '%(issue.file)s',
+                                                  'line': '%(issue.line)s',
+                                                  'severity': 3,
+                                                  'title': 'ApexUnitTestShouldNotUseSeeAllDataTrue'},
+    'ApexXSSFromEscapeFalse': {   'categories': ['security'],
+                                  'description': '%(issue.data)s',
+                                  'file': '%(issue.file)s',
+                                  'line': '%(issue.line)s',
+                                  'severity': 3,
+                                  'title': 'ApexXSSFromEscapeFalse'},
+    'ApexXSSFromURLParam': {   'categories': ['security'],
+                               'description': '%(issue.data)s',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': 3,
+                               'title': 'ApexXSSFromURLParam'},
+    'AvoidDeeplyNestedIfStmts': {   'categories': ['security'],
+                                    'description': '%(issue.data)s',
+                                    'file': '%(issue.file)s',
+                                    'line': '%(issue.line)s',
+                                    'severity': 3,
+                                    'title': 'AvoidDeeplyNestedIfStmts'},
+    'AvoidDirectAccessTriggerMap': {   'categories': ['security'],
+                                       'description': '%(issue.data)s',
+                                       'file': '%(issue.file)s',
+                                       'line': '%(issue.line)s',
+                                       'severity': 3,
+                                       'title': 'AvoidDirectAccessTriggerMap'},
+    'AvoidGlobalModifier': {   'categories': ['security'],
+                               'description': '%(issue.data)s',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': 3,
+                               'title': 'AvoidGlobalModifier'},
+    'AvoidHardcodingId': {   'categories': ['security'],
+                             'description': '%(issue.data)s',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': 3,
+                             'title': 'AvoidHardcodingId'},
+    'AvoidLogicInTrigger': {   'categories': ['security'],
+                               'description': '%(issue.data)s',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': 3,
+                               'title': 'AvoidLogicInTrigger'},
+    'AvoidNonExistentAnnotations': {   'categories': ['security'],
+                                       'description': '%(issue.data)s',
+                                       'file': '%(issue.file)s',
+                                       'line': '%(issue.line)s',
+                                       'severity': 3,
+                                       'title': 'AvoidNonExistentAnnotations'},
+    'ClassNamingConventions': {   'categories': ['security'],
+                                  'description': '%(issue.data)s',
+                                  'file': '%(issue.file)s',
+                                  'line': '%(issue.line)s',
+                                  'severity': 3,
+                                  'title': 'ClassNamingConventions'},
+    'CyclomaticComplexity': {   'categories': ['security'],
+                                'description': '%(issue.data)s',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': 3,
+                                'title': 'ExcessiveClassLength'},
+    'DebugsShouldUseLoggingLevel': {   'categories': ['security'],
+                                       'description': '%(issue.data)s',
+                                       'file': '%(issue.file)s',
+                                       'line': '%(issue.line)s',
+                                       'severity': 3,
+                                       'title': 'DebugsShouldUseLoggingLevel'},
+    'EmptyCatchBlock': {   'categories': ['security'],
+                           'description': '%(issue.data)s',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': 3,
+                           'title': 'EmptyCatchBlock'},
+    'EmptyIfStmt': {   'categories': ['security'],
+                       'description': '%(issue.data)s',
+                       'file': '%(issue.file)s',
+                       'line': '%(issue.line)s',
+                       'severity': 3,
+                       'title': 'EmptyIfStmt'},
+    'EmptyStatementBlock': {   'categories': ['security'],
+                               'description': '%(issue.data)s',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': 3,
+                               'title': 'EmptyStatementBlock'},
+    'EmptyTryOrFinallyBlock': {   'categories': ['security'],
+                                  'description': '%(issue.data)s',
+                                  'file': '%(issue.file)s',
+                                  'line': '%(issue.line)s',
+                                  'severity': 3,
+                                  'title': 'EmptyTryOrFinallyBlock'},
+    'EmptyWhileStmt': {   'categories': ['security'],
+                          'description': '%(issue.data)s',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': 3,
+                          'title': 'EmptyWhileStmt'},
+    'ExcessiveClassLength': {   'categories': ['security'],
+                                'description': '%(issue.data)s',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': 3,
+                                'title': 'ExcessiveClassLength'},
+    'ExcessiveParameterList': {   'categories': ['security'],
+                                  'description': '%(issue.data)s',
+                                  'file': '%(issue.file)s',
+                                  'line': '%(issue.line)s',
+                                  'severity': 3,
+                                  'title': 'ExcessiveParameterList'},
+    'ExcessivePublicCount': {   'categories': ['security'],
+                                'description': '%(issue.data)s',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': 3,
+                                'title': 'ExcessivePublicCount'},
+    'FieldNamingConventions': {   'categories': ['security'],
+                                  'description': '%(issue.data)s',
+                                  'file': '%(issue.file)s',
+                                  'line': '%(issue.line)s',
+                                  'severity': 3,
+                                  'title': 'FieldNamingConventions'},
+    'ForLoopsMustUseBraces': {   'categories': ['security'],
+                                 'description': '%(issue.data)s',
+                                 'file': '%(issue.file)s',
+                                 'line': '%(issue.line)s',
+                                 'severity': 3,
+                                 'title': 'ForLoopsMustUseBraces'},
+    'FormalParameterNamingConventions': {   'categories': ['security'],
+                                            'description': '%(issue.data)s',
+                                            'file': '%(issue.file)s',
+                                            'line': '%(issue.line)s',
+                                            'severity': 3,
+                                            'title': 'FormalParameterNamingConventions'},
+    'IfElseStmtsMustUseBraces': {   'categories': ['security'],
+                                    'description': '%(issue.data)s',
+                                    'file': '%(issue.file)s',
+                                    'line': '%(issue.line)s',
+                                    'severity': 3,
+                                    'title': 'IfElseStmtsMustUseBraces'},
+    'IfStmtsMustUseBraces': {   'categories': ['security'],
+                                'description': '%(issue.data)s',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': 3,
+                                'title': 'IfStmtsMustUseBraces'},
+    'LocalVariableNamingConventions': {   'categories': ['security'],
+                                          'description': '%(issue.data)s',
+                                          'file': '%(issue.file)s',
+                                          'line': '%(issue.line)s',
+                                          'severity': 3,
+                                          'title': 'LocalVariableNamingConventions'},
+    'MethodNamingConventions': {   'categories': ['security'],
+                                   'description': '%(issue.data)s',
+                                   'file': '%(issue.file)s',
+                                   'line': '%(issue.line)s',
+                                   'severity': 3,
+                                   'title': 'MethodNamingConventions'},
+    'MethodWithSameNameAsEnclosingClass': {   'categories': ['security'],
+                                              'description': '%(issue.data)s',
+                                              'file': '%(issue.file)s',
+                                              'line': '%(issue.line)s',
+                                              'severity': 3,
+                                              'title': 'MethodWithSameNameAsEnclosingClass'},
+    'NcssConstructorCount': {   'categories': ['security'],
+                                'description': '%(issue.data)s',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': 3,
+                                'title': 'NcssConstructorCount'},
+    'NcssMethodCount': {   'categories': ['security'],
+                           'description': '%(issue.data)s',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': 3,
+                           'title': 'NcssMethodCount'},
+    'NcssTypeCount': {   'categories': ['security'],
+                         'description': '%(issue.data)s',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': 3,
+                         'title': 'NcssTypeCount'},
+    'OneDeclarationPerLine': {   'categories': ['security'],
+                                 'description': '%(issue.data)s',
+                                 'file': '%(issue.file)s',
+                                 'line': '%(issue.line)s',
+                                 'severity': 3,
+                                 'title': 'OneDeclarationPerLine'},
+    'OperationWithLimitsInLoop': {   'categories': ['security'],
+                                     'description': '%(issue.data)s',
+                                     'file': '%(issue.file)s',
+                                     'line': '%(issue.line)s',
+                                     'severity': 3,
+                                     'title': 'OperationWithLimitsInLoop'},
+    'PropertyNamingConventions': {   'categories': ['security'],
+                                     'description': '%(issue.data)s',
+                                     'file': '%(issue.file)s',
+                                     'line': '%(issue.line)s',
+                                     'severity': 3,
+                                     'title': 'PropertyNamingConventions'},
+    'StdCyclomaticComplexity': {   'categories': ['security'],
+                                   'description': '%(issue.data)s',
+                                   'file': '%(issue.file)s',
+                                   'line': '%(issue.line)s',
+                                   'severity': 3,
+                                   'title': 'StdCyclomaticComplexity'},
+    'TooManyFields': {   'categories': ['security'],
+                         'description': '%(issue.data)s',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': 3,
+                         'title': 'TooManyFields'},
+    'WhileLoopsMustUseBraces': {   'categories': ['security'],
+                                   'description': '%(issue.data)s',
+                                   'file': '%(issue.file)s',
+                                   'line': '%(issue.line)s',
+                                   'severity': 3,
+                                   'title': 'WhileLoopsMustUseBraces'}}

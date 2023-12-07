@@ -1,1202 +1,949 @@
-issues_data = {
-  "F042": {
-    "title": "Insecurely generated cookies",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecurely generated cookies"
-  },
-  "F043": {
-    "title": "Insecure or unset HTTP headers - Content-Security-Policy",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure or unset HTTP headers - Content-Security-Policy"
-  },
-  "F206": {
-    "title": "Security controls bypass or absence - Anti hooking",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Security controls bypass or absence - Anti hooking"
-  },
-  "F207": {
-    "title": "Security controls bypass or absence - SSLPinning",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Security controls bypass or absence - SSLPinning"
-  },
-  "F046": {
-    "title": "Missing secure obfuscation - APK",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Missing secure obfuscation - APK"
-  },
-  "F044": {
-    "title": "Insecure HTTP methods enabled",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure HTTP methods enabled"
-  },
-  "F203": {
-    "title": "Unauthorized access to files - S3 Bucket",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Unauthorized access to files - S3 Bucket"
-  },
-  "F363": {
-    "title": "Weak credential policy - Password strength",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Weak credential policy - Password strength"
-  },
-  "F048": {
-    "title": "Lack of root detection",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of root detection"
-  },
-  "F366": {
-    "title": "Inappropriate coding practices - Transparency Conflict",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Inappropriate coding practices - Transparency Conflict"
-  },
-  "F368": {
-    "title": "Unrestricted access between network segments - StrictHostKeyChecking",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Unrestricted access between network segments - StrictHostKeyChecking"
-  },
-  "F200": {
-    "title": "Traceability loss",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Traceability loss"
-  },
-  "F176": {
-    "title": "Insecure service configuration - SSH",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - SSH"
-  },
-  "F177": {
-    "title": "Insecure service configuration - Security Groups",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - Security Groups"
-  },
-  "F426": {
-    "title": "Supply Chain Attack - Kubernetes",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Supply Chain Attack - Kubernetes"
-  },
-  "F037": {
-    "title": "Technical information leak",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Technical information leak"
-  },
-  "F277": {
-    "title": "Weak credential policy - Password Expiration",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Weak credential policy - Password Expiration"
-  },
-  "F279": {
-    "title": "Root detection control bypass",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Root detection control bypass"
-  },
-  "F059": {
-    "title": "Sensitive information stored in logs",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Sensitive information stored in logs"
-  },
-  "F058": {
-    "title": "Debugging enabled in production - APK",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Debugging enabled in production - APK"
-  },
-  "F192": {
-    "title": "Lack of data validation - Reflected Parameters",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of data validation - Reflected Parameters"
-  },
-  "F055": {
-    "title": "Insecure service configuration - ADB Backups",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - ADB Backups"
-  },
-  "F056": {
-    "title": "Anonymous connection",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Anonymous connection"
-  },
-  "F052": {
-    "title": "Insecure encryption algorithm",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure encryption algorithm"
-  },
-  "F160": {
-    "title": "Excessive privileges - Temporary Files",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Excessive privileges - Temporary Files"
-  },
-  "F165": {
-    "title": "Insecure service configuration - AWS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - AWS"
-  },
-  "F164": {
-    "title": "Insecure service configuration",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration"
-  },
-  "F280": {
-    "title": "Session Fixation",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Session Fixation"
-  },
-  "F281": {
-    "title": "Use of an insecure channel - AWS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Use of an insecure channel - AWS"
-  },
-  "F183": {
-    "title": "Debugging enabled in production",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Debugging enabled in production"
-  },
-  "F182": {
-    "title": "Email spoofing",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Email spoofing"
-  },
-  "F020": {
-    "title": "Non-encrypted confidential information",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Non-encrypted confidential information"
-  },
-  "F021": {
-    "title": "XPath injection",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "XPath injection"
-  },
-  "F022": {
-    "title": "Use of an insecure channel",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Use of an insecure channel"
-  },
-  "F023": {
-    "title": "Uncontrolled external site redirect - Host Header Injection",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Uncontrolled external site redirect - Host Header Injection"
-  },
-  "F024": {
-    "title": "Unrestricted access between network segments - AWS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Unrestricted access between network segments - AWS"
-  },
-  "F128": {
-    "title": "Insecurely generated cookies - HttpOnly",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecurely generated cookies - HttpOnly"
-  },
-  "F354": {
-    "title": "Insecure file upload - Files Limit",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure file upload - Files Limit"
-  },
-  "F427": {
-    "title": "Use of an insecure channel - Docker",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Use of an insecure channel - Docker"
-  },
-  "F353": {
-    "title": "Lack of data validation - Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of data validation - Token"
-  },
-  "F350": {
-    "title": "Insecure digital certificates - Chain of trust",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure digital certificates - Chain of trust"
-  },
-  "F423": {
-    "title": "Inappropriate coding practices - System exit",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Inappropriate coding practices - System exit"
-  },
-  "F297": {
-    "title": "SQL injection - Code",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "SQL injection - Code"
-  },
-  "F117": {
-    "title": "Unverifiable files",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Unverifiable files"
-  },
-  "F428": {
-    "title": "Inappropriate coding practices - invalid file",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Inappropriate coding practices - invalid file"
-  },
-  "F031": {
-    "title": "Excessive privileges - AWS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Excessive privileges - AWS"
-  },
-  "F112": {
-    "title": "SQL injection - Java SQL API",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "SQL injection - Java SQL API"
-  },
-  "F335": {
-    "title": "Insecure service configuration - Bucket",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - Bucket"
-  },
-  "F337": {
-    "title": "Insecure session management - CSRF Fixation",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure session management - CSRF Fixation"
-  },
-  "F239": {
-    "title": "Technical information leak - Errors",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Technical information leak - Errors"
-  },
-  "F332": {
-    "title": "Use of insecure channel - Source code",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Use of insecure channel - Source code"
-  },
-  "F333": {
-    "title": "Insecure service configuration - EC2",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - EC2"
-  },
-  "F234": {
-    "title": "Technical information leak - Stacktrace",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Technical information leak - Stacktrace"
-  },
-  "F237": {
-    "title": "Technical information leak - Print Functions",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Technical information leak - Print Functions"
-  },
-  "F236": {
-    "title": "Technical information leak - SourceMap",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Technical information leak - SourceMap"
-  },
-  "F338": {
-    "title": "Insecure service configuration - Salt",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - Salt"
-  },
-  "F036": {
-    "title": "ViewState not encrypted",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "ViewState not encrypted"
-  },
-  "F035": {
-    "title": "Weak credential policy",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Weak credential policy"
-  },
-  "F034": {
-    "title": "Insecure generation of random numbers",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure generation of random numbers"
-  },
-  "F343": {
-    "title": "Insecure service configuration - BREACH Attack",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - BREACH Attack"
-  },
-  "F008": {
-    "title": "Reflected cross-site scripting (XSS)",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Reflected cross-site scripting (XSS)"
-  },
-  "F109": {
-    "title": "Unrestricted access between network segments - RDS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Unrestricted access between network segments - RDS"
-  },
-  "F346": {
-    "title": "Excessive privileges - Mobile App",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Excessive privileges - Mobile App"
-  },
-  "F107": {
-    "title": "LDAP injection",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "LDAP injection"
-  },
-  "F009": {
-    "title": "Sensitive information in source code",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Sensitive information in source code"
-  },
-  "F103": {
-    "title": "Insufficient data authenticity validation - APK signing",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insufficient data authenticity validation - APK signing"
-  },
-  "F101": {
-    "title": "Lack of protection against deletion",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of protection against deletion"
-  },
-  "F100": {
-    "title": "Server-side request forgery (SSRF)",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Server-side request forgery (SSRF)"
-  },
-  "F325": {
-    "title": "Excessive privileges - Wildcards",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Excessive privileges - Wildcards"
-  },
-  "F320": {
-    "title": "Insecure service configuration - LDAP",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - LDAP"
-  },
-  "F246": {
-    "title": "Non-encrypted confidential information - DB",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Non-encrypted confidential information - DB"
-  },
-  "F247": {
-    "title": "Non-encrypted confidential information - AWS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Non-encrypted confidential information - AWS"
-  },
-  "F402": {
-    "title": "Traceability Loss - Azure",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Traceability Loss - Azure"
-  },
-  "F403": {
-    "title": "Insecure service configuration - usesCleartextTraffic",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - usesCleartextTraffic"
-  },
-  "F400": {
-    "title": "Traceability Loss - AWS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Traceability Loss - AWS"
-  },
-  "F401": {
-    "title": "Insecure service configuration - AKV Secret Expiration",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - AKV Secret Expiration"
-  },
-  "F406": {
-    "title": "Non-encrypted confidential information - EFS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Non-encrypted confidential information - EFS"
-  },
-  "F407": {
-    "title": "Non-encrypted confidential information - EBS Volumes",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Non-encrypted confidential information - EBS Volumes"
-  },
-  "F405": {
-    "title": "Excessive privileges - Access Mode",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Excessive privileges - Access Mode"
-  },
-  "F132": {
-    "title": "Insecure or unset HTTP headers - X-Content-Type-Options",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure or unset HTTP headers - X-Content-Type-Options"
-  },
-  "F133": {
-    "title": "Insecure encryption algorithm - Perfect Forward Secrecy",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure encryption algorithm - Perfect Forward Secrecy"
-  },
-  "F130": {
-    "title": "Insecurely generated cookies - Secure",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecurely generated cookies - Secure"
-  },
-  "F131": {
-    "title": "Insecure or unset HTTP headers - Strict Transport Security",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure or unset HTTP headers - Strict Transport Security"
-  },
-  "F134": {
-    "title": "Insecure or unset HTTP headers - CORS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure or unset HTTP headers - CORS"
-  },
-  "F135": {
-    "title": "Insecure or unset HTTP headers - X-XSS Protection",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure or unset HTTP headers - X-XSS Protection"
-  },
-  "F313": {
-    "title": "Insecure service configuration - Certificates",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - Certificates"
-  },
-  "F259": {
-    "title": "Lack of protection against deletion - DynamoDB",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of protection against deletion - DynamoDB"
-  },
-  "F258": {
-    "title": "Lack of protection against deletion - ELB",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of protection against deletion - ELB"
-  },
-  "F252": {
-    "title": "Automatic information enumeration - Open ports",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Automatic information enumeration - Open ports"
-  },
-  "F250": {
-    "title": "Non-encrypted hard drives",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Non-encrypted hard drives"
-  },
-  "F257": {
-    "title": "Lack of protection against deletion - EC2",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of protection against deletion - EC2"
-  },
-  "F256": {
-    "title": "Lack of protection against deletion - RDS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of protection against deletion - RDS"
-  },
-  "F408": {
-    "title": "Traceability Loss - API Gateway",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Traceability Loss - API Gateway"
-  },
-  "F127": {
-    "title": "Lack of data validation - Type confusion",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of data validation - Type confusion"
-  },
-  "F409": {
-    "title": "Non-encrypted confidential information - DynamoDB",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Non-encrypted confidential information - DynamoDB"
-  },
-  "F120": {
-    "title": "Improper dependency pinning",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Improper dependency pinning"
-  },
-  "F089": {
-    "title": "Lack of data validation - Trust boundary violation",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of data validation - Trust boundary violation"
-  },
-  "F086": {
-    "title": "Missing subresource integrity check",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Missing subresource integrity check"
-  },
-  "F085": {
-    "title": "Sensitive data stored in client-side storage",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Sensitive data stored in client-side storage"
-  },
-  "F129": {
-    "title": "Insecurely generated cookies - SameSite",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecurely generated cookies - SameSite"
-  },
-  "F083": {
-    "title": "XML injection (XXE)",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "XML injection (XXE)"
-  },
-  "F080": {
-    "title": "Business information leak - Customers or providers",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Business information leak - Customers or providers"
-  },
-  "F081": {
-    "title": "Lack of multi-factor authentication",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of multi-factor authentication"
-  },
-  "F007": {
-    "title": "Cross-site request forgery",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Cross-site request forgery"
-  },
-  "F004": {
-    "title": "Remote command execution",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Remote command execution"
-  },
-  "F418": {
-    "title": "Insecure service configuration - Docker",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - Docker"
-  },
-  "F001": {
-    "title": "SQL injection - C Sharp SQL API",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "SQL injection - C Sharp SQL API"
-  },
-  "F414": {
-    "title": "Insecure service configuration - Header Checking",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - Header Checking"
-  },
-  "F416": {
-    "title": "XAML injection",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "XAML injection"
-  },
-  "F411": {
-    "title": "Insecure encryption algorithm - Default encryption",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure encryption algorithm - Default encryption"
-  },
-  "F413": {
-    "title": "Insecure file upload - DLL Injection",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure file upload - DLL Injection"
-  },
-  "F412": {
-    "title": "Lack of protection against deletion - Azure Key Vault",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of protection against deletion - Azure Key Vault"
-  },
-  "F064": {
-    "title": "Traceability loss - Server's clock",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Traceability loss - Server's clock"
-  },
-  "F066": {
-    "title": "Technical information leak - Console functions",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Technical information leak - Console functions"
-  },
-  "F309": {
-    "title": "Insecurely generated token - JWT",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecurely generated token - JWT"
-  },
-  "F063": {
-    "title": "Lack of data validation - Path Traversal",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lack of data validation - Path Traversal"
-  },
-  "F300": {
-    "title": "Authentication mechanism absence or evasion - Azure",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Authentication mechanism absence or evasion - Azure"
-  },
-  "F082": {
-    "title": "Insecurely deleted files",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecurely deleted files"
-  },
-  "F099": {
-    "title": "Non-encrypted confidential information - S3 Server Side Encryption",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Non-encrypted confidential information - S3 Server Side Encryption"
-  },
-  "F098": {
-    "title": "External control of file name or path",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "External control of file name or path"
-  },
-  "F152": {
-    "title": "Insecure or unset HTTP headers - X-Frame Options",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure or unset HTTP headers - X-Frame Options"
-  },
-  "F153": {
-    "title": "Insecure or unset HTTP headers - Accept",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure or unset HTTP headers - Accept"
-  },
-  "F211": {
-    "title": "Asymmetric denial of service - ReDoS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Asymmetric denial of service - ReDoS"
-  },
-  "F157": {
-    "title": "Unrestricted access between network segments",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Unrestricted access between network segments"
-  },
-  "F091": {
-    "title": "Log injection",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Log injection"
-  },
-  "F092": {
-    "title": "Insecure encryption algorithm - Anonymous cipher suites",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure encryption algorithm - Anonymous cipher suites"
-  },
-  "F094": {
-    "title": "Insecure encryption algorithm - Cipher Block Chaining",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure encryption algorithm - Cipher Block Chaining"
-  },
-  "F096": {
-    "title": "Insecure deserialization",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure deserialization"
-  },
-  "F010": {
-    "title": "Stored cross-site scripting (XSS)",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Stored cross-site scripting (XSS)"
-  },
-  "F398": {
-    "title": "Fragment Injection",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Fragment Injection"
-  },
-  "F012": {
-    "title": "SQL injection - Java Persistence API",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "SQL injection - Java Persistence API"
-  },
-  "F015": {
-    "title": "Insecure authentication method - Basic",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure authentication method - Basic"
-  },
-  "F017": {
-    "title": "Sensitive information sent insecurely",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Sensitive information sent insecurely"
-  },
-  "F016": {
-    "title": "Insecure encryption algorithm - SSL/TLS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure encryption algorithm - SSL/TLS"
-  },
-  "F396": {
-    "title": "Insecure service configuration - KMS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - KMS"
-  },
-  "F394": {
-    "title": "Insufficient data authenticity validation - Cloudtrail Logs",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insufficient data authenticity validation - Cloudtrail Logs"
-  },
-  "F075": {
-    "title": "Unauthorized access to files - APK Content Provider",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Unauthorized access to files - APK Content Provider"
-  },
-  "F073": {
-    "title": "Improper authorization control for web services - RDS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Improper authorization control for web services - RDS"
-  },
-  "F071": {
-    "title": "Insecure or unset HTTP headers - Referrer-Policy",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure or unset HTTP headers - Referrer-Policy"
-  },
-  "F070": {
-    "title": "Insecure service configuration - ELB",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - ELB"
-  },
-  "F372": {
-    "title": "Use of an insecure channel - HTTP",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Use of an insecure channel - HTTP"
-  },
-  "F079": {
-    "title": "Non-upgradable dependencies",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Non-upgradable dependencies"
-  },
-  "F143": {
-    "title": "Inappropriate coding practices - Eval function",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Inappropriate coding practices - Eval function"
-  },
-  "F381": {
-    "title": "Supply Chain Attack - Terraform",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Supply Chain Attack - Terraform"
-  },
-  "F380": {
-    "title": "Supply Chain Attack - Docker",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Supply Chain Attack - Docker"
-  },
-  "F149": {
-    "title": "Use of an insecure channel - SMTP",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Use of an insecure channel - SMTP"
-  },
-  "F148": {
-    "title": "Use of an insecure channel - FTP",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Use of an insecure channel - FTP"
-  },
-  "F266": {
-    "title": "Excessive Privileges - Docker",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Excessive Privileges - Docker"
-  },
-  "F267": {
-    "title": "Excessive Privileges - Kubernetes",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Excessive Privileges - Kubernetes"
-  },
-  "F268": {
-    "title": "Insecure service configuration - Webview",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Insecure service configuration - Webview"
-  }
-}
+issues_data = {   'F001': {   'categories': ['security'],
+                'description': 'SQL injection - C Sharp SQL API',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'SQL injection - C Sharp SQL API'},
+    'F004': {   'categories': ['security'],
+                'description': 'Remote command execution',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Remote command execution'},
+    'F007': {   'categories': ['security'],
+                'description': 'Cross-site request forgery',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Cross-site request forgery'},
+    'F008': {   'categories': ['security'],
+                'description': 'Reflected cross-site scripting (XSS)',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Reflected cross-site scripting (XSS)'},
+    'F009': {   'categories': ['security'],
+                'description': 'Sensitive information in source code',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Sensitive information in source code'},
+    'F010': {   'categories': ['security'],
+                'description': 'Stored cross-site scripting (XSS)',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Stored cross-site scripting (XSS)'},
+    'F012': {   'categories': ['security'],
+                'description': 'SQL injection - Java Persistence API',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'SQL injection - Java Persistence API'},
+    'F015': {   'categories': ['security'],
+                'description': 'Insecure authentication method - Basic',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure authentication method - Basic'},
+    'F016': {   'categories': ['security'],
+                'description': 'Insecure encryption algorithm - SSL/TLS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure encryption algorithm - SSL/TLS'},
+    'F017': {   'categories': ['security'],
+                'description': 'Sensitive information sent insecurely',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Sensitive information sent insecurely'},
+    'F020': {   'categories': ['security'],
+                'description': 'Non-encrypted confidential information',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Non-encrypted confidential information'},
+    'F021': {   'categories': ['security'],
+                'description': 'XPath injection',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'XPath injection'},
+    'F022': {   'categories': ['security'],
+                'description': 'Use of an insecure channel',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Use of an insecure channel'},
+    'F023': {   'categories': ['security'],
+                'description': 'Uncontrolled external site redirect - Host '
+                               'Header Injection',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Uncontrolled external site redirect - Host Header '
+                         'Injection'},
+    'F024': {   'categories': ['security'],
+                'description': 'Unrestricted access between network segments - '
+                               'AWS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Unrestricted access between network segments - AWS'},
+    'F031': {   'categories': ['security'],
+                'description': 'Excessive privileges - AWS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Excessive privileges - AWS'},
+    'F034': {   'categories': ['security'],
+                'description': 'Insecure generation of random numbers',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure generation of random numbers'},
+    'F035': {   'categories': ['security'],
+                'description': 'Weak credential policy',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Weak credential policy'},
+    'F036': {   'categories': ['security'],
+                'description': 'ViewState not encrypted',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'ViewState not encrypted'},
+    'F037': {   'categories': ['security'],
+                'description': 'Technical information leak',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Technical information leak'},
+    'F042': {   'categories': ['security'],
+                'description': 'Insecurely generated cookies',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecurely generated cookies'},
+    'F043': {   'categories': ['security'],
+                'description': 'Insecure or unset HTTP headers - '
+                               'Content-Security-Policy',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure or unset HTTP headers - '
+                         'Content-Security-Policy'},
+    'F044': {   'categories': ['security'],
+                'description': 'Insecure HTTP methods enabled',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure HTTP methods enabled'},
+    'F046': {   'categories': ['security'],
+                'description': 'Missing secure obfuscation - APK',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Missing secure obfuscation - APK'},
+    'F048': {   'categories': ['security'],
+                'description': 'Lack of root detection',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of root detection'},
+    'F052': {   'categories': ['security'],
+                'description': 'Insecure encryption algorithm',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure encryption algorithm'},
+    'F055': {   'categories': ['security'],
+                'description': 'Insecure service configuration - ADB Backups',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - ADB Backups'},
+    'F056': {   'categories': ['security'],
+                'description': 'Anonymous connection',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Anonymous connection'},
+    'F058': {   'categories': ['security'],
+                'description': 'Debugging enabled in production - APK',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Debugging enabled in production - APK'},
+    'F059': {   'categories': ['security'],
+                'description': 'Sensitive information stored in logs',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Sensitive information stored in logs'},
+    'F063': {   'categories': ['security'],
+                'description': 'Lack of data validation - Path Traversal',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of data validation - Path Traversal'},
+    'F064': {   'categories': ['security'],
+                'description': "Traceability loss - Server's clock",
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': "Traceability loss - Server's clock"},
+    'F066': {   'categories': ['security'],
+                'description': 'Technical information leak - Console functions',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Technical information leak - Console functions'},
+    'F070': {   'categories': ['security'],
+                'description': 'Insecure service configuration - ELB',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - ELB'},
+    'F071': {   'categories': ['security'],
+                'description': 'Insecure or unset HTTP headers - '
+                               'Referrer-Policy',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure or unset HTTP headers - Referrer-Policy'},
+    'F073': {   'categories': ['security'],
+                'description': 'Improper authorization control for web '
+                               'services - RDS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Improper authorization control for web services - '
+                         'RDS'},
+    'F075': {   'categories': ['security'],
+                'description': 'Unauthorized access to files - APK Content '
+                               'Provider',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Unauthorized access to files - APK Content Provider'},
+    'F079': {   'categories': ['security'],
+                'description': 'Non-upgradable dependencies',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Non-upgradable dependencies'},
+    'F080': {   'categories': ['security'],
+                'description': 'Business information leak - Customers or '
+                               'providers',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Business information leak - Customers or providers'},
+    'F081': {   'categories': ['security'],
+                'description': 'Lack of multi-factor authentication',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of multi-factor authentication'},
+    'F082': {   'categories': ['security'],
+                'description': 'Insecurely deleted files',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecurely deleted files'},
+    'F083': {   'categories': ['security'],
+                'description': 'XML injection (XXE)',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'XML injection (XXE)'},
+    'F085': {   'categories': ['security'],
+                'description': 'Sensitive data stored in client-side storage',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Sensitive data stored in client-side storage'},
+    'F086': {   'categories': ['security'],
+                'description': 'Missing subresource integrity check',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Missing subresource integrity check'},
+    'F089': {   'categories': ['security'],
+                'description': 'Lack of data validation - Trust boundary '
+                               'violation',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of data validation - Trust boundary violation'},
+    'F091': {   'categories': ['security'],
+                'description': 'Log injection',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Log injection'},
+    'F092': {   'categories': ['security'],
+                'description': 'Insecure encryption algorithm - Anonymous '
+                               'cipher suites',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure encryption algorithm - Anonymous cipher '
+                         'suites'},
+    'F094': {   'categories': ['security'],
+                'description': 'Insecure encryption algorithm - Cipher Block '
+                               'Chaining',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure encryption algorithm - Cipher Block '
+                         'Chaining'},
+    'F096': {   'categories': ['security'],
+                'description': 'Insecure deserialization',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure deserialization'},
+    'F098': {   'categories': ['security'],
+                'description': 'External control of file name or path',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'External control of file name or path'},
+    'F099': {   'categories': ['security'],
+                'description': 'Non-encrypted confidential information - S3 '
+                               'Server Side Encryption',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Non-encrypted confidential information - S3 Server '
+                         'Side Encryption'},
+    'F100': {   'categories': ['security'],
+                'description': 'Server-side request forgery (SSRF)',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Server-side request forgery (SSRF)'},
+    'F101': {   'categories': ['security'],
+                'description': 'Lack of protection against deletion',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of protection against deletion'},
+    'F103': {   'categories': ['security'],
+                'description': 'Insufficient data authenticity validation - '
+                               'APK signing',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insufficient data authenticity validation - APK '
+                         'signing'},
+    'F107': {   'categories': ['security'],
+                'description': 'LDAP injection',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'LDAP injection'},
+    'F109': {   'categories': ['security'],
+                'description': 'Unrestricted access between network segments - '
+                               'RDS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Unrestricted access between network segments - RDS'},
+    'F112': {   'categories': ['security'],
+                'description': 'SQL injection - Java SQL API',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'SQL injection - Java SQL API'},
+    'F117': {   'categories': ['security'],
+                'description': 'Unverifiable files',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Unverifiable files'},
+    'F120': {   'categories': ['security'],
+                'description': 'Improper dependency pinning',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Improper dependency pinning'},
+    'F127': {   'categories': ['security'],
+                'description': 'Lack of data validation - Type confusion',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of data validation - Type confusion'},
+    'F128': {   'categories': ['security'],
+                'description': 'Insecurely generated cookies - HttpOnly',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecurely generated cookies - HttpOnly'},
+    'F129': {   'categories': ['security'],
+                'description': 'Insecurely generated cookies - SameSite',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecurely generated cookies - SameSite'},
+    'F130': {   'categories': ['security'],
+                'description': 'Insecurely generated cookies - Secure',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecurely generated cookies - Secure'},
+    'F131': {   'categories': ['security'],
+                'description': 'Insecure or unset HTTP headers - Strict '
+                               'Transport Security',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure or unset HTTP headers - Strict Transport '
+                         'Security'},
+    'F132': {   'categories': ['security'],
+                'description': 'Insecure or unset HTTP headers - '
+                               'X-Content-Type-Options',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure or unset HTTP headers - '
+                         'X-Content-Type-Options'},
+    'F133': {   'categories': ['security'],
+                'description': 'Insecure encryption algorithm - Perfect '
+                               'Forward Secrecy',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure encryption algorithm - Perfect Forward '
+                         'Secrecy'},
+    'F134': {   'categories': ['security'],
+                'description': 'Insecure or unset HTTP headers - CORS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure or unset HTTP headers - CORS'},
+    'F135': {   'categories': ['security'],
+                'description': 'Insecure or unset HTTP headers - X-XSS '
+                               'Protection',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure or unset HTTP headers - X-XSS Protection'},
+    'F143': {   'categories': ['security'],
+                'description': 'Inappropriate coding practices - Eval function',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Inappropriate coding practices - Eval function'},
+    'F148': {   'categories': ['security'],
+                'description': 'Use of an insecure channel - FTP',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Use of an insecure channel - FTP'},
+    'F149': {   'categories': ['security'],
+                'description': 'Use of an insecure channel - SMTP',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Use of an insecure channel - SMTP'},
+    'F152': {   'categories': ['security'],
+                'description': 'Insecure or unset HTTP headers - X-Frame '
+                               'Options',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure or unset HTTP headers - X-Frame Options'},
+    'F153': {   'categories': ['security'],
+                'description': 'Insecure or unset HTTP headers - Accept',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure or unset HTTP headers - Accept'},
+    'F157': {   'categories': ['security'],
+                'description': 'Unrestricted access between network segments',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Unrestricted access between network segments'},
+    'F160': {   'categories': ['security'],
+                'description': 'Excessive privileges - Temporary Files',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Excessive privileges - Temporary Files'},
+    'F164': {   'categories': ['security'],
+                'description': 'Insecure service configuration',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration'},
+    'F165': {   'categories': ['security'],
+                'description': 'Insecure service configuration - AWS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - AWS'},
+    'F176': {   'categories': ['security'],
+                'description': 'Insecure service configuration - SSH',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - SSH'},
+    'F177': {   'categories': ['security'],
+                'description': 'Insecure service configuration - Security '
+                               'Groups',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - Security Groups'},
+    'F182': {   'categories': ['security'],
+                'description': 'Email spoofing',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Email spoofing'},
+    'F183': {   'categories': ['security'],
+                'description': 'Debugging enabled in production',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Debugging enabled in production'},
+    'F192': {   'categories': ['security'],
+                'description': 'Lack of data validation - Reflected Parameters',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of data validation - Reflected Parameters'},
+    'F200': {   'categories': ['security'],
+                'description': 'Traceability loss',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Traceability loss'},
+    'F203': {   'categories': ['security'],
+                'description': 'Unauthorized access to files - S3 Bucket',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Unauthorized access to files - S3 Bucket'},
+    'F206': {   'categories': ['security'],
+                'description': 'Security controls bypass or absence - Anti '
+                               'hooking',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Security controls bypass or absence - Anti hooking'},
+    'F207': {   'categories': ['security'],
+                'description': 'Security controls bypass or absence - '
+                               'SSLPinning',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Security controls bypass or absence - SSLPinning'},
+    'F211': {   'categories': ['security'],
+                'description': 'Asymmetric denial of service - ReDoS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Asymmetric denial of service - ReDoS'},
+    'F234': {   'categories': ['security'],
+                'description': 'Technical information leak - Stacktrace',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Technical information leak - Stacktrace'},
+    'F236': {   'categories': ['security'],
+                'description': 'Technical information leak - SourceMap',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Technical information leak - SourceMap'},
+    'F237': {   'categories': ['security'],
+                'description': 'Technical information leak - Print Functions',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Technical information leak - Print Functions'},
+    'F239': {   'categories': ['security'],
+                'description': 'Technical information leak - Errors',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Technical information leak - Errors'},
+    'F246': {   'categories': ['security'],
+                'description': 'Non-encrypted confidential information - DB',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Non-encrypted confidential information - DB'},
+    'F247': {   'categories': ['security'],
+                'description': 'Non-encrypted confidential information - AWS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Non-encrypted confidential information - AWS'},
+    'F250': {   'categories': ['security'],
+                'description': 'Non-encrypted hard drives',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Non-encrypted hard drives'},
+    'F252': {   'categories': ['security'],
+                'description': 'Automatic information enumeration - Open ports',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Automatic information enumeration - Open ports'},
+    'F256': {   'categories': ['security'],
+                'description': 'Lack of protection against deletion - RDS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of protection against deletion - RDS'},
+    'F257': {   'categories': ['security'],
+                'description': 'Lack of protection against deletion - EC2',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of protection against deletion - EC2'},
+    'F258': {   'categories': ['security'],
+                'description': 'Lack of protection against deletion - ELB',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of protection against deletion - ELB'},
+    'F259': {   'categories': ['security'],
+                'description': 'Lack of protection against deletion - DynamoDB',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of protection against deletion - DynamoDB'},
+    'F266': {   'categories': ['security'],
+                'description': 'Excessive Privileges - Docker',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Excessive Privileges - Docker'},
+    'F267': {   'categories': ['security'],
+                'description': 'Excessive Privileges - Kubernetes',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Excessive Privileges - Kubernetes'},
+    'F268': {   'categories': ['security'],
+                'description': 'Insecure service configuration - Webview',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - Webview'},
+    'F277': {   'categories': ['security'],
+                'description': 'Weak credential policy - Password Expiration',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Weak credential policy - Password Expiration'},
+    'F279': {   'categories': ['security'],
+                'description': 'Root detection control bypass',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Root detection control bypass'},
+    'F280': {   'categories': ['security'],
+                'description': 'Session Fixation',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Session Fixation'},
+    'F281': {   'categories': ['security'],
+                'description': 'Use of an insecure channel - AWS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Use of an insecure channel - AWS'},
+    'F297': {   'categories': ['security'],
+                'description': 'SQL injection - Code',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'SQL injection - Code'},
+    'F300': {   'categories': ['security'],
+                'description': 'Authentication mechanism absence or evasion - '
+                               'Azure',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Authentication mechanism absence or evasion - Azure'},
+    'F309': {   'categories': ['security'],
+                'description': 'Insecurely generated token - JWT',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecurely generated token - JWT'},
+    'F313': {   'categories': ['security'],
+                'description': 'Insecure service configuration - Certificates',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - Certificates'},
+    'F320': {   'categories': ['security'],
+                'description': 'Insecure service configuration - LDAP',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - LDAP'},
+    'F325': {   'categories': ['security'],
+                'description': 'Excessive privileges - Wildcards',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Excessive privileges - Wildcards'},
+    'F332': {   'categories': ['security'],
+                'description': 'Use of insecure channel - Source code',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Use of insecure channel - Source code'},
+    'F333': {   'categories': ['security'],
+                'description': 'Insecure service configuration - EC2',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - EC2'},
+    'F335': {   'categories': ['security'],
+                'description': 'Insecure service configuration - Bucket',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - Bucket'},
+    'F337': {   'categories': ['security'],
+                'description': 'Insecure session management - CSRF Fixation',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure session management - CSRF Fixation'},
+    'F338': {   'categories': ['security'],
+                'description': 'Insecure service configuration - Salt',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - Salt'},
+    'F343': {   'categories': ['security'],
+                'description': 'Insecure service configuration - BREACH Attack',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - BREACH Attack'},
+    'F346': {   'categories': ['security'],
+                'description': 'Excessive privileges - Mobile App',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Excessive privileges - Mobile App'},
+    'F350': {   'categories': ['security'],
+                'description': 'Insecure digital certificates - Chain of trust',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure digital certificates - Chain of trust'},
+    'F353': {   'categories': ['security'],
+                'description': 'Lack of data validation - Token',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of data validation - Token'},
+    'F354': {   'categories': ['security'],
+                'description': 'Insecure file upload - Files Limit',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure file upload - Files Limit'},
+    'F363': {   'categories': ['security'],
+                'description': 'Weak credential policy - Password strength',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Weak credential policy - Password strength'},
+    'F366': {   'categories': ['security'],
+                'description': 'Inappropriate coding practices - Transparency '
+                               'Conflict',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Inappropriate coding practices - Transparency '
+                         'Conflict'},
+    'F368': {   'categories': ['security'],
+                'description': 'Unrestricted access between network segments - '
+                               'StrictHostKeyChecking',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Unrestricted access between network segments - '
+                         'StrictHostKeyChecking'},
+    'F372': {   'categories': ['security'],
+                'description': 'Use of an insecure channel - HTTP',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Use of an insecure channel - HTTP'},
+    'F380': {   'categories': ['security'],
+                'description': 'Supply Chain Attack - Docker',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Supply Chain Attack - Docker'},
+    'F381': {   'categories': ['security'],
+                'description': 'Supply Chain Attack - Terraform',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Supply Chain Attack - Terraform'},
+    'F394': {   'categories': ['security'],
+                'description': 'Insufficient data authenticity validation - '
+                               'Cloudtrail Logs',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insufficient data authenticity validation - '
+                         'Cloudtrail Logs'},
+    'F396': {   'categories': ['security'],
+                'description': 'Insecure service configuration - KMS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - KMS'},
+    'F398': {   'categories': ['security'],
+                'description': 'Fragment Injection',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Fragment Injection'},
+    'F400': {   'categories': ['security'],
+                'description': 'Traceability Loss - AWS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Traceability Loss - AWS'},
+    'F401': {   'categories': ['security'],
+                'description': 'Insecure service configuration - AKV Secret '
+                               'Expiration',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - AKV Secret '
+                         'Expiration'},
+    'F402': {   'categories': ['security'],
+                'description': 'Traceability Loss - Azure',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Traceability Loss - Azure'},
+    'F403': {   'categories': ['security'],
+                'description': 'Insecure service configuration - '
+                               'usesCleartextTraffic',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - '
+                         'usesCleartextTraffic'},
+    'F405': {   'categories': ['security'],
+                'description': 'Excessive privileges - Access Mode',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Excessive privileges - Access Mode'},
+    'F406': {   'categories': ['security'],
+                'description': 'Non-encrypted confidential information - EFS',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Non-encrypted confidential information - EFS'},
+    'F407': {   'categories': ['security'],
+                'description': 'Non-encrypted confidential information - EBS '
+                               'Volumes',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Non-encrypted confidential information - EBS '
+                         'Volumes'},
+    'F408': {   'categories': ['security'],
+                'description': 'Traceability Loss - API Gateway',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Traceability Loss - API Gateway'},
+    'F409': {   'categories': ['security'],
+                'description': 'Non-encrypted confidential information - '
+                               'DynamoDB',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Non-encrypted confidential information - DynamoDB'},
+    'F411': {   'categories': ['security'],
+                'description': 'Insecure encryption algorithm - Default '
+                               'encryption',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure encryption algorithm - Default encryption'},
+    'F412': {   'categories': ['security'],
+                'description': 'Lack of protection against deletion - Azure '
+                               'Key Vault',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Lack of protection against deletion - Azure Key '
+                         'Vault'},
+    'F413': {   'categories': ['security'],
+                'description': 'Insecure file upload - DLL Injection',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure file upload - DLL Injection'},
+    'F414': {   'categories': ['security'],
+                'description': 'Insecure service configuration - Header '
+                               'Checking',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - Header Checking'},
+    'F416': {   'categories': ['security'],
+                'description': 'XAML injection',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'XAML injection'},
+    'F418': {   'categories': ['security'],
+                'description': 'Insecure service configuration - Docker',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Insecure service configuration - Docker'},
+    'F423': {   'categories': ['security'],
+                'description': 'Inappropriate coding practices - System exit',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Inappropriate coding practices - System exit'},
+    'F426': {   'categories': ['security'],
+                'description': 'Supply Chain Attack - Kubernetes',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Supply Chain Attack - Kubernetes'},
+    'F427': {   'categories': ['security'],
+                'description': 'Use of an insecure channel - Docker',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Use of an insecure channel - Docker'},
+    'F428': {   'categories': ['security'],
+                'description': 'Inappropriate coding practices - invalid file',
+                'file': '%(issue.file)s',
+                'line': '%(issue.line)s',
+                'severity': '1',
+                'title': 'Inappropriate coding practices - invalid file'}}

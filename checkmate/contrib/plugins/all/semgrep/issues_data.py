@@ -1,25 +1,14 @@
-# -*- coding: utf-8 -*-
-
-issues_data = {
-
-    "log4shell": {
-        "title": "Log4jshell vulnerability",
-        "display_name": "log4shell",
-        "severity": "3",
-        "categories": [
-            "security"
-        ],
-        "description": "Possible Log4shell injection"
-    },
-    "spring4shell": {
-        "title": "Spring4jshell vulnerability",
-        "display_name": "spring4shell",
-        "severity": "3",
-        "categories": [
-            "security"
-        ],
-        "description": "Possible Spring4Shell injection"
-    }
-
-}
-
+issues_data = {   'log4shell': {   'categories': ['security'],
+                     'description': 'Possible Log4shell injection',
+                     'display_name': 'log4shell',
+                     'file': '%(issue.file)s',
+                     'line': '%(issue.line)s',
+                     'severity': '3',
+                     'title': 'Log4jshell vulnerability'},
+    'spring4shell': {   'categories': ['security'],
+                        'description': 'Possible Spring4Shell injection',
+                        'display_name': 'spring4shell',
+                        'file': '%(issue.file)s',
+                        'line': '%(issue.line)s',
+                        'severity': '3',
+                        'title': 'Spring4jshell vulnerability'}}

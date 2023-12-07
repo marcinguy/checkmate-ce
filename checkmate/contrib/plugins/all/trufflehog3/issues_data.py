@@ -1,1125 +1,851 @@
-# -*- coding: utf-8 -*-
-
-
-issues_data = {
- "SlackToken": {
-    "severity": "1",
-    "description": "Slack Token",
-    "categories": [
-      "security"
-    ],
-    "title": "Slack Token"
-  },
-  "RSAprivatekey": {
-    "severity": "1",
-    "description": "RSA private key",
-    "categories": [
-      "security"
-    ],
-    "title": "RSA private key"
-  },
-  "GenericSecret": {
-    "severity": "1",
-    "description": "Generic Secret",
-    "categories": [
-      "security"
-    ],
-    "title": "Generic Secret"
-  },
-  "AmazonAWSAccessKeyID": {
-    "severity": "1",
-    "description": "Amazon AWS Access Key ID",
-    "categories": [
-      "security"
-    ],
-    "title": "Amazon AWS Access Key ID"
-  },
-  "AWSAPIKey": {
-    "severity": "1",
-    "description": "AWS API Key",
-    "categories": [
-      "security"
-    ],
-    "title": "AWS API Key"
-  },
-  "PasswordinURL": {
-    "severity": "1",
-    "description": "Password in URL",
-    "categories": [
-      "security"
-    ],
-    "title": "Password in URL"
-  },
-  "TwitterOAuth": {
-    "severity": "1",
-    "description": "Twitter OAuth",
-    "categories": [
-      "security"
-    ],
-    "title": "Twitter OAuth"
-  },
-  "GitHub": {
-    "severity": "1",
-    "description": "GitHub",
-    "categories": [
-      "security"
-    ],
-    "title": "GitHub"
-  },
-  "TwitterAccessToken": {
-    "severity": "1",
-    "description": "Twitter Access Token",
-    "categories": [
-      "security"
-    ],
-    "title": "Twitter Access Token"
-  },
-  "GoogleAPIKey": {
-    "severity": "1",
-    "description": "Google API Key",
-    "categories": [
-      "security"
-    ],
-    "title": "Google API Key"
-  },
-  "Google(GCP)Service-account": {
-    "severity": "1",
-    "description": "Google(GCP) Service-account",
-    "categories": [
-      "security"
-    ],
-    "title": "Google(GCP) Service-account"
-  },
-  "StripeAPIKey": {
-    "severity": "1",
-    "description": "Stripe API Key",
-    "categories": [
-      "security"
-    ],
-    "title": "Stripe API Key"
-  },
-  "AlibabaSecretKey": {
-    "title": "Alibaba Secret Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Alibaba Secret Key"
-  },
-  "YandexAPIKey": {
-    "title": "Yandex API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Yandex API Key"
-  },
-  "DatadogAccessToken": {
-    "title": "Datadog Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Datadog Access Token"
-  },
-  "MessageBirdclientID": {
-    "title": "MessageBird client ID",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "MessageBird client ID"
-  },
-  "BeamerAPItoken": {
-    "title": "Beamer API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Beamer API token"
-  },
-  "PlanetScaleOAuthtoken": {
-    "title": "PlanetScale OAuth token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "PlanetScale OAuth token"
-  },
-  "SumoLogicAccessToken": {
-    "title": "SumoLogic Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "SumoLogic Access Token"
-  },
-  "RapidAPIAccessToken": {
-    "title": "RapidAPI Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "RapidAPI Access Token"
-  },
-  "DuffelAPItoken": {
-    "title": "Duffel API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Duffel API token"
-  },
-  "BitbucketClientSecret": {
-    "title": "Bitbucket Client Secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Bitbucket Client Secret"
-  },
-  "AWS": {
-    "title": "AWS",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "AWS"
-  },
-  "SendGridAPItoken": {
-    "title": "SendGrid API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "SendGrid API token"
-  },
-  "ConfluentSecretKey": {
-    "title": "Confluent Secret Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Confluent Secret Key"
-  },
-  "SentryAccessToken": {
-    "title": "Sentry Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Sentry Access Token"
-  },
-  "ZendeskSecretKey": {
-    "title": "Zendesk Secret Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Zendesk Secret Key"
-  },
-  "Shopifyprivateappaccesstoken": {
-    "title": "Shopify private app access token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Shopify private app access token"
-  },
-  "HubSpotAPIToken": {
-    "title": "HubSpot API Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "HubSpot API Token"
-  },
-  "AdobeClientID(OAuthWeb)": {
-    "title": "Adobe Client ID (OAuth Web)",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Adobe Client ID (OAuth Web)"
-  },
-  "Frame.ioAPItoken": {
-    "title": "Frame.io API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Frame.io API token"
-  },
-  "SumoLogicAccessID": {
-    "title": "SumoLogic Access ID",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "SumoLogic Access ID"
-  },
-  "KucoinSecretKey": {
-    "title": "Kucoin Secret Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Kucoin Secret Key"
-  },
-  "TwitterAccessSecret": {
-    "title": "Twitter Access Secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Twitter Access Secret"
-  },
-  "TwitterBearerToken": {
-    "title": "Twitter Bearer Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Twitter Bearer Token"
-  },
-  "Stripe": {
-    "title": "Stripe",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Stripe"
-  },
-  "TwitchAPItoken": {
-    "title": "Twitch API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Twitch API token"
-  },
-  "IntercomAPIToken": {
-    "title": "Intercom API Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Intercom API Token"
-  },
-  "AirtableAPIKey": {
-    "title": "Airtable API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Airtable API Key"
-  },
-  "BittrexSecretKey": {
-    "title": "Bittrex Secret Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Bittrex Secret Key"
-  },
-  "AtlassianAPItoken": {
-    "title": "Atlassian API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Atlassian API token"
-  },
-  "ShippoAPItoken": {
-    "title": "Shippo API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Shippo API token"
-  },
-  "KrakenAccessToken": {
-    "title": "Kraken Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Kraken Access Token"
-  },
-  "GitLabPersonalAccessToken": {
-    "title": "GitLab Personal Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "GitLab Personal Access Token"
-  },
-  "ClojarsAPItoken": {
-    "title": "Clojars API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Clojars API token"
-  },
-  "TypeformAPItoken": {
-    "title": "Typeform API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Typeform API token"
-  },
-  "FlutterwaveSecretKey": {
-    "title": "Flutterwave Secret Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Flutterwave Secret Key"
-  },
-  "DiscordclientID": {
-    "title": "Discord client ID",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Discord client ID"
-  },
-  "NewRelicingestbrowserAPItoken": {
-    "title": "New Relic ingest browser API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "New Relic ingest browser API token"
-  },
-  "PlaidSecretkey": {
-    "title": "Plaid Secret key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Plaid Secret key"
-  },
-  "TwitterAPIKey": {
-    "title": "Twitter API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Twitter API Key"
-  },
-  "Facebook": {
-    "title": "Facebook",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Facebook"
-  },
-  "GitHubOAuthAccessToken": {
-    "title": "GitHub OAuth Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "GitHub OAuth Access Token"
-  },
-  "HashiCorpTerraformuser/orgAPItoken": {
-    "title": "HashiCorp Terraform user/org API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "HashiCorp Terraform user/org API token"
-  },
-  "Slacktoken": {
-    "title": "Slack token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Slack token"
-  },
-  "AsanaClientID": {
-    "title": "Asana Client ID",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Asana Client ID"
-  },
-  "DynatraceAPItoken": {
-    "title": "Dynatrace API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Dynatrace API token"
-  },
-  "Discordclientsecret": {
-    "title": "Discord client secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Discord client secret"
-  },
-  "SlackWebhook": {
-    "title": "Slack Webhook",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Slack Webhook"
-  },
-  "DiscordAPIkey": {
-    "title": "Discord API key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Discord API key"
-  },
-  "FlickrAccessToken": {
-    "title": "Flickr Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Flickr Access Token"
-  },
-  "DroneciAccessToken": {
-    "title": "Droneci Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Droneci Access Token"
-  },
-  "ConfluentAccessToken": {
-    "title": "Confluent Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Confluent Access Token"
-  },
-  "DopplerAPItoken": {
-    "title": "Doppler API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Doppler API token"
-  },
-  "MattermostAccessToken": {
-    "title": "Mattermost Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Mattermost Access Token"
-  },
-  "LinkedInClientsecret": {
-    "title": "LinkedIn Client secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "LinkedIn Client secret"
-  },
-  "NewRelicuserAPIKey": {
-    "title": "New Relic user API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "New Relic user API Key"
-  },
-  "GoCardlessAPItoken": {
-    "title": "GoCardless API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "GoCardless API token"
-  },
-  "Shopifycustomaccesstoken": {
-    "title": "Shopify custom access token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Shopify custom access token"
-  },
-  "PlanetScaleAPItoken": {
-    "title": "PlanetScale API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "PlanetScale API token"
-  },
-  "BittrexAccessKey": {
-    "title": "Bittrex Access Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Bittrex Access Key"
-  },
-  "KucoinAccessToken": {
-    "title": "Kucoin Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Kucoin Access Token"
-  },
-  "AsanaClientSecret": {
-    "title": "Asana Client Secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Asana Client Secret"
-  },
-  "GitHubPersonalAccessToken": {
-    "title": "GitHub Personal Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "GitHub Personal Access Token"
-  },
-  "Agesecretkey": {
-    "title": "Age secret key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Age secret key"
-  },
-  "ContentfuldeliveryAPItoken": {
-    "title": "Contentful delivery API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Contentful delivery API token"
-  },
-  "LinearAPIToken": {
-    "title": "Linear API Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Linear API Token"
-  },
-  "Mailgunpublicvalidationkey": {
-    "title": "Mailgun public validation key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Mailgun public validation key"
-  },
-  "MapBoxAPItoken": {
-    "title": "MapBox API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "MapBox API token"
-  },
-  "NetlifyAccessToken": {
-    "title": "Netlify Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Netlify Access Token"
-  },
-  "FlutterwaveEncryptionKey": {
-    "title": "Flutterwave Encryption Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Flutterwave Encryption Key"
-  },
-  "LaunchdarklyAccessToken": {
-    "title": "Launchdarkly Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Launchdarkly Access Token"
-  },
-  "MessageBirdAPItoken": {
-    "title": "MessageBird API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "MessageBird API token"
-  },
-  "FinicityClientSecret": {
-    "title": "Finicity Client Secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Finicity Client Secret"
-  },
-  "PyPIuploadtoken": {
-    "title": "PyPI upload token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "PyPI upload token"
-  },
-  "DatabricksAPItoken": {
-    "title": "Databricks API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Databricks API token"
-  },
-  "SendbirdAccessID": {
-    "title": "Sendbird Access ID",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Sendbird Access ID"
-  },
-  "NytimesAccessToken": {
-    "title": "Nytimes Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Nytimes Access Token"
-  },
-  "RubygemAPItoken": {
-    "title": "Rubygem API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Rubygem API token"
-  },
-  "SendinblueAPItoken": {
-    "title": "Sendinblue API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Sendinblue API token"
-  },
-  "YandexAWSAccessToken": {
-    "title": "Yandex AWS Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Yandex AWS Access Token"
-  },
-  "GitHubRefreshToken": {
-    "title": "GitHub Refresh Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "GitHub Refresh Token"
-  },
-  "TwitterAPISecret": {
-    "title": "Twitter API Secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Twitter API Secret"
-  },
-  "TwitterAccessToken": {
-    "title": "Twitter Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Twitter Access Token"
-  },
-  "FinnhubAccessToken": {
-    "title": "Finnhub Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Finnhub Access Token"
-  },
-  "PlaidAPIToken": {
-    "title": "Plaid API Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Plaid API Token"
-  },
-  "PlaidClientID": {
-    "title": "Plaid Client ID",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Plaid Client ID"
-  },
-  "SquarespaceAccessToken": {
-    "title": "Squarespace Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Squarespace Access Token"
-  },
-  "NewRelicuserAPIID": {
-    "title": "New Relic user API ID",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "New Relic user API ID"
-  },
-  "GitterAccessToken": {
-    "title": "Gitter Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Gitter Access Token"
-  },
-  "LinearClientSecret": {
-    "title": "Linear Client Secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Linear Client Secret"
-  },
-  "YandexAccessToken": {
-    "title": "Yandex Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Yandex Access Token"
-  },
-  "HerokuAPIKey": {
-    "title": "Heroku API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Heroku API Key"
-  },
-  "FinicityAPItoken": {
-    "title": "Finicity API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Finicity API token"
-  },
-  "DropboxshortlivedAPItoken": {
-    "title": "Dropbox short lived API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Dropbox short lived API token"
-  },
-  "LobPublishableAPIKey": {
-    "title": "Lob Publishable API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lob Publishable API Key"
-  },
-  "AlgoliaAPIKey": {
-    "title": "Algolia API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Algolia API Key"
-  },
-  "OktaAccessToken": {
-    "title": "Okta Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Okta Access Token"
-  },
-  "EasyPostAPItoken": {
-    "title": "EasyPost API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "EasyPost API token"
-  },
-  "PostmanAPItoken": {
-    "title": "Postman API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Postman API token"
-  },
-  "Shopifyaccesstoken": {
-    "title": "Shopify access token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Shopify access token"
-  },
-  "TwilioAPIKey": {
-    "title": "Twilio API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Twilio API Key"
-  },
-  "Shopifysharedsecret": {
-    "title": "Shopify shared secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Shopify shared secret"
-  },
-  "SquareAccessToken": {
-    "title": "Square Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Square Access Token"
-  },
-  "Mailgunwebhooksigningkey": {
-    "title": "Mailgun webhook signing key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Mailgun webhook signing key"
-  },
-  "MailgunprivateAPItoken": {
-    "title": "Mailgun private API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Mailgun private API token"
-  },
-  "SendbirdAccessToken": {
-    "title": "Sendbird Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Sendbird Access Token"
-  },
-  "DropboxAPIsecret": {
-    "title": "Dropbox API secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Dropbox API secret"
-  },
-  "npmaccesstoken": {
-    "title": "npm access token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "npm access token"
-  },
-  "GitHubAppToken": {
-    "title": "GitHub App Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "GitHub App Token"
-  },
-  "LinkedInClientID": {
-    "title": "LinkedIn Client ID",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "LinkedIn Client ID"
-  },
-  "DropboxlonglivedAPItoken": {
-    "title": "Dropbox long lived API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Dropbox long lived API token"
-  },
-  "FastlyAPIkey": {
-    "title": "Fastly API key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Fastly API key"
-  },
-  "TravisCIAccessToken": {
-    "title": "Travis CI Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Travis CI Access Token"
-  },
-  "AdafruitAPIKey": {
-    "title": "Adafruit API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Adafruit API Key"
-  },
-  "PlanetScalepassword": {
-    "title": "PlanetScale password",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "PlanetScale password"
-  },
-  "BitbucketClientID": {
-    "title": "Bitbucket Client ID",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Bitbucket Client ID"
-  },
-  "LobAPIKey": {
-    "title": "Lob API Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Lob API Key"
-  },
-  "FreshbooksAccessToken": {
-    "title": "Freshbooks Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Freshbooks Access Token"
-  },
-  "EasyPosttestAPItoken": {
-    "title": "EasyPost test API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "EasyPost test API token"
-  },
-  "MailchimpAPIkey": {
-    "title": "Mailchimp API key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Mailchimp API key"
-  },
-  "CodecovAccessToken": {
-    "title": "Codecov Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Codecov Access Token"
-  },
-  "GCPAPIkey": {
-    "title": "GCP API key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "GCP API key"
-  },
-  "PrivateKey": {
-    "title": "Private Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Private Key"
-  },
-  "CoinbaseAccessToken": {
-    "title": "Coinbase Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Coinbase Access Token"
-  },
-  "PulumiAPItoken": {
-    "title": "Pulumi API token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Pulumi API token"
-  },
-  "AlibabaAccessKeyID": {
-    "title": "Alibaba AccessKey ID",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Alibaba AccessKey ID"
-  },
-  "FinicityPublicKey": {
-    "title": "Finicity Public Key",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Finicity Public Key"
-  },
-  "AdobeClientSecret": {
-    "title": "Adobe Client Secret",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Adobe Client Secret"
-  },
-  "EtsyAccessToken": {
-    "title": "Etsy Access Token",
-    "severity": "1",
-    "categories": [
-      "security"
-    ],
-    "description": "Etsy Access Token"
-  }
-}
+issues_data = {   'AWS': {   'categories': ['security'],
+               'description': 'AWS',
+               'file': '%(issue.file)s',
+               'line': '%(issue.line)s',
+               'severity': '1',
+               'title': 'AWS'},
+    'AWSAPIKey': {   'categories': ['security'],
+                     'description': 'AWS API Key',
+                     'file': '%(issue.file)s',
+                     'line': '%(issue.line)s',
+                     'severity': '1',
+                     'title': 'AWS API Key'},
+    'AdafruitAPIKey': {   'categories': ['security'],
+                          'description': 'Adafruit API Key',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'Adafruit API Key'},
+    'AdobeClientID(OAuthWeb)': {   'categories': ['security'],
+                                   'description': 'Adobe Client ID (OAuth Web)',
+                                   'file': '%(issue.file)s',
+                                   'line': '%(issue.line)s',
+                                   'severity': '1',
+                                   'title': 'Adobe Client ID (OAuth Web)'},
+    'AdobeClientSecret': {   'categories': ['security'],
+                             'description': 'Adobe Client Secret',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Adobe Client Secret'},
+    'Agesecretkey': {   'categories': ['security'],
+                        'description': 'Age secret key',
+                        'file': '%(issue.file)s',
+                        'line': '%(issue.line)s',
+                        'severity': '1',
+                        'title': 'Age secret key'},
+    'AirtableAPIKey': {   'categories': ['security'],
+                          'description': 'Airtable API Key',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'Airtable API Key'},
+    'AlgoliaAPIKey': {   'categories': ['security'],
+                         'description': 'Algolia API Key',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': '1',
+                         'title': 'Algolia API Key'},
+    'AlibabaAccessKeyID': {   'categories': ['security'],
+                              'description': 'Alibaba AccessKey ID',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Alibaba AccessKey ID'},
+    'AlibabaSecretKey': {   'categories': ['security'],
+                            'description': 'Alibaba Secret Key',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Alibaba Secret Key'},
+    'AmazonAWSAccessKeyID': {   'categories': ['security'],
+                                'description': 'Amazon AWS Access Key ID',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': '1',
+                                'title': 'Amazon AWS Access Key ID'},
+    'AsanaClientID': {   'categories': ['security'],
+                         'description': 'Asana Client ID',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': '1',
+                         'title': 'Asana Client ID'},
+    'AsanaClientSecret': {   'categories': ['security'],
+                             'description': 'Asana Client Secret',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Asana Client Secret'},
+    'AtlassianAPItoken': {   'categories': ['security'],
+                             'description': 'Atlassian API token',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Atlassian API token'},
+    'BeamerAPItoken': {   'categories': ['security'],
+                          'description': 'Beamer API token',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'Beamer API token'},
+    'BitbucketClientID': {   'categories': ['security'],
+                             'description': 'Bitbucket Client ID',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Bitbucket Client ID'},
+    'BitbucketClientSecret': {   'categories': ['security'],
+                                 'description': 'Bitbucket Client Secret',
+                                 'file': '%(issue.file)s',
+                                 'line': '%(issue.line)s',
+                                 'severity': '1',
+                                 'title': 'Bitbucket Client Secret'},
+    'BittrexAccessKey': {   'categories': ['security'],
+                            'description': 'Bittrex Access Key',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Bittrex Access Key'},
+    'BittrexSecretKey': {   'categories': ['security'],
+                            'description': 'Bittrex Secret Key',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Bittrex Secret Key'},
+    'ClojarsAPItoken': {   'categories': ['security'],
+                           'description': 'Clojars API token',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'Clojars API token'},
+    'CodecovAccessToken': {   'categories': ['security'],
+                              'description': 'Codecov Access Token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Codecov Access Token'},
+    'CoinbaseAccessToken': {   'categories': ['security'],
+                               'description': 'Coinbase Access Token',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'Coinbase Access Token'},
+    'ConfluentAccessToken': {   'categories': ['security'],
+                                'description': 'Confluent Access Token',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': '1',
+                                'title': 'Confluent Access Token'},
+    'ConfluentSecretKey': {   'categories': ['security'],
+                              'description': 'Confluent Secret Key',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Confluent Secret Key'},
+    'ContentfuldeliveryAPItoken': {   'categories': ['security'],
+                                      'description': 'Contentful delivery API '
+                                                     'token',
+                                      'file': '%(issue.file)s',
+                                      'line': '%(issue.line)s',
+                                      'severity': '1',
+                                      'title': 'Contentful delivery API token'},
+    'DatabricksAPItoken': {   'categories': ['security'],
+                              'description': 'Databricks API token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Databricks API token'},
+    'DatadogAccessToken': {   'categories': ['security'],
+                              'description': 'Datadog Access Token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Datadog Access Token'},
+    'DiscordAPIkey': {   'categories': ['security'],
+                         'description': 'Discord API key',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': '1',
+                         'title': 'Discord API key'},
+    'DiscordclientID': {   'categories': ['security'],
+                           'description': 'Discord client ID',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'Discord client ID'},
+    'Discordclientsecret': {   'categories': ['security'],
+                               'description': 'Discord client secret',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'Discord client secret'},
+    'DopplerAPItoken': {   'categories': ['security'],
+                           'description': 'Doppler API token',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'Doppler API token'},
+    'DroneciAccessToken': {   'categories': ['security'],
+                              'description': 'Droneci Access Token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Droneci Access Token'},
+    'DropboxAPIsecret': {   'categories': ['security'],
+                            'description': 'Dropbox API secret',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Dropbox API secret'},
+    'DropboxlonglivedAPItoken': {   'categories': ['security'],
+                                    'description': 'Dropbox long lived API '
+                                                   'token',
+                                    'file': '%(issue.file)s',
+                                    'line': '%(issue.line)s',
+                                    'severity': '1',
+                                    'title': 'Dropbox long lived API token'},
+    'DropboxshortlivedAPItoken': {   'categories': ['security'],
+                                     'description': 'Dropbox short lived API '
+                                                    'token',
+                                     'file': '%(issue.file)s',
+                                     'line': '%(issue.line)s',
+                                     'severity': '1',
+                                     'title': 'Dropbox short lived API token'},
+    'DuffelAPItoken': {   'categories': ['security'],
+                          'description': 'Duffel API token',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'Duffel API token'},
+    'DynatraceAPItoken': {   'categories': ['security'],
+                             'description': 'Dynatrace API token',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Dynatrace API token'},
+    'EasyPostAPItoken': {   'categories': ['security'],
+                            'description': 'EasyPost API token',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'EasyPost API token'},
+    'EasyPosttestAPItoken': {   'categories': ['security'],
+                                'description': 'EasyPost test API token',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': '1',
+                                'title': 'EasyPost test API token'},
+    'EtsyAccessToken': {   'categories': ['security'],
+                           'description': 'Etsy Access Token',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'Etsy Access Token'},
+    'Facebook': {   'categories': ['security'],
+                    'description': 'Facebook',
+                    'file': '%(issue.file)s',
+                    'line': '%(issue.line)s',
+                    'severity': '1',
+                    'title': 'Facebook'},
+    'FastlyAPIkey': {   'categories': ['security'],
+                        'description': 'Fastly API key',
+                        'file': '%(issue.file)s',
+                        'line': '%(issue.line)s',
+                        'severity': '1',
+                        'title': 'Fastly API key'},
+    'FinicityAPItoken': {   'categories': ['security'],
+                            'description': 'Finicity API token',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Finicity API token'},
+    'FinicityClientSecret': {   'categories': ['security'],
+                                'description': 'Finicity Client Secret',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': '1',
+                                'title': 'Finicity Client Secret'},
+    'FinicityPublicKey': {   'categories': ['security'],
+                             'description': 'Finicity Public Key',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Finicity Public Key'},
+    'FinnhubAccessToken': {   'categories': ['security'],
+                              'description': 'Finnhub Access Token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Finnhub Access Token'},
+    'FlickrAccessToken': {   'categories': ['security'],
+                             'description': 'Flickr Access Token',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Flickr Access Token'},
+    'FlutterwaveEncryptionKey': {   'categories': ['security'],
+                                    'description': 'Flutterwave Encryption Key',
+                                    'file': '%(issue.file)s',
+                                    'line': '%(issue.line)s',
+                                    'severity': '1',
+                                    'title': 'Flutterwave Encryption Key'},
+    'FlutterwaveSecretKey': {   'categories': ['security'],
+                                'description': 'Flutterwave Secret Key',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': '1',
+                                'title': 'Flutterwave Secret Key'},
+    'Frame.ioAPItoken': {   'categories': ['security'],
+                            'description': 'Frame.io API token',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Frame.io API token'},
+    'FreshbooksAccessToken': {   'categories': ['security'],
+                                 'description': 'Freshbooks Access Token',
+                                 'file': '%(issue.file)s',
+                                 'line': '%(issue.line)s',
+                                 'severity': '1',
+                                 'title': 'Freshbooks Access Token'},
+    'GCPAPIkey': {   'categories': ['security'],
+                     'description': 'GCP API key',
+                     'file': '%(issue.file)s',
+                     'line': '%(issue.line)s',
+                     'severity': '1',
+                     'title': 'GCP API key'},
+    'GenericSecret': {   'categories': ['security'],
+                         'description': 'Generic Secret',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': '1',
+                         'title': 'Generic Secret'},
+    'GitHub': {   'categories': ['security'],
+                  'description': 'GitHub',
+                  'file': '%(issue.file)s',
+                  'line': '%(issue.line)s',
+                  'severity': '1',
+                  'title': 'GitHub'},
+    'GitHubAppToken': {   'categories': ['security'],
+                          'description': 'GitHub App Token',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'GitHub App Token'},
+    'GitHubOAuthAccessToken': {   'categories': ['security'],
+                                  'description': 'GitHub OAuth Access Token',
+                                  'file': '%(issue.file)s',
+                                  'line': '%(issue.line)s',
+                                  'severity': '1',
+                                  'title': 'GitHub OAuth Access Token'},
+    'GitHubPersonalAccessToken': {   'categories': ['security'],
+                                     'description': 'GitHub Personal Access '
+                                                    'Token',
+                                     'file': '%(issue.file)s',
+                                     'line': '%(issue.line)s',
+                                     'severity': '1',
+                                     'title': 'GitHub Personal Access Token'},
+    'GitHubRefreshToken': {   'categories': ['security'],
+                              'description': 'GitHub Refresh Token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'GitHub Refresh Token'},
+    'GitLabPersonalAccessToken': {   'categories': ['security'],
+                                     'description': 'GitLab Personal Access '
+                                                    'Token',
+                                     'file': '%(issue.file)s',
+                                     'line': '%(issue.line)s',
+                                     'severity': '1',
+                                     'title': 'GitLab Personal Access Token'},
+    'GitterAccessToken': {   'categories': ['security'],
+                             'description': 'Gitter Access Token',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Gitter Access Token'},
+    'GoCardlessAPItoken': {   'categories': ['security'],
+                              'description': 'GoCardless API token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'GoCardless API token'},
+    'Google(GCP)Service-account': {   'categories': ['security'],
+                                      'description': 'Google(GCP) '
+                                                     'Service-account',
+                                      'file': '%(issue.file)s',
+                                      'line': '%(issue.line)s',
+                                      'severity': '1',
+                                      'title': 'Google(GCP) Service-account'},
+    'GoogleAPIKey': {   'categories': ['security'],
+                        'description': 'Google API Key',
+                        'file': '%(issue.file)s',
+                        'line': '%(issue.line)s',
+                        'severity': '1',
+                        'title': 'Google API Key'},
+    'HashiCorpTerraformuser/orgAPItoken': {   'categories': ['security'],
+                                              'description': 'HashiCorp '
+                                                             'Terraform '
+                                                             'user/org API '
+                                                             'token',
+                                              'file': '%(issue.file)s',
+                                              'line': '%(issue.line)s',
+                                              'severity': '1',
+                                              'title': 'HashiCorp Terraform '
+                                                       'user/org API token'},
+    'HerokuAPIKey': {   'categories': ['security'],
+                        'description': 'Heroku API Key',
+                        'file': '%(issue.file)s',
+                        'line': '%(issue.line)s',
+                        'severity': '1',
+                        'title': 'Heroku API Key'},
+    'HubSpotAPIToken': {   'categories': ['security'],
+                           'description': 'HubSpot API Token',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'HubSpot API Token'},
+    'IntercomAPIToken': {   'categories': ['security'],
+                            'description': 'Intercom API Token',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Intercom API Token'},
+    'KrakenAccessToken': {   'categories': ['security'],
+                             'description': 'Kraken Access Token',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Kraken Access Token'},
+    'KucoinAccessToken': {   'categories': ['security'],
+                             'description': 'Kucoin Access Token',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Kucoin Access Token'},
+    'KucoinSecretKey': {   'categories': ['security'],
+                           'description': 'Kucoin Secret Key',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'Kucoin Secret Key'},
+    'LaunchdarklyAccessToken': {   'categories': ['security'],
+                                   'description': 'Launchdarkly Access Token',
+                                   'file': '%(issue.file)s',
+                                   'line': '%(issue.line)s',
+                                   'severity': '1',
+                                   'title': 'Launchdarkly Access Token'},
+    'LinearAPIToken': {   'categories': ['security'],
+                          'description': 'Linear API Token',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'Linear API Token'},
+    'LinearClientSecret': {   'categories': ['security'],
+                              'description': 'Linear Client Secret',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Linear Client Secret'},
+    'LinkedInClientID': {   'categories': ['security'],
+                            'description': 'LinkedIn Client ID',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'LinkedIn Client ID'},
+    'LinkedInClientsecret': {   'categories': ['security'],
+                                'description': 'LinkedIn Client secret',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': '1',
+                                'title': 'LinkedIn Client secret'},
+    'LobAPIKey': {   'categories': ['security'],
+                     'description': 'Lob API Key',
+                     'file': '%(issue.file)s',
+                     'line': '%(issue.line)s',
+                     'severity': '1',
+                     'title': 'Lob API Key'},
+    'LobPublishableAPIKey': {   'categories': ['security'],
+                                'description': 'Lob Publishable API Key',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': '1',
+                                'title': 'Lob Publishable API Key'},
+    'MailchimpAPIkey': {   'categories': ['security'],
+                           'description': 'Mailchimp API key',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'Mailchimp API key'},
+    'MailgunprivateAPItoken': {   'categories': ['security'],
+                                  'description': 'Mailgun private API token',
+                                  'file': '%(issue.file)s',
+                                  'line': '%(issue.line)s',
+                                  'severity': '1',
+                                  'title': 'Mailgun private API token'},
+    'Mailgunpublicvalidationkey': {   'categories': ['security'],
+                                      'description': 'Mailgun public '
+                                                     'validation key',
+                                      'file': '%(issue.file)s',
+                                      'line': '%(issue.line)s',
+                                      'severity': '1',
+                                      'title': 'Mailgun public validation key'},
+    'Mailgunwebhooksigningkey': {   'categories': ['security'],
+                                    'description': 'Mailgun webhook signing '
+                                                   'key',
+                                    'file': '%(issue.file)s',
+                                    'line': '%(issue.line)s',
+                                    'severity': '1',
+                                    'title': 'Mailgun webhook signing key'},
+    'MapBoxAPItoken': {   'categories': ['security'],
+                          'description': 'MapBox API token',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'MapBox API token'},
+    'MattermostAccessToken': {   'categories': ['security'],
+                                 'description': 'Mattermost Access Token',
+                                 'file': '%(issue.file)s',
+                                 'line': '%(issue.line)s',
+                                 'severity': '1',
+                                 'title': 'Mattermost Access Token'},
+    'MessageBirdAPItoken': {   'categories': ['security'],
+                               'description': 'MessageBird API token',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'MessageBird API token'},
+    'MessageBirdclientID': {   'categories': ['security'],
+                               'description': 'MessageBird client ID',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'MessageBird client ID'},
+    'NetlifyAccessToken': {   'categories': ['security'],
+                              'description': 'Netlify Access Token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Netlify Access Token'},
+    'NewRelicingestbrowserAPItoken': {   'categories': ['security'],
+                                         'description': 'New Relic ingest '
+                                                        'browser API token',
+                                         'file': '%(issue.file)s',
+                                         'line': '%(issue.line)s',
+                                         'severity': '1',
+                                         'title': 'New Relic ingest browser '
+                                                  'API token'},
+    'NewRelicuserAPIID': {   'categories': ['security'],
+                             'description': 'New Relic user API ID',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'New Relic user API ID'},
+    'NewRelicuserAPIKey': {   'categories': ['security'],
+                              'description': 'New Relic user API Key',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'New Relic user API Key'},
+    'NytimesAccessToken': {   'categories': ['security'],
+                              'description': 'Nytimes Access Token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Nytimes Access Token'},
+    'OktaAccessToken': {   'categories': ['security'],
+                           'description': 'Okta Access Token',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'Okta Access Token'},
+    'PasswordinURL': {   'categories': ['security'],
+                         'description': 'Password in URL',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': '1',
+                         'title': 'Password in URL'},
+    'PlaidAPIToken': {   'categories': ['security'],
+                         'description': 'Plaid API Token',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': '1',
+                         'title': 'Plaid API Token'},
+    'PlaidClientID': {   'categories': ['security'],
+                         'description': 'Plaid Client ID',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': '1',
+                         'title': 'Plaid Client ID'},
+    'PlaidSecretkey': {   'categories': ['security'],
+                          'description': 'Plaid Secret key',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'Plaid Secret key'},
+    'PlanetScaleAPItoken': {   'categories': ['security'],
+                               'description': 'PlanetScale API token',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'PlanetScale API token'},
+    'PlanetScaleOAuthtoken': {   'categories': ['security'],
+                                 'description': 'PlanetScale OAuth token',
+                                 'file': '%(issue.file)s',
+                                 'line': '%(issue.line)s',
+                                 'severity': '1',
+                                 'title': 'PlanetScale OAuth token'},
+    'PlanetScalepassword': {   'categories': ['security'],
+                               'description': 'PlanetScale password',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'PlanetScale password'},
+    'PostmanAPItoken': {   'categories': ['security'],
+                           'description': 'Postman API token',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'Postman API token'},
+    'PrivateKey': {   'categories': ['security'],
+                      'description': 'Private Key',
+                      'file': '%(issue.file)s',
+                      'line': '%(issue.line)s',
+                      'severity': '1',
+                      'title': 'Private Key'},
+    'PulumiAPItoken': {   'categories': ['security'],
+                          'description': 'Pulumi API token',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'Pulumi API token'},
+    'PyPIuploadtoken': {   'categories': ['security'],
+                           'description': 'PyPI upload token',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'PyPI upload token'},
+    'RSAprivatekey': {   'categories': ['security'],
+                         'description': 'RSA private key',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': '1',
+                         'title': 'RSA private key'},
+    'RapidAPIAccessToken': {   'categories': ['security'],
+                               'description': 'RapidAPI Access Token',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'RapidAPI Access Token'},
+    'RubygemAPItoken': {   'categories': ['security'],
+                           'description': 'Rubygem API token',
+                           'file': '%(issue.file)s',
+                           'line': '%(issue.line)s',
+                           'severity': '1',
+                           'title': 'Rubygem API token'},
+    'SendGridAPItoken': {   'categories': ['security'],
+                            'description': 'SendGrid API token',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'SendGrid API token'},
+    'SendbirdAccessID': {   'categories': ['security'],
+                            'description': 'Sendbird Access ID',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Sendbird Access ID'},
+    'SendbirdAccessToken': {   'categories': ['security'],
+                               'description': 'Sendbird Access Token',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'Sendbird Access Token'},
+    'SendinblueAPItoken': {   'categories': ['security'],
+                              'description': 'Sendinblue API token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Sendinblue API token'},
+    'SentryAccessToken': {   'categories': ['security'],
+                             'description': 'Sentry Access Token',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Sentry Access Token'},
+    'ShippoAPItoken': {   'categories': ['security'],
+                          'description': 'Shippo API token',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'Shippo API token'},
+    'Shopifyaccesstoken': {   'categories': ['security'],
+                              'description': 'Shopify access token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Shopify access token'},
+    'Shopifycustomaccesstoken': {   'categories': ['security'],
+                                    'description': 'Shopify custom access '
+                                                   'token',
+                                    'file': '%(issue.file)s',
+                                    'line': '%(issue.line)s',
+                                    'severity': '1',
+                                    'title': 'Shopify custom access token'},
+    'Shopifyprivateappaccesstoken': {   'categories': ['security'],
+                                        'description': 'Shopify private app '
+                                                       'access token',
+                                        'file': '%(issue.file)s',
+                                        'line': '%(issue.line)s',
+                                        'severity': '1',
+                                        'title': 'Shopify private app access '
+                                                 'token'},
+    'Shopifysharedsecret': {   'categories': ['security'],
+                               'description': 'Shopify shared secret',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'Shopify shared secret'},
+    'SlackToken': {   'categories': ['security'],
+                      'description': 'Slack Token',
+                      'file': '%(issue.file)s',
+                      'line': '%(issue.line)s',
+                      'severity': '1',
+                      'title': 'Slack Token'},
+    'SlackWebhook': {   'categories': ['security'],
+                        'description': 'Slack Webhook',
+                        'file': '%(issue.file)s',
+                        'line': '%(issue.line)s',
+                        'severity': '1',
+                        'title': 'Slack Webhook'},
+    'Slacktoken': {   'categories': ['security'],
+                      'description': 'Slack token',
+                      'file': '%(issue.file)s',
+                      'line': '%(issue.line)s',
+                      'severity': '1',
+                      'title': 'Slack token'},
+    'SquareAccessToken': {   'categories': ['security'],
+                             'description': 'Square Access Token',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Square Access Token'},
+    'SquarespaceAccessToken': {   'categories': ['security'],
+                                  'description': 'Squarespace Access Token',
+                                  'file': '%(issue.file)s',
+                                  'line': '%(issue.line)s',
+                                  'severity': '1',
+                                  'title': 'Squarespace Access Token'},
+    'Stripe': {   'categories': ['security'],
+                  'description': 'Stripe',
+                  'file': '%(issue.file)s',
+                  'line': '%(issue.line)s',
+                  'severity': '1',
+                  'title': 'Stripe'},
+    'StripeAPIKey': {   'categories': ['security'],
+                        'description': 'Stripe API Key',
+                        'file': '%(issue.file)s',
+                        'line': '%(issue.line)s',
+                        'severity': '1',
+                        'title': 'Stripe API Key'},
+    'SumoLogicAccessID': {   'categories': ['security'],
+                             'description': 'SumoLogic Access ID',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'SumoLogic Access ID'},
+    'SumoLogicAccessToken': {   'categories': ['security'],
+                                'description': 'SumoLogic Access Token',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': '1',
+                                'title': 'SumoLogic Access Token'},
+    'TravisCIAccessToken': {   'categories': ['security'],
+                               'description': 'Travis CI Access Token',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'Travis CI Access Token'},
+    'TwilioAPIKey': {   'categories': ['security'],
+                        'description': 'Twilio API Key',
+                        'file': '%(issue.file)s',
+                        'line': '%(issue.line)s',
+                        'severity': '1',
+                        'title': 'Twilio API Key'},
+    'TwitchAPItoken': {   'categories': ['security'],
+                          'description': 'Twitch API token',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'Twitch API token'},
+    'TwitterAPIKey': {   'categories': ['security'],
+                         'description': 'Twitter API Key',
+                         'file': '%(issue.file)s',
+                         'line': '%(issue.line)s',
+                         'severity': '1',
+                         'title': 'Twitter API Key'},
+    'TwitterAPISecret': {   'categories': ['security'],
+                            'description': 'Twitter API Secret',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Twitter API Secret'},
+    'TwitterAccessSecret': {   'categories': ['security'],
+                               'description': 'Twitter Access Secret',
+                               'file': '%(issue.file)s',
+                               'line': '%(issue.line)s',
+                               'severity': '1',
+                               'title': 'Twitter Access Secret'},
+    'TwitterAccessToken': {   'categories': ['security'],
+                              'description': 'Twitter Access Token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Twitter Access Token'},
+    'TwitterBearerToken': {   'categories': ['security'],
+                              'description': 'Twitter Bearer Token',
+                              'file': '%(issue.file)s',
+                              'line': '%(issue.line)s',
+                              'severity': '1',
+                              'title': 'Twitter Bearer Token'},
+    'TwitterOAuth': {   'categories': ['security'],
+                        'description': 'Twitter OAuth',
+                        'file': '%(issue.file)s',
+                        'line': '%(issue.line)s',
+                        'severity': '1',
+                        'title': 'Twitter OAuth'},
+    'TypeformAPItoken': {   'categories': ['security'],
+                            'description': 'Typeform API token',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Typeform API token'},
+    'YandexAPIKey': {   'categories': ['security'],
+                        'description': 'Yandex API Key',
+                        'file': '%(issue.file)s',
+                        'line': '%(issue.line)s',
+                        'severity': '1',
+                        'title': 'Yandex API Key'},
+    'YandexAWSAccessToken': {   'categories': ['security'],
+                                'description': 'Yandex AWS Access Token',
+                                'file': '%(issue.file)s',
+                                'line': '%(issue.line)s',
+                                'severity': '1',
+                                'title': 'Yandex AWS Access Token'},
+    'YandexAccessToken': {   'categories': ['security'],
+                             'description': 'Yandex Access Token',
+                             'file': '%(issue.file)s',
+                             'line': '%(issue.line)s',
+                             'severity': '1',
+                             'title': 'Yandex Access Token'},
+    'ZendeskSecretKey': {   'categories': ['security'],
+                            'description': 'Zendesk Secret Key',
+                            'file': '%(issue.file)s',
+                            'line': '%(issue.line)s',
+                            'severity': '1',
+                            'title': 'Zendesk Secret Key'},
+    'npmaccesstoken': {   'categories': ['security'],
+                          'description': 'npm access token',
+                          'file': '%(issue.file)s',
+                          'line': '%(issue.line)s',
+                          'severity': '1',
+                          'title': 'npm access token'}}

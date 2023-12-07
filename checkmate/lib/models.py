@@ -73,6 +73,11 @@ class IssueClass(BaseDocument):
     language = CharField(indexed=True, length=50)
     code = CharField(indexed=True, length=50)
     description = TextField(indexed=False)
+    file = CharField(indexed=True, length=50)
+    line = CharField(indexed=True, length=50)
+
+
+
 
     # obsolete
     occurrence_description = CharField(indexed=True, length=2000)
@@ -122,6 +127,9 @@ class Issue(BaseDocument):
     analyzer = CharField(indexed=True, length=100, nullable=False)
     code = CharField(indexed=True, length=100, nullable=False)
     fingerprint = CharField(indexed=True, length=255, nullable=False)
+    file = CharField(indexed=True, length=100, nullable=False)
+    line = CharField(indexed=True, length=100, nullable=False)
+
 
     # determines if this issue should be ignored
     ignore = BooleanField(indexed=True, default=False,
@@ -479,7 +487,10 @@ class Project(BaseDocument):
                                                 'severity',
                                                 'description',
                                                 'code',
-                                                'pk'],
+                                                'pk',
+                                                'file',
+                                                'line'],
+
                                                raw=True)
         grouped_issue_data = {}
 
@@ -501,7 +512,9 @@ class Project(BaseDocument):
                 'categories': [category['name'] for category in issue_class['categories']],
                 'description': issue_class['description'],
                 'code': issue_class['code'],
-                'pk': issue_class['pk']
+                'pk': issue_class['pk'],
+                'file': issue_class['file'],
+                'line': issue_class['line']
             }
             for field_name in extra_fields:
                 code_data[issue_class['code']

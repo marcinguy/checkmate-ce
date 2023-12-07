@@ -2,6 +2,7 @@ from collections import defaultdict
 from checkmate.lib.stats.mapreduce import MapReducer
 
 
+
 class IssuesMapReducer(MapReducer):
 
     def __init__(self, aggregators, count_column='count', group_by=['language', 'analyzer', 'code']):
@@ -59,11 +60,27 @@ def group_issues_by_fingerprint(issues):
             raise AttributeError("No fingerprint defined for issue with analyzer %s and code %s!" %
                                  (issue.get('analyzer', '(undefined)'), issue['code']))
         fp_code = "%s:%s" % (issue['fingerprint'], issue['code'])
+        
         if fp_code in issues_by_fingerprint:
+         
+
+
             grouped_issue = issues_by_fingerprint[fp_code]
+            grouped_issue['file'] = issue.get('file')
+            grouped_issue['line'] = issue.get('line')
+
+
+
         else:
             grouped_issue = issue.copy()
+          
+
+
             grouped_issue['occurrences'] = []
+     
+
+
+
             if 'location' in grouped_issue:
                 del grouped_issue['location']
             issues_by_fingerprint[fp_code] = grouped_issue
@@ -98,4 +115,4 @@ def group_issues_by_fingerprint(issues):
             grouped_issue['occurrences'] = sorted(
                 grouped_issue['occurrences'], key=lambda x: (x['from_row'], x['from_column']))
 
-    return list(issues_by_fingerprint.values())
+    return issues_by_fingerprint.values()

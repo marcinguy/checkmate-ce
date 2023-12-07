@@ -1,224 +1,150 @@
-# -*- coding: utf-8 -*-
-
-
-issues_data = {
-        "CWE-78": {
-        "title": "CWE-78",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-532": {
-        "title": "CWE-532",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-554": {
-        "title": "CWE-554",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-316": {
-        "title": "CWE-316",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-129": {
-        "title": "CWE-129",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-502": {
-        "title": "CWE-502",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-330": {
-        "title": "CWE-330",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-377": {
-        "title": "CWE-377",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-12": {
-        "title": "CWE-12",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-11": {
-        "title": "CWE-11",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-643": {
-        "title": "CWE-643",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-611": {
-        "title": "CWE-611",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-23": {
-        "title": "CWE-23",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-90": {
-        "title": "CWE-90",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-521": {
-        "title": "CWE-521",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-89": {
-        "title": "CWE-89",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-330": {
-        "title": "CWE-330",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-326": {
-        "title": "CWE-326",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-310": {
-        "title": "CWE-310",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-614": {
-        "title": "CWE-614",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-20": {
-        "title": "CWE-20",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-259": {
-        "title": "CWE-259",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-521": {
-        "title": "CWE-521",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-312": {
-        "title": "CWE-312",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-787": {
-        "title": "CWE-787",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-524": {
-        "title": "CWE-524",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    },
-    "CWE-352": {
-        "title": "CWE-352",
-        "description": "%(issue.data)s",
-        "categories": [
-            "security"
-        ],
-        "severity": 3
-    }
-
-
-}
-
+issues_data = {   'CWE-11': {   'categories': ['security'],
+                  'description': '%(issue.data)s',
+                  'file': '%(issue.file)s',
+                  'line': '%(issue.line)s',
+                  'severity': 3,
+                  'title': 'CWE-11'},
+    'CWE-12': {   'categories': ['security'],
+                  'description': '%(issue.data)s',
+                  'file': '%(issue.file)s',
+                  'line': '%(issue.line)s',
+                  'severity': 3,
+                  'title': 'CWE-12'},
+    'CWE-129': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-129'},
+    'CWE-20': {   'categories': ['security'],
+                  'description': '%(issue.data)s',
+                  'file': '%(issue.file)s',
+                  'line': '%(issue.line)s',
+                  'severity': 3,
+                  'title': 'CWE-20'},
+    'CWE-23': {   'categories': ['security'],
+                  'description': '%(issue.data)s',
+                  'file': '%(issue.file)s',
+                  'line': '%(issue.line)s',
+                  'severity': 3,
+                  'title': 'CWE-23'},
+    'CWE-259': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-259'},
+    'CWE-310': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-310'},
+    'CWE-312': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-312'},
+    'CWE-316': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-316'},
+    'CWE-326': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-326'},
+    'CWE-330': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-330'},
+    'CWE-352': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-352'},
+    'CWE-377': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-377'},
+    'CWE-502': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-502'},
+    'CWE-521': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-521'},
+    'CWE-524': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-524'},
+    'CWE-532': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-532'},
+    'CWE-554': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-554'},
+    'CWE-611': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-611'},
+    'CWE-614': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-614'},
+    'CWE-643': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-643'},
+    'CWE-78': {   'categories': ['security'],
+                  'description': '%(issue.data)s',
+                  'file': '%(issue.file)s',
+                  'line': '%(issue.line)s',
+                  'severity': 3,
+                  'title': 'CWE-78'},
+    'CWE-787': {   'categories': ['security'],
+                   'description': '%(issue.data)s',
+                   'file': '%(issue.file)s',
+                   'line': '%(issue.line)s',
+                   'severity': 3,
+                   'title': 'CWE-787'},
+    'CWE-89': {   'categories': ['security'],
+                  'description': '%(issue.data)s',
+                  'file': '%(issue.file)s',
+                  'line': '%(issue.line)s',
+                  'severity': 3,
+                  'title': 'CWE-89'},
+    'CWE-90': {   'categories': ['security'],
+                  'description': '%(issue.data)s',
+                  'file': '%(issue.file)s',
+                  'line': '%(issue.line)s',
+                  'severity': 3,
+                  'title': 'CWE-90'}}
