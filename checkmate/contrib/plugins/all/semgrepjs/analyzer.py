@@ -79,6 +79,8 @@ class SemgrepJsAnalyzer(BaseAnalyzer):
                             'code': val,
                             'location': location,
                             'data': issue['extra']['message'],
+                            'file': file_revision.path,
+                            'line': issue['start']['line'],
                             'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['extra']['message'])
                         })
             except:

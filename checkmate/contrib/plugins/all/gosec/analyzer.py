@@ -80,6 +80,8 @@ class GosecAnalyzer(BaseAnalyzer):
                             'code': issue['rule_id'],
                             'location': location,
                             'data': issue['details'],
+                            'file': file_revision.path,
+                            'line': value,
                             'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['details'])
                         })
 

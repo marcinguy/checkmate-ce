@@ -58,6 +58,8 @@ class Trufflehog3Analyzer(BaseAnalyzer):
                     'code': issue['reason'],
                     'location': location,
                     'data': issue['reason'],
+                    'file': file_revision.path,
+                    'line': issue['line'],
                     'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['reason'])
                 })
         except:

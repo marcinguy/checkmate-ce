@@ -74,6 +74,8 @@ class CheckovAnalyzer(BaseAnalyzer):
                             'code': issue['check_id'],
                             'location': location,
                             'data': issue['check_name'],
+                            'file': file_revision.path,
+                            'line': line,
                             'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['check_name'])
                     })
             except:

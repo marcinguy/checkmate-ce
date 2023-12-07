@@ -90,6 +90,8 @@ class InsiderseckotlinAnalyzer(BaseAnalyzer):
                             'code': issue['cwe'],
                             'location': location,
                             'data': issue['description'],
+                            'file': file_revision.path,
+                            'line': issue['line'],
                             'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['description'])
                       })
             except:

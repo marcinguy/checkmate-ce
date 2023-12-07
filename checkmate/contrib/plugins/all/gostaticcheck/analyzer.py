@@ -79,6 +79,8 @@ class GostaticcheckAnalyzer(BaseAnalyzer):
                             'code': issue['code'],
                             'location': location,
                             'data': issue['message'],
+                            'file': file_revision.path,
+                            'line': value,
                             'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['message'])
                         })
 

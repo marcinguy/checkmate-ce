@@ -56,6 +56,8 @@ class JSHintAnalyzer(BaseAnalyzer):
                         'code': issue['error']['code'],
                         'location': location,
                         'data': issue['error'],
+                        'file': file_revision.path,
+                        'line': issue['error']['line'],
                         'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['error'])
                     })
 

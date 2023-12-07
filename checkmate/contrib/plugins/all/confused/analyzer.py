@@ -46,6 +46,8 @@ class ConfusedAnalyzer(BaseAnalyzer):
                     'code': "I001",
                     'location': location,
                     'data': json_result["I001"],
+                    'file': file_revision.path,
+                    'line': "1",
                     'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=json_result["I001"])
                 })
 

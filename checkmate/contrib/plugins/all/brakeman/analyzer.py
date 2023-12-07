@@ -82,7 +82,8 @@ class BrakemanAnalyzer(BaseAnalyzer):
                         'warning_type': issue['warning_type'],
                         'location': location,
                         'data': issue['message'],
-
+                        'file': file_revision.path,
+                        'line': issue['line'],
                         'fingerprint': self.get_fingerprint_from_code(file_revision, location, extra_data=issue['message'])
                     })
 
