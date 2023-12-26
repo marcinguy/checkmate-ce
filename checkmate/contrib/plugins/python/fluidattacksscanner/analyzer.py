@@ -36,7 +36,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
         f = open(tmpdir+"/"+file_revision.path, "wb")
 
         result = ""
-        fconf = tempfile.NamedTemporaryFile(delete=False)
+        fconf = tempfile.NamedTemporaryFile(delete=False, suffix='.yaml')
         fresults = tempfile.NamedTemporaryFile(delete=False)
 
         try:
@@ -54,7 +54,7 @@ class FluidAttacksAnalyzer(BaseAnalyzer):
             os.environ["PATH"] = "/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
             try:
                 result = subprocess.check_output(["/root/.nix-profile/bin/m",
-                                                  "gitlab:fluidattacks/universe@2061c6097d66adf4e2f9feb1e4df43447ee51984",
+                                                  "gitlab:fluidattacks/universe@trunk",
                                                   "/skims",
                                                   "scan",
                                                   fconf.name],
