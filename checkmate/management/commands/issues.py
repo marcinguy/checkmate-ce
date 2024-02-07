@@ -471,6 +471,6 @@ $('#findings').append("<hr>");
           print("Check your report in report.html file")
 
           if not valid:
-            print("This scan will have all the features with PRO version :thumbs_up: https://www.betterscan.io/pricing")
+            print("This scan will have all the features with PRO version :thumbs_up: Limited Lifetime deal with this [link=https://buy.betterscan.io]link[/link]")
           else:
             print("Thank you for using the PRO version. :thumbs_up:")
