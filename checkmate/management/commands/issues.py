@@ -137,7 +137,7 @@ class Command(BaseCommand):
           console.print(table)
           print("[bold red]Note:[/bold red] Issues include findings accross all revisions i.e it can be that you have fixed it in your latest revision, but the finding will still appear here (for the affected revision)")
           if not valid:
-            print("This scan will have all the features with PRO version :thumbs_up: Limited Lifetime deal with this [link=https://buy.betterscan.io]link[/link]")
+            print("This scan will have all the features with PRO version :thumbs_up: Limited Lifetime deal with this [link=https://buy.betterscan.io]link[/link] https://buy.betterscan.io")
           else:
             print("Thank you for using the PRO version. :thumbs_up:") 
 
@@ -471,6 +471,6 @@ $('#findings').append("<hr>");
           print("Check your report in report.html file")
 
           if not valid:
-            print("This scan will have all the features with PRO version :thumbs_up: Limited Lifetime deal with this [link=https://buy.betterscan.io]link[/link]")
+            print("This scan will have all the features with PRO version :thumbs_up: Limited Lifetime deal with this [link=https://buy.betterscan.io]link[/link] https://buy.betterscan.io")
           else:
             print("Thank you for using the PRO version. :thumbs_up:")
