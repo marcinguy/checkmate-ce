@@ -31,17 +31,9 @@ class Command(BaseCommand):
             'name': '--backend',
             'action': 'store',
             'dest': 'backend',
+            'default': None,
             'type': str,
-            'default': 'sql',
-            'help': 'The backend to use.'
-        },
-        {
-            'name': '--backend-opts',
-            'action': 'store',
-            'dest': 'backend_opts',
-            'type': str,
-            'default': '',
-            'help': 'Backend options (e.g. connection string).'
+            'help': 'The SqlAlchemy compliant connection string'
         },
         {
             'name': '--path',
@@ -82,7 +74,7 @@ class Command(BaseCommand):
             'project_id': uuid.uuid4().hex if not self.opts['pk'] else self.opts['pk'],
             'project_class': 'Project',
             'backend': {
-                'driver': self.opts['backend'],
+                'db_url': self.opts['backend'],
             }
         }
 

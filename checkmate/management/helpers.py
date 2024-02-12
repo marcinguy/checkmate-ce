@@ -111,8 +111,8 @@ def get_project_and_backend(path, settings, echo=False, initialize_db=True):
 
 def get_backend(project_path, project_config, settings, echo=False, initialize_db=True):
     backend_config = project_config['backend']
-    engine = create_engine(
-        'sqlite:///%s' % os.path.join(project_path, '.checkmate/db.sqlite'), echo=echo)
+    db_url = backend_config['db_url'] or 'sqlite:///%s' % os.path.join(project_path, '.checkmate/db.sqlite')
+    engine = create_engine(db_url, echo=echo)
     backend = SqlBackend(engine)
 
     if initialize_db:
